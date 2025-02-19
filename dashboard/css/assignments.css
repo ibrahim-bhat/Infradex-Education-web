@@ -1,0 +1,110 @@
+.student-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.student-name {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.student-contact {
+    display: flex;
+    gap: 15px;
+}
+
+.student-contact small {
+    color: var(--secondary-color);
+}
+
+.course-title {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.amount-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.amount {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.transaction-id {
+    color: var(--primary-color);
+    font-family: monospace;
+}
+
+.assigned-by {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.user-role {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Details Modal */
+.assignment-details {
+    background: #f8f9fc;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section h6 {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.detail-label {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.detail-value {
+    color: var(--dark-color);
+    font-weight: 600;
+} 
