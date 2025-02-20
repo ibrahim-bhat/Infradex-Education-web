@@ -5,7 +5,7 @@ $servername = "localhost";
 // $dbname = "phpinfradex";
 
 $username = "u873877420_infradexedu";  // Replace with your database username
-$password = "infradexedu123@";  // Replace with your database password
+$password = "Infradexedu123@";  // Replace with your database password
 $dbname = "u873877420_infradexedu";
 // Create connection
 try {
