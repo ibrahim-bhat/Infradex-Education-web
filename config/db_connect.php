@@ -8,10 +8,11 @@ $username = "u873877420_infradexedu";  // Replace with your database username
 $password = "infradexedu123@";  // Replace with your database password
 $dbname = "u873877420_infradexedu";
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Server Error ");
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
 }
+
 ?> 
