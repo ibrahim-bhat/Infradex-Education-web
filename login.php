@@ -4,6 +4,8 @@ if (isset($_SESSION['user_role'])) {
     // Redirect based on role
     if ($_SESSION['user_role'] == 'user') {
         header('Location: student-dashboard/index.php');
+    } elseif ($_SESSION['user_role'] == 'ground_team') {
+        header('Location: dashboard/userdash.php');
     } else {
         header('Location: dashboard/dashboard.php');
     }
@@ -58,7 +60,14 @@ try {
                 $_SESSION['user_role'] = $user['user_role'];
                 
                 // Role-based redirection
-                $redirect = $user['user_role'] == 'user' ? 'student-dashboard/index.php' : 'dashboard/dashboard.php';
+                if ($user['user_role'] == 'user') {
+                    $redirect = 'student-dashboard/index.php';
+                } elseif ($user['user_role'] == 'ground_team') {
+                    $redirect = 'dashboard/userdash.php';
+                } else {
+                    $redirect = 'dashboard/dashboard.php';
+                }
+                
                 sendResponse(true, 'Login successful', $redirect);
             } else {
                 sendResponse(false, 'Invalid password!');

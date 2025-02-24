@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] === 'user') {
-    header('Location: ../login.php');
+if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin'])) {
+    header('Location: userdash.php');
     exit();
 }
 
@@ -89,12 +89,13 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/charts.css">
 </head>
 
 <body>
@@ -116,112 +117,67 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
                 </div>
 
                 <div class="stats-cards">
-                    <div class="stat-card primary">
-                        <div class="stat-icon">
-                            <i class="fas fa-user-graduate"></i>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(52,152,219,0.1); color: #3498db;">
+                            <i class="fas fa-users"></i>
                         </div>
                         <div class="stat-info">
                             <h3><?php echo number_format($counts['total_students']); ?></h3>
                             <p>Total Students</p>
-                            <div class="stat-progress">
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 75%"></div>
-                                </div>
-                                <small>75% Growth</small>
-                            </div>
                         </div>
                     </div>
-
-                    <div class="stat-card success">
-                        <div class="stat-icon">
-                            <i class="fas fa-rupee-sign"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>₹<?php echo number_format($counts['total_revenue']); ?></h3>
-                            <p>Total Revenue</p>
-                            <div class="stat-progress">
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" style="width: 65%"></div>
-                                </div>
-                                <small>₹<?php echo number_format($today_stats['revenue_today']); ?> Today</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card info">
-                        <div class="stat-icon">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(46,204,113,0.1); color: #2ecc71;">
                             <i class="fas fa-book"></i>
                         </div>
                         <div class="stat-info">
                             <h3><?php echo number_format($counts['total_courses']); ?></h3>
                             <p>Total Courses</p>
-                            <div class="stat-progress">
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" style="width: 50%"></div>
-                                </div>
-                                <small><?php echo $counts['total_assignments']; ?> Enrollments</small>
-                            </div>
                         </div>
                     </div>
-
-                    <div class="stat-card warning">
-                        <div class="stat-icon">
-                            <i class="fas fa-chart-line"></i>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(155,89,182,0.1); color: #9b59b6;">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="stat-info">
-                            <h3><?php echo $today_stats['assignments_today']; ?></h3>
-                            <p>Today's Enrollments</p>
-                            <div class="stat-progress">
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" style="width: 40%"></div>
-                                </div>
-                                <small><?php echo $today_stats['cash_payments'] + $today_stats['online_payments']; ?> Transactions</small>
-                            </div>
+                            <h3><?php echo number_format($counts['total_users']); ?></h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(230,126,34,0.1); color: #e67e22;">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>₹<?php echo number_format($counts['total_revenue']); ?></h3>
+                            <p>Total Revenue</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="row mt-4">
+                <div class="row">
                     <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <h5 class="card-title">Revenue Overview</h5>
-                                    <div class="chart-actions">
-                                        <button class="btn btn-sm btn-light" onclick="updateChart('monthly')">Monthly</button>
-                                        <button class="btn btn-sm btn-light" onclick="updateChart('weekly')">Weekly</button>
-                                    </div>
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h5 class="chart-title">Revenue Overview</h5>
+                                <div class="chart-filters">
+                                    <button class="chart-filter active">Week</button>
+                                    <button class="chart-filter">Month</button>
+                                    <button class="chart-filter">Year</button>
                                 </div>
-                                <canvas id="revenueChart" height="300"></canvas>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="revenueChart"></canvas>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Payment Methods</h5>
-                                <canvas id="paymentChart" height="300"></canvas>
-                                <div class="payment-stats mt-4">
-                                    <div class="payment-stat-item">
-                                        <div class="stat-label">
-                                            <span class="dot bg-primary"></span>
-                                            <span>Cash Payments</span>
-                                        </div>
-                                        <div class="stat-value">
-                                            ₹<?php echo number_format($payment_stats['cash']['total']); ?>
-                                        </div>
-                                    </div>
-                                    <div class="payment-stat-item">
-                                        <div class="stat-label">
-                                            <span class="dot bg-success"></span>
-                                            <span>Online Payments</span>
-                                        </div>
-                                        <div class="stat-value">
-                                            ₹<?php echo number_format($payment_stats['online']['total']); ?>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h5 class="chart-title">Course Distribution</h5>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="courseDistribution"></canvas>
                             </div>
                         </div>
                     </div>
@@ -288,78 +244,7 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/admin.js"></script>
-    <script>
-        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
-        const revenueChart = new Chart(revenueCtx, {
-            type: 'line',
-            data: {
-                labels: <?php echo json_encode(array_keys($revenue_data)); ?>,
-                datasets: [{
-                    label: 'Revenue',
-                    data: <?php echo json_encode(array_values($revenue_data)); ?>,
-                    borderColor: '#4e73df',
-                    tension: 0.3,
-                    fill: true,
-                    backgroundColor: 'rgba(78,115,223,0.05)'
-                }, {
-                    label: 'Enrollments',
-                    data: <?php echo json_encode($assignment_data); ?>,
-                    borderColor: '#1cc88a',
-                    tension: 0.3,
-                    fill: true,
-                    backgroundColor: 'rgba(28,200,138,0.05)'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        grid: {
-                            drawBorder: false
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    }
-                }
-            }
-        });
-
-        const paymentCtx = document.getElementById('paymentChart').getContext('2d');
-        const paymentChart = new Chart(paymentCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Cash', 'Online'],
-                datasets: [{
-                    data: [
-                        <?php echo $payment_stats['cash']['count']; ?>,
-                        <?php echo $payment_stats['online']['count']; ?>
-                    ],
-                    backgroundColor: ['#4e73df', '#1cc88a'],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    }
-                },
-                cutout: '70%'
-            }
-        });
-    </script>
+    <script src="js/dashboard.js"></script>
 </body>
 
 </html>

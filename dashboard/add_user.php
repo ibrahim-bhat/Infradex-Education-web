@@ -1,6 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin'])) {
+// Allow super_admin, admin, and management to access this page
+if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])) {
     header('Location: ../login.php');
     exit();
 }
@@ -8,23 +9,35 @@ if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_
 require_once '../config/db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $full_name = $conn->real_escape_string($_POST['full_name']);
+    $username = $conn->real_escape_string($_POST['username']);
     $email = $conn->real_escape_string($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $full_name = $conn->real_escape_string($_POST['full_name']);
     $user_role = $conn->real_escape_string($_POST['user_role']);
 
-    // Check if email exists
-    $check_email = $conn->query("SELECT id FROM users WHERE email = '$email'");
-    if ($check_email->num_rows > 0) {
-        $error_message = "Email already exists!";
-    } else {
-        $query = "INSERT INTO users (email, password, full_name, user_role) 
-                  VALUES ('$email', '$password', '$full_name', '$user_role')";
+    // Management users can only create users with 'user' or 'ground_team' role
+    if ($_SESSION['user_role'] == 'management' && !in_array($user_role, ['user', 'ground_team'])) {
+        $_SESSION['error'] = "Management users can only create users with 'user' or 'ground_team' role.";
+        header('Location: add_user.php');
+        exit();
+    }
 
+    // Check if username or email already exists
+    $check_query = "SELECT id FROM users WHERE username = '$username' OR email = '$email'";
+    $check_result = $conn->query($check_query);
+
+    if ($check_result->num_rows > 0) {
+        $_SESSION['error'] = "Username or email already exists.";
+    } else {
+        $query = "INSERT INTO users (full_name, username, email, password, user_role) 
+                  VALUES ('$full_name', '$username', '$email', '$password', '$user_role')";
+        
         if ($conn->query($query)) {
-            $success_message = "User added successfully!";
+            $_SESSION['success'] = "User added successfully.";
+            header('Location: users.php');
+            exit();
         } else {
-            $error_message = "Error: " . $conn->error;
+            $_SESSION['error'] = "Error adding user: " . $conn->error;
         }
     }
 }
@@ -36,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Add New User</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/admin.css">
@@ -70,15 +83,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <h4 class="mb-0"><i class="fas fa-user-plus me-2"></i>Create New User Account</h4>
                             </div>
                             <div class="form-body">
-                                <?php if (isset($success_message)): ?>
-                                    <div class="alert alert-success">
-                                        <i class="fas fa-check-circle me-2"></i><?php echo $success_message; ?>
-                                    </div>
-                                <?php endif; ?>
-
-                                <?php if (isset($error_message)): ?>
+                                <?php if (isset($_SESSION['error'])): ?>
                                     <div class="alert alert-danger">
-                                        <i class="fas fa-exclamation-circle me-2"></i><?php echo $error_message; ?>
+                                        <?php 
+                                            echo $_SESSION['error'];
+                                            unset($_SESSION['error']);
+                                        ?>
                                     </div>
                                 <?php endif; ?>
 
@@ -92,11 +102,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label class="form-label">Email</label>
+                                            <label class="form-label">Username</label>
                                             <div class="input-group">
-                                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                                <input type="email" name="email" class="form-control" required>
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                <input type="text" name="username" class="form-control" required>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                            <input type="email" name="email" class="form-control" required>
                                         </div>
                                     </div>
 
@@ -121,9 +139,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <select name="user_role" class="form-control role-select" required>
                                                 <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
                                                     <option value="admin">Admin</option>
+                                                    <option value="management">Management</option>
+                                                    <option value="ground_team">Ground Team</option>
+                                                    <option value="user">User</option>
+                                                <?php elseif ($_SESSION['user_role'] == 'admin'): ?>
+                                                    <option value="management">Management</option>
+                                                    <option value="ground_team">Ground Team</option>
+                                                    <option value="user">User</option>
+                                                <?php else: ?>
+                                                    <option value="ground_team">Ground Team</option>
+                                                    <option value="user">User</option>
                                                 <?php endif; ?>
-                                                <option value="management">Management</option>
-                                                <option value="user">User</option>
                                             </select>
                                         </div>
                                     </div>

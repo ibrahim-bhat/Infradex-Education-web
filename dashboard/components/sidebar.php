@@ -13,24 +13,35 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <div class="nav-section">
             <h6 class="nav-section-title">MAIN MENU</h6>
             <ul>
-                <li class="<?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">
-                    <a href="dashboard.php">
+                <li class="<?php echo $current_page == 'userdash.php' ? 'active' : ''; ?>">
+                    <a href="userdash.php">
                         <i class="fas fa-home"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <?php if (in_array($_SESSION['user_role'], ['super_admin', 'admin'])): ?>
+                    <li class="<?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">
+                        <a href="dashboard.php">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
 
+        <?php if (!in_array($_SESSION['user_role'], ['user'])): ?>
         <div class="nav-section">
             <h6 class="nav-section-title">STUDENTS</h6>
             <ul>
+                <?php if (!in_array($_SESSION['user_role'], ['ground_team'])): ?>
                 <li class="<?php echo $current_page == 'students.php' ? 'active' : ''; ?>">
                     <a href="students.php">
                         <i class="fas fa-user-graduate"></i>
                         <span>Students List</span>
                     </a>
                 </li>
+                <?php endif; ?>
                 <li class="<?php echo $current_page == 'add_student.php' ? 'active' : ''; ?>">
                     <a href="add_student.php">
                         <i class="fas fa-user-plus"></i>
@@ -43,18 +54,20 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <div class="nav-section">
             <h6 class="nav-section-title">COURSES</h6>
             <ul>
-                <li class="<?php echo $current_page == 'courses.php' ? 'active' : ''; ?>">
-                    <a href="courses.php">
-                        <i class="fas fa-book"></i>
-                        <span>Courses List</span>
-                    </a>
-                </li>
-                <li class="<?php echo $current_page == 'add_course.php' ? 'active' : ''; ?>">
-                    <a href="add_course.php">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>Add Course</span>
-                    </a>
-                </li>
+                <?php if (in_array($_SESSION['user_role'], ['super_admin', 'admin'])): ?>
+                    <li class="<?php echo $current_page == 'courses.php' ? 'active' : ''; ?>">
+                        <a href="courses.php">
+                            <i class="fas fa-book"></i>
+                            <span>Courses List</span>
+                        </a>
+                    </li>
+                    <li class="<?php echo $current_page == 'add_course.php' ? 'active' : ''; ?>">
+                        <a href="add_course.php">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Add Course</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
                 <li class="<?php echo $current_page == 'assign_course.php' ? 'active' : ''; ?>">
                     <a href="assign_course.php">
                         <i class="fas fa-user-check"></i>
@@ -62,52 +75,48 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <span class="nav-badge">New</span>
                     </a>
                 </li>
+                <?php if (!in_array($_SESSION['user_role'], ['ground_team'])): ?>
                 <li class="<?php echo $current_page == 'course_assignments.php' ? 'active' : ''; ?>">
                     <a href="course_assignments.php">
                         <i class="fas fa-tasks"></i>
                         <span>Assignment List</span>
                     </a>
                 </li>
-            </ul>
-        </div>
-
-        <?php if ($_SESSION['user_role'] == 'super_admin' || $_SESSION['user_role'] == 'admin'): ?>
-        <div class="nav-section">
-            <h6 class="nav-section-title">ADMINISTRATION</h6>
-            <ul>
-                <li class="<?php echo $current_page == 'users.php' ? 'active' : ''; ?>">
-                    <a href="users.php">
-                        <i class="fas fa-users"></i>
-                        <span>Users List</span>
-                    </a>
-                </li>
-                <li class="<?php echo $current_page == 'add_user.php' ? 'active' : ''; ?>">
-                    <a href="add_user.php">
-                        <i class="fas fa-user-plus"></i>
-                        <span>Add User</span>
-                    </a>
-                </li>
+                <?php endif; ?>
             </ul>
         </div>
         <?php endif; ?>
 
-        <div class="nav-section">
-            <h6 class="nav-section-title">PAYMENT HISTORY</h6>
-            <ul>
-                <li class="<?php echo $current_page == 'payment_history.php' ? 'active' : ''; ?>">
-                    <a href="payment_history.php">
-                        <i class="fas fa-history"></i>
-                        <span>Payment History</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <?php if (in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])): ?>
+            <div class="nav-section">
+                <h6 class="nav-section-title">ADMINISTRATION</h6>
+                <ul>
+                    <li class="<?php echo $current_page == 'users.php' ? 'active' : ''; ?>">
+                        <a href="users.php">
+                            <i class="fas fa-users"></i>
+                            <span>Users List</span>
+                        </a>
+                    </li>
+                    <li class="<?php echo $current_page == 'add_user.php' ? 'active' : ''; ?>">
+                        <a href="add_user.php">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add User</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-    <div class="user-profile">
-        <div class="user-details">
-            <h4><?php echo $_SESSION['full_name']; ?></h4>
-            <small><?php echo $_SESSION['email']; ?></small>
-        </div>
-    </div>
+            <div class="nav-section">
+                <h6 class="nav-section-title">PAYMENT HISTORY</h6>
+                <ul>
+                    <li class="<?php echo $current_page == 'payment_history.php' ? 'active' : ''; ?>">
+                        <a href="payment_history.php">
+                            <i class="fas fa-history"></i>
+                            <span>Payment History</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <?php endif; ?>
+    </nav>
 </div>

@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] === 'user') {
-    header('Location: ../login.php');
+if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])) {
+    header('Location: userdash.php');
     exit();
 }
 

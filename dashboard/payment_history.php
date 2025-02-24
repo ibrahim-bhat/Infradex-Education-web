@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])) {
-    header('Location: ../login.php');
+    header('Location: userdash.php');
     exit();
 }
 
@@ -29,6 +29,18 @@ if (!$table_exists) {
     )";
     $conn->query($create_payments_table);
 }
+
+// Get payment statistics
+$stats_query = "SELECT 
+    COUNT(*) as total_payments,
+    SUM(amount) as total_revenue,
+    COUNT(CASE WHEN payment_method = 'cash' THEN 1 END) as cash_payments,
+    COUNT(CASE WHEN payment_method = 'online' THEN 1 END) as online_payments,
+    SUM(CASE WHEN payment_method = 'cash' THEN amount END) as cash_revenue,
+    SUM(CASE WHEN payment_method = 'online' THEN amount END) as online_revenue
+    FROM payments";
+$stats_result = $conn->query($stats_query);
+$payment_stats = $stats_result->fetch_assoc();
 
 // Base query
 $query = "SELECT p.*, u.full_name, u.email 
@@ -101,16 +113,6 @@ $total_stmt->execute();
 $total_result = $total_stmt->get_result();
 $total_records = $total_result->fetch_assoc()['count'];
 $total_pages = ceil($total_records / $per_page);
-
-// Calculate summary statistics
-$stats_query = "SELECT 
-    COUNT(*) as total_transactions,
-    SUM(amount) as total_amount,
-    COUNT(CASE WHEN payment_method = 'cash' THEN 1 END) as cash_payments,
-    COUNT(CASE WHEN payment_method = 'online' THEN 1 END) as online_payments
-    FROM payments";
-$stats_result = $conn->query($stats_query);
-$stats = $stats_result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -152,45 +154,55 @@ $stats = $stats_result->fetch_assoc();
                     </div>
                 </div>
 
-                <!-- Statistics Cards -->
-                <div class="stats-cards">
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: rgba(78,115,223,0.1); color: var(--primary-color);">
-                            <i class="fas fa-money-bill-wave"></i>
+                <!-- Payment Statistics Section -->
+                <?php if (in_array($_SESSION['user_role'], ['super_admin', 'admin'])): ?>
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background: rgba(52,152,219,0.1); color: #3498db;">
+                                    <i class="fas fa-rupee-sign"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>₹<?php echo number_format($payment_stats['total_revenue']); ?></h3>
+                                    <p>Total Revenue</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat-info">
-                            <h3>₹<?php echo number_format($stats['total_amount'], 2); ?></h3>
-                            <p>Total Revenue</p>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background: rgba(46,204,113,0.1); color: #2ecc71;">
+                                    <i class="fas fa-money-bill"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3><?php echo number_format($payment_stats['cash_payments']); ?></h3>
+                                    <p>Cash Payments</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background: rgba(155,89,182,0.1); color: #9b59b6;">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3><?php echo number_format($payment_stats['online_payments']); ?></h3>
+                                    <p>Online Payments</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background: rgba(230,126,34,0.1); color: #e67e22;">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3><?php echo number_format($payment_stats['total_payments']); ?></h3>
+                                    <p>Total Transactions</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: rgba(28,200,138,0.1); color: var(--success-color);">
-                            <i class="fas fa-receipt"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3><?php echo $stats['total_transactions']; ?></h3>
-                            <p>Total Transactions</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: rgba(54,185,204,0.1); color: var(--info-color);">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3><?php echo $stats['cash_payments']; ?></h3>
-                            <p>Cash Payments</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: rgba(246,194,62,0.1); color: var(--warning-color);">
-                            <i class="fas fa-credit-card"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3><?php echo $stats['online_payments']; ?></h3>
-                            <p>Online Payments</p>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
 
                 <!-- Filters -->
                 <div class="card mb-4">

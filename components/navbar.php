@@ -28,7 +28,7 @@
                     </li>
                     <?php if (isset($_SESSION['user_role'])): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard/dashboard.php">
+                            <a class="nav-link" href="dashboard/userdash.php">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span>Dashboard</span>
                             </a>

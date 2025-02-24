@@ -1,8 +1,7 @@
 <?php
 session_start();
-// Only allow super_admin and admin to access this page
-if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin'])) {
-    header('Location: ../login.php');
+if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])) {
+    header('Location: userdash.php');
     exit();
 }
 
@@ -48,7 +47,7 @@ $total_pages = ceil($total_users / $per_page);
                 <div class="content-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <h1>Users Management</h1>
-                        <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
+                        <?php if (in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])): ?>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
                                 <i class="fas fa-plus"></i> Add New User
                             </button>
@@ -106,9 +105,11 @@ $total_pages = ceil($total_users / $per_page);
                                                     <button class="btn btn-sm btn-info view-user" data-id="<?php echo $user['id']; ?>">
                                                         <i class="fas fa-eye"></i>
                                                     </button>
-                                                    <button class="btn btn-sm btn-primary edit-user" data-id="<?php echo $user['id']; ?>">
-                                                        <i class="fas fa-edit"></i>
-                                                    </button>
+                                                    <?php if ($_SESSION['user_role'] == 'super_admin' || ($_SESSION['user_role'] == 'admin' && $user['user_role'] != 'super_admin') || ($_SESSION['user_role'] == 'management' && $user['user_role'] == 'user')): ?>
+                                                        <button class="btn btn-sm btn-primary edit-user" data-id="<?php echo $user['id']; ?>">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                    <?php endif; ?>
                                                     <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
                                                         <button class="btn btn-sm btn-danger delete-user" data-id="<?php echo $user['id']; ?>">
                                                             <i class="fas fa-trash"></i>
@@ -123,15 +124,17 @@ $total_pages = ceil($total_users / $per_page);
                         </div>
 
                         <!-- Pagination -->
-                        <nav aria-label="Page navigation" class="mt-4">
-                            <ul class="pagination justify-content-center">
-                                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                                    <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
-                                        <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                                    </li>
-                                <?php endfor; ?>
-                            </ul>
-                        </nav>
+                        <?php if ($total_pages > 1): ?>
+                            <nav aria-label="Page navigation" class="mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                                        <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
+                                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                        </li>
+                                    <?php endfor; ?>
+                                </ul>
+                            </nav>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
