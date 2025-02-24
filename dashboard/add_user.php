@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $full_name = $conn->real_escape_string($_POST['full_name']);
     $user_role = $conn->real_escape_string($_POST['user_role']);
-    
+
     // Check if email exists
     $check_email = $conn->query("SELECT id FROM users WHERE email = '$email'");
     if ($check_email->num_rows > 0) {
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $query = "INSERT INTO users (email, password, full_name, user_role) 
                   VALUES ('$email', '$password', '$full_name', '$user_role')";
-        
+
         if ($conn->query($query)) {
             $success_message = "User added successfully!";
         } else {
@@ -32,105 +32,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User - Admin Dashboard</title>
+    <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/admin.css">
-    <style>
-        .form-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        .form-header {
-            background: linear-gradient(45deg, #4e73df, #224abe);
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-        .form-body {
-            padding: 30px;
-        }
-        .form-control {
-            border-radius: 8px;
-            padding: 12px;
-            border: 2px solid #e3e6f0;
-            transition: all 0.3s ease;
-        }
-        .form-control:focus {
-            border-color: #4e73df;
-            box-shadow: 0 0 0 0.2rem rgba(78,115,223,0.25);
-        }
-        .form-label {
-            font-weight: 600;
-            color: #4e73df;
-            margin-bottom: 8px;
-        }
-        .password-wrapper {
-            position: relative;
-        }
-        .toggle-password {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #666;
-        }
-        .role-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1em;
-        }
-        .btn-submit {
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 8px;
-            background: linear-gradient(45deg, #4e73df, #224abe);
-            border: none;
-            transition: all 0.3s ease;
-        }
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(78,115,223,0.4);
-        }
-        .alert {
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-        .alert-success {
-            background-color: #1cc88a20;
-            border-color: #1cc88a;
-            color: #1cc88a;
-        }
-        .alert-danger {
-            background-color: #e74a3b20;
-            border-color: #e74a3b;
-            color: #e74a3b;
-        }
-        .password-strength {
-            margin-top: 5px;
-            font-size: 12px;
-        }
-        .strength-weak { color: #e74a3b; }
-        .strength-medium { color: #f6c23e; }
-        .strength-strong { color: #1cc88a; }
-    </style>
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
+
 <body>
     <div class="admin-container">
         <?php include 'components/sidebar.php'; ?>
-        
+
         <div class="main-content">
             <?php include 'components/header.php'; ?>
-            
+
             <div class="content-wrapper">
                 <div class="content-header">
                     <h1>Add New User</h1>
@@ -155,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <i class="fas fa-check-circle me-2"></i><?php echo $success_message; ?>
                                     </div>
                                 <?php endif; ?>
-                                
+
                                 <?php if (isset($error_message)): ?>
                                     <div class="alert alert-danger">
                                         <i class="fas fa-exclamation-circle me-2"></i><?php echo $error_message; ?>
@@ -229,61 +149,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/admin.js"></script>
     <script>
-    function togglePassword() {
-        const passwordInput = document.getElementById('password');
-        const toggleIcon = document.querySelector('.toggle-password i');
-        
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            toggleIcon.classList.remove('fa-eye');
-            toggleIcon.classList.add('fa-eye-slash');
-        } else {
-            passwordInput.type = 'password';
-            toggleIcon.classList.remove('fa-eye-slash');
-            toggleIcon.classList.add('fa-eye');
-        }
-    }
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.toggle-password i');
 
-    // Password strength checker
-    document.getElementById('password').addEventListener('input', function(e) {
-        const password = e.target.value;
-        const strengthDiv = document.getElementById('passwordStrength');
-        let strength = 0;
-        let message = '';
-
-        if (password.match(/[a-z]/)) strength++;
-        if (password.match(/[A-Z]/)) strength++;
-        if (password.match(/[0-9]/)) strength++;
-        if (password.match(/[^a-zA-Z0-9]/)) strength++;
-        if (password.length >= 8) strength++;
-
-        switch(strength) {
-            case 0:
-            case 1:
-                message = '<span class="strength-weak"><i class="fas fa-times-circle"></i> Weak password</span>';
-                break;
-            case 2:
-            case 3:
-                message = '<span class="strength-medium"><i class="fas fa-exclamation-circle"></i> Medium password</span>';
-                break;
-            case 4:
-            case 5:
-                message = '<span class="strength-strong"><i class="fas fa-check-circle"></i> Strong password</span>';
-                break;
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
         }
 
-        strengthDiv.innerHTML = message;
-    });
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthDiv = document.getElementById('passwordStrength');
+            let strength = 0;
+            let message = '';
 
-    // Form validation
-    $('#addUserForm').on('submit', function(e) {
-        const password = $('#password').val();
-        if (password.length < 8) {
-            e.preventDefault();
-            alert('Password must be at least 8 characters long');
-            return false;
-        }
-    });
+            if (password.match(/[a-z]/)) strength++;
+            if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++;
+            if (password.match(/[^a-zA-Z0-9]/)) strength++;
+            if (password.length >= 8) strength++;
+
+            switch (strength) {
+                case 0:
+                case 1:
+                    message = '<span class="strength-weak"><i class="fas fa-times-circle"></i> Weak password</span>';
+                    break;
+                case 2:
+                case 3:
+                    message = '<span class="strength-medium"><i class="fas fa-exclamation-circle"></i> Medium password</span>';
+                    break;
+                case 4:
+                case 5:
+                    message = '<span class="strength-strong"><i class="fas fa-check-circle"></i> Strong password</span>';
+                    break;
+            }
+
+            strengthDiv.innerHTML = message;
+        });
+
+        // Form validation
+        $('#addUserForm').on('submit', function(e) {
+            const password = $('#password').val();
+            if (password.length < 8) {
+                e.preventDefault();
+                alert('Password must be at least 8 characters long');
+                return false;
+            }
+        });
     </script>
 </body>
-</html> 
+
+</html>

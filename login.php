@@ -14,6 +14,7 @@ require_once 'config/db_connect.php';
 
 // Function to send JSON response
 function sendResponse($success, $message, $redirect = '') {
+    header('Content-Type: application/json');
     echo json_encode([
         'success' => $success,
         'message' => $message,
@@ -22,36 +23,56 @@ function sendResponse($success, $message, $redirect = '') {
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $conn->real_escape_string($_POST['email']);
-    $password = $_POST['password'];
-    
-    $query = "SELECT * FROM users WHERE email = '$email'";
-    $result = $conn->query($query);
-    
-    if ($result->num_rows == 1) {
-        $user = $result->fetch_assoc();
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['full_name'] = $user['full_name'];
-            $_SESSION['user_role'] = $user['user_role'];
-            
-            // Role-based redirection
-            if ($user['user_role'] == 'user') {
-                sendResponse(true, 'Login successful', 'student-dashboard/index.php');
+try {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (!isset($_POST['email']) || !isset($_POST['password'])) {
+            sendResponse(false, 'Email and password are required.');
+        }
+
+        $email = $conn->real_escape_string($_POST['email']);
+        $password = $_POST['password'];
+        
+        $query = "SELECT * FROM users WHERE email = ?";
+        $stmt = $conn->prepare($query);
+        
+        if (!$stmt) {
+            error_log("Prepare failed: " . $conn->error);
+            sendResponse(false, 'Database error occurred.');
+        }
+        
+        $stmt->bind_param("s", $email);
+        
+        if (!$stmt->execute()) {
+            error_log("Execute failed: " . $stmt->error);
+            sendResponse(false, 'Database error occurred.');
+        }
+        
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows == 1) {
+            $user = $result->fetch_assoc();
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['full_name'] = $user['full_name'];
+                $_SESSION['user_role'] = $user['user_role'];
+                
+                // Role-based redirection
+                $redirect = $user['user_role'] == 'user' ? 'student-dashboard/index.php' : 'dashboard/dashboard.php';
+                sendResponse(true, 'Login successful', $redirect);
             } else {
-                sendResponse(true, 'Login successful', 'dashboard/dashboard.php');
+                sendResponse(false, 'Invalid password!');
             }
         } else {
-            sendResponse(false, 'Invalid password!');
+            sendResponse(false, 'Email not found!');
         }
-    } else {
-        sendResponse(false, 'Email not found!');
     }
+} catch (Exception $e) {
+    error_log("Login error: " . $e->getMessage());
+    sendResponse(false, 'An error occurred. Please try again.');
 }
 
-// If direct access to login.php, redirect to index
+// If direct access, redirect to index
 if (!isset($_POST['email'])) {
     header('Location: index.php');
     exit();

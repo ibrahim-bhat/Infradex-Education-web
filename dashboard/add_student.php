@@ -21,28 +21,65 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $colony = $conn->real_escape_string($_POST['colony']);
     $parent_name = $conn->real_escape_string($_POST['parent_name']);
     $parent_phone = $conn->real_escape_string($_POST['parent_phone']);
-    $added_by = $_SESSION['user_id']; // Get the current user's ID
+    $added_by = $_SESSION['user_id'];
 
-    $check_email = $conn->query("SELECT id FROM users WHERE email = '$email'");
+    // Generate a default password (you can modify this as needed)
+    $default_password = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 8);
+    $hashed_password = password_hash($default_password, PASSWORD_DEFAULT);
+
+    $check_email = $conn->query("SELECT id FROM students WHERE email = '$email'");
     if ($check_email->num_rows > 0) {
         $error_message = "Email already exists!";
     } else {
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        
-        $query = "INSERT INTO users (email, password, full_name, user_role) 
-                  VALUES ('$email', '$password', '$full_name', 'student')";
-        
-        if ($conn->query($query)) {
-            // Add additional student details if needed
-            $success_message = "Student added successfully!";
+        // First insert into students table
+        $student_query = "INSERT INTO students (
+            full_name, email, phone_number, dob, gender, class, 
+            city, state, pincode, colony, parent_name, parent_phone, 
+            added_by, created_at
+        ) VALUES (
+            ?, ?, ?, ?, ?, ?, 
+            ?, ?, ?, ?, ?, ?,
+            ?, NOW()
+        )";
+
+        $stmt = $conn->prepare($student_query);
+        $stmt->bind_param(
+            "ssssssssssssi",
+            $full_name,
+            $email,
+            $phone,
+            $dob,
+            $gender,
+            $class,
+            $city,
+            $state,
+            $pincode,
+            $colony,
+            $parent_name,
+            $parent_phone,
+            $added_by
+        );
+
+        if ($stmt->execute()) {
+            // Then create user account with 'user' role
+            $user_query = "INSERT INTO users (email, password, full_name, user_role) 
+                          VALUES (?, ?, ?, 'user')";
+            $user_stmt = $conn->prepare($user_query);
+            $user_stmt->bind_param("sss", $email, $hashed_password, $full_name);
+
+            if ($user_stmt->execute()) {
+                $success_message = "Student added successfully! Default password: " . $default_password;
+            } else {
+                $error_message = "Error creating user account: " . $conn->error;
+            }
         } else {
-            $error_message = "Error: " . $conn->error;
+            $error_message = "Error adding student: " . $conn->error;
         }
     }
 }
 
 // Get current user's details
-$user_query = "SELECT username, user_role FROM users WHERE id = ?";
+$user_query = "SELECT full_name, user_role FROM users WHERE id = ?";
 $stmt = $conn->prepare($user_query);
 $stmt->bind_param("i", $_SESSION['user_id']);
 $stmt->execute();
@@ -52,163 +89,158 @@ $current_user = $user_result->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Student - Admin Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .success {
-            color: green;
-            padding: 10px;
-            background: #e8f5e9;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-        .error {
-            color: red;
-            padding: 10px;
-            background: #ffebee;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
+
 <body>
-    <div class="container">
-        <h2>Add New Student</h2>
-        
-        <?php if (isset($success_message)): ?>
-            <div class="success"><?php echo $success_message; ?></div>
-        <?php endif; ?>
-        
-        <?php if (isset($error_message)): ?>
-            <div class="error"><?php echo $error_message; ?></div>
-        <?php endif; ?>
+    <div class="admin-container">
+        <?php include 'components/sidebar.php'; ?>
 
-        <form method="POST" action="">
-            <div class="form-group">
-                <label>Full Name:</label>
-                <input type="text" name="full_name" required>
-            </div>
+        <div class="main-content">
+            <?php include 'components/header.php'; ?>
 
-            <div class="form-group">
-                <label>Phone Number:</label>
-                <input type="tel" name="phone" required>
-            </div>
+            <div class="content-wrapper">
+                <div class="content-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1>Add New Student</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="students.php">Students</a></li>
+                                    <li class="breadcrumb-item active">Add Student</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" name="email" required>
-            </div>
+                <div class="form-section">
+                    <?php if (isset($success_message)): ?>
+                        <div class="alert alert-success" role="alert">
+                            <i class="fas fa-check-circle me-2"></i><?php echo $success_message; ?>
+                        </div>
+                    <?php endif; ?>
 
-            <div class="form-group">
-                <label>Date of Birth:</label>
-                <input type="date" name="dob" required>
-            </div>
+                    <?php if (isset($error_message)): ?>
+                        <div class="alert alert-danger" role="alert">
+                            <i class="fas fa-exclamation-circle me-2"></i><?php echo $error_message; ?>
+                        </div>
+                    <?php endif; ?>
 
-            <div class="form-group">
-                <label>Gender:</label>
-                <select name="gender" required>
-                    <option value="">Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+                    <form method="POST" action="">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" name="full_name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" name="phone" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Date of Birth</label>
+                                    <input type="date" name="dob" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Gender</label>
+                                    <select name="gender" class="form-select" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Class</label>
+                                    <select name="class" class="form-select" required>
+                                        <option value="">Select Class</option>
+                                        <option value="nursery">Nursery</option>
+                                        <?php for ($i = 1; $i <= 12; $i++): ?>
+                                            <option value="<?php echo $i; ?>">Class <?php echo $i; ?></option>
+                                        <?php endfor; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">City</label>
+                                    <input type="text" name="city" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">State</label>
+                                    <input type="text" name="state" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Pin Code</label>
+                                    <input type="text" name="pincode" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Colony/Area</label>
+                                    <input type="text" name="colony" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Parent's Name</label>
+                                    <input type="text" name="parent_name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Parent's Phone Number</label>
+                                    <input type="tel" name="parent_phone" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                <label>Class:</label>
-                <select name="class" required>
-                    <option value="">Select Class</option>
-                    <option value="nursery">Nursery</option>
-                    <?php for($i=1; $i<=12; $i++): ?>
-                        <option value="<?php echo $i; ?>">Class <?php echo $i; ?></option>
-                    <?php endfor; ?>
-                    <option value="college">College</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>City:</label>
-                <input type="text" name="city" required>
-            </div>
-
-            <div class="form-group">
-                <label>State:</label>
-                <input type="text" name="state" required>
-            </div>
-
-            <div class="form-group">
-                <label>Pin Code:</label>
-                <input type="text" name="pincode" required>
-            </div>
-
-            <div class="form-group">
-                <label>Colony/Area:</label>
-                <input type="text" name="colony" required>
-            </div>
-
-            <div class="form-group">
-                <label>Parent's Name:</label>
-                <input type="text" name="parent_name" required>
-            </div>
-
-            <div class="form-group">
-                <label>Parent's Phone Number:</label>
-                <input type="tel" name="parent_phone" required>
-            </div>
-
-            <div class="form-group mb-4">
-                <label>Added By:</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    <input type="text" class="form-control" value="<?php echo htmlspecialchars($current_user['username'] . ' (' . ucfirst($current_user['user_role']) . ')'); ?>" readonly>
-                    <input type="hidden" name="added_by" value="<?php echo $_SESSION['user_id']; ?>">
+                        <div class="form-actions mt-4">
+                            <button type="button" class="btn btn-secondary me-2" onclick="history.back()">
+                                <i class="fas fa-arrow-left me-2"></i>Back
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-plus me-2"></i>Add Student
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-
-            <button type="submit">Add Student</button>
-        </form>
-
-        <div style="margin-top: 20px;">
-            <a href="dashboard.php" style="color: #4CAF50; text-decoration: none;">← Back to Dashboard</a>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
 </body>
-</html> 
+
+</html>

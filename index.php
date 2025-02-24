@@ -686,6 +686,10 @@ session_start();
             
             const email = $('input[name="email"]').val();
             const password = $('input[name="password"]').val();
+            const submitBtn = $(this).find('button[type="submit"]');
+            
+            // Disable button and show loading state
+            submitBtn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-2"></span>Loading...');
             
             $.ajax({
                 url: 'login.php',
@@ -694,40 +698,37 @@ session_start();
                     email: email,
                     password: password
                 },
+                dataType: 'json',
                 success: function(response) {
-                    try {
-                        const data = JSON.parse(response);
-                        if (data.success) {
-                            $('#loginAlert')
-                                .removeClass('alert-danger')
-                                .addClass('alert-success')
-                                .html('Login successful! Redirecting...')
-                                .show();
-                                
-                            setTimeout(function() {
-                                window.location.href = data.redirect;
-                            }, 1500);
-                        } else {
-                            $('#loginAlert')
-                                .removeClass('alert-success')
-                                .addClass('alert-danger')
-                                .html(data.message)
-                                .show();
-                        }
-                    } catch (e) {
+                    if (response.success) {
+                        $('#loginAlert')
+                            .removeClass('alert-danger')
+                            .addClass('alert-success')
+                            .html('Login successful! Redirecting...')
+                            .show();
+                            
+                        setTimeout(function() {
+                            window.location.href = response.redirect;
+                        }, 1500);
+                    } else {
                         $('#loginAlert')
                             .removeClass('alert-success')
                             .addClass('alert-danger')
-                            .html('An error occurred. Please try again.')
+                            .html(response.message)
                             .show();
                     }
                 },
-                error: function() {
+                error: function(xhr, status, error) {
+                    console.error("Login error:", error);
                     $('#loginAlert')
                         .removeClass('alert-success')
                         .addClass('alert-danger')
                         .html('Server error. Please try again.')
                         .show();
+                },
+                complete: function() {
+                    // Re-enable button and restore text
+                    submitBtn.prop('disabled', false).html('Login');
                 }
             });
         });

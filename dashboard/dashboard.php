@@ -1,6 +1,5 @@
 <?php
 session_start();
-// Only allow admin roles
 if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] === 'user') {
     header('Location: ../login.php');
     exit();
@@ -8,7 +7,6 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] === 'user') {
 
 require_once '../config/db_connect.php';
 
-// Get total counts
 $counts_query = "SELECT 
     (SELECT COUNT(*) FROM students) as total_students,
     (SELECT COUNT(*) FROM users) as total_users,
@@ -18,7 +16,6 @@ $counts_query = "SELECT
 $counts_result = $conn->query($counts_query);
 $counts = $counts_result->fetch_assoc();
 
-// Get today's statistics
 $today_query = "SELECT 
     COUNT(*) as assignments_today,
     SUM(amount) as revenue_today,
@@ -29,7 +26,6 @@ $today_query = "SELECT
 $today_result = $conn->query($today_query);
 $today_stats = $today_result->fetch_assoc();
 
-// Get monthly revenue data for chart
 $monthly_revenue_query = "SELECT 
     DATE_FORMAT(assigned_at, '%Y-%m') as month,
     SUM(amount) as revenue,
@@ -41,12 +37,11 @@ $monthly_revenue_query = "SELECT
 $monthly_revenue_result = $conn->query($monthly_revenue_query);
 $revenue_data = [];
 $assignment_data = [];
-while($row = $monthly_revenue_result->fetch_assoc()) {
+while ($row = $monthly_revenue_result->fetch_assoc()) {
     $revenue_data[] = $row['revenue'];
     $assignment_data[] = $row['assignments'];
 }
 
-// Get popular courses
 $popular_courses_query = "SELECT 
     c.title, 
     COUNT(ca.id) as enrollment_count,
@@ -58,7 +53,6 @@ $popular_courses_query = "SELECT
     LIMIT 5";
 $popular_courses_result = $conn->query($popular_courses_query);
 
-// Get recent activities
 $recent_activities_query = "SELECT 
     ca.assigned_at,
     s.full_name as student_name,
@@ -74,7 +68,6 @@ $recent_activities_query = "SELECT
     LIMIT 10";
 $recent_activities_result = $conn->query($recent_activities_query);
 
-// Get payment method distribution
 $payment_stats_query = "SELECT 
     payment_method,
     COUNT(*) as count,
@@ -83,16 +76,16 @@ $payment_stats_query = "SELECT
     GROUP BY payment_method";
 $payment_stats_result = $conn->query($payment_stats_query);
 $payment_stats = [];
-while($row = $payment_stats_result->fetch_assoc()) {
+while ($row = $payment_stats_result->fetch_assoc()) {
     $payment_stats[$row['payment_method']] = $row;
 }
 
-// Update any user listing queries
 $users_query = "SELECT id, email, full_name, user_role FROM users";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,15 +93,17 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
+
 <body>
     <div class="admin-container">
         <?php include 'components/sidebar.php'; ?>
-        
+
         <div class="main-content">
             <?php include 'components/header.php'; ?>
-            
+
             <div class="content-wrapper">
                 <div class="content-header">
                     <h1>Dashboard Overview</h1>
@@ -187,7 +182,6 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
                 </div>
 
                 <div class="row mt-4">
-                    <!-- Revenue Chart -->
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
@@ -203,7 +197,6 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
                         </div>
                     </div>
 
-                    <!-- Payment Distribution -->
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="card-body">
@@ -235,54 +228,52 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
                 </div>
 
                 <div class="row mt-4">
-                    <!-- Popular Courses -->
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Popular Courses</h5>
                                 <div class="popular-courses">
-                                    <?php while($course = $popular_courses_result->fetch_assoc()): ?>
-                                    <div class="course-item">
-                                        <div class="course-info">
-                                            <h6><?php echo htmlspecialchars($course['title']); ?></h6>
-                                            <small><?php echo $course['enrollment_count']; ?> students enrolled</small>
+                                    <?php while ($course = $popular_courses_result->fetch_assoc()): ?>
+                                        <div class="course-item">
+                                            <div class="course-info">
+                                                <h6><?php echo htmlspecialchars($course['title']); ?></h6>
+                                                <small><?php echo $course['enrollment_count']; ?> students enrolled</small>
+                                            </div>
+                                            <div class="course-revenue">
+                                                ₹<?php echo number_format($course['total_revenue']); ?>
+                                            </div>
                                         </div>
-                                        <div class="course-revenue">
-                                            ₹<?php echo number_format($course['total_revenue']); ?>
-                                        </div>
-                                    </div>
                                     <?php endwhile; ?>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Recent Activities -->
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Recent Activities</h5>
                                 <div class="activities-timeline">
-                                    <?php while($activity = $recent_activities_result->fetch_assoc()): ?>
-                                    <div class="activity-item">
-                                        <div class="activity-icon <?php echo $activity['payment_method'] == 'cash' ? 'bg-success' : 'bg-primary'; ?>">
-                                            <i class="fas <?php echo $activity['payment_method'] == 'cash' ? 'fa-money-bill' : 'fa-credit-card'; ?>"></i>
-                                        </div>
-                                        <div class="activity-content">
-                                            <div class="activity-header">
-                                                <h6><?php echo htmlspecialchars($activity['student_name']); ?></h6>
-                                                <small><?php echo date('d M Y, h:i A', strtotime($activity['assigned_at'])); ?></small>
+                                    <?php while ($activity = $recent_activities_result->fetch_assoc()): ?>
+                                        <div class="activity-item">
+                                            <div class="activity-icon <?php echo $activity['payment_method'] == 'cash' ? 'bg-success' : 'bg-primary'; ?>">
+                                                <i class="fas <?php echo $activity['payment_method'] == 'cash' ? 'fa-money-bill' : 'fa-credit-card'; ?>"></i>
                                             </div>
-                                            <p>Enrolled in <?php echo htmlspecialchars($activity['course_name']); ?></p>
-                                            <div class="activity-meta">
-                                                <span class="badge <?php echo $activity['payment_method'] == 'cash' ? 'bg-success' : 'bg-primary'; ?>">
-                                                    <?php echo ucfirst($activity['payment_method']); ?>
-                                                </span>
-                                                <span class="amount">₹<?php echo number_format($activity['amount'], 2); ?></span>
-                                                <span class="assigned-by">by <?php echo htmlspecialchars($activity['assigned_by']); ?></span>
+                                            <div class="activity-content">
+                                                <div class="activity-header">
+                                                    <h6><?php echo htmlspecialchars($activity['student_name']); ?></h6>
+                                                    <small><?php echo date('d M Y, h:i A', strtotime($activity['assigned_at'])); ?></small>
+                                                </div>
+                                                <p>Enrolled in <?php echo htmlspecialchars($activity['course_name']); ?></p>
+                                                <div class="activity-meta">
+                                                    <span class="badge <?php echo $activity['payment_method'] == 'cash' ? 'bg-success' : 'bg-primary'; ?>">
+                                                        <?php echo ucfirst($activity['payment_method']); ?>
+                                                    </span>
+                                                    <span class="amount">₹<?php echo number_format($activity['amount'], 2); ?></span>
+                                                    <span class="assigned-by">by <?php echo htmlspecialchars($activity['assigned_by']); ?></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <?php endwhile; ?>
                                 </div>
                             </div>
@@ -298,78 +289,77 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/admin.js"></script>
     <script>
-    // Revenue Chart
-    const revenueCtx = document.getElementById('revenueChart').getContext('2d');
-    const revenueChart = new Chart(revenueCtx, {
-        type: 'line',
-        data: {
-            labels: <?php echo json_encode(array_keys($revenue_data)); ?>,
-            datasets: [{
-                label: 'Revenue',
-                data: <?php echo json_encode(array_values($revenue_data)); ?>,
-                borderColor: '#4e73df',
-                tension: 0.3,
-                fill: true,
-                backgroundColor: 'rgba(78,115,223,0.05)'
-            }, {
-                label: 'Enrollments',
-                data: <?php echo json_encode($assignment_data); ?>,
-                borderColor: '#1cc88a',
-                tension: 0.3,
-                fill: true,
-                backgroundColor: 'rgba(28,200,138,0.05)'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'top'
-                }
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: <?php echo json_encode(array_keys($revenue_data)); ?>,
+                datasets: [{
+                    label: 'Revenue',
+                    data: <?php echo json_encode(array_values($revenue_data)); ?>,
+                    borderColor: '#4e73df',
+                    tension: 0.3,
+                    fill: true,
+                    backgroundColor: 'rgba(78,115,223,0.05)'
+                }, {
+                    label: 'Enrollments',
+                    data: <?php echo json_encode($assignment_data); ?>,
+                    borderColor: '#1cc88a',
+                    tension: 0.3,
+                    fill: true,
+                    backgroundColor: 'rgba(28,200,138,0.05)'
+                }]
             },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: {
-                        drawBorder: false
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top'
                     }
                 },
-                x: {
-                    grid: {
-                        display: false
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            drawBorder: false
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
                     }
                 }
             }
-        }
-    });
+        });
 
-    // Payment Methods Chart
-    const paymentCtx = document.getElementById('paymentChart').getContext('2d');
-    const paymentChart = new Chart(paymentCtx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Cash', 'Online'],
-            datasets: [{
-                data: [
-                    <?php echo $payment_stats['cash']['count']; ?>,
-                    <?php echo $payment_stats['online']['count']; ?>
-                ],
-                backgroundColor: ['#4e73df', '#1cc88a'],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom'
-                }
+        const paymentCtx = document.getElementById('paymentChart').getContext('2d');
+        const paymentChart = new Chart(paymentCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Cash', 'Online'],
+                datasets: [{
+                    data: [
+                        <?php echo $payment_stats['cash']['count']; ?>,
+                        <?php echo $payment_stats['online']['count']; ?>
+                    ],
+                    backgroundColor: ['#4e73df', '#1cc88a'],
+                    borderWidth: 0
+                }]
             },
-            cutout: '70%'
-        }
-    });
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                cutout: '70%'
+            }
+        });
     </script>
 </body>
-</html> 
+
+</html>

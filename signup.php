@@ -7,28 +7,49 @@ if (isset($_SESSION['user_role'])) {
 
 require_once 'config/db_connect.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $conn->real_escape_string($_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $full_name = $conn->real_escape_string($_POST['full_name']);
-    
-    // Always set default role as 'user' for public signups
-    $user_role = 'user';
+$error_message = '';
+$success_message = '';
 
-    // Check if email already exists
-    $check_email = $conn->query("SELECT id FROM users WHERE email = '$email'");
-    if ($check_email->num_rows > 0) {
-        $error_message = "Email already exists!";
-    } else {
-        $query = "INSERT INTO users (email, password, full_name, user_role) 
-                  VALUES ('$email', '$password', '$full_name', '$user_role')";
-        
-        if ($conn->query($query)) {
-            $success_message = "Registration successful! Please login.";
+try {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Validate inputs
+        if (empty($_POST['full_name']) || empty($_POST['email']) || empty($_POST['password'])) {
+            $error_message = "All fields are required.";
         } else {
-            $error_message = "Error: " . $conn->error;
+            $full_name = $conn->real_escape_string($_POST['full_name']);
+            $email = $conn->real_escape_string($_POST['email']);
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            
+            // Check if email exists
+            $check_query = "SELECT id FROM users WHERE email = ?";
+            $check_stmt = $conn->prepare($check_query);
+            $check_stmt->bind_param("s", $email);
+            $check_stmt->execute();
+            $check_result = $check_stmt->get_result();
+            
+            if ($check_result->num_rows > 0) {
+                $error_message = "Email already exists!";
+            } else {
+                // Insert new user
+                $insert_query = "INSERT INTO users (full_name, email, password, user_role) VALUES (?, ?, ?, 'user')";
+                $insert_stmt = $conn->prepare($insert_query);
+                $insert_stmt->bind_param("sss", $full_name, $email, $password);
+                
+                if ($insert_stmt->execute()) {
+                    $success_message = "Registration successful! You can now login.";
+                    // Optionally redirect to login page after successful signup
+                    header("Location: index.php?registered=true");
+                    exit();
+                } else {
+                    $error_message = "Error creating account. Please try again.";
+                    error_log("Signup error: " . $insert_stmt->error);
+                }
+            }
         }
     }
+} catch (Exception $e) {
+    error_log("Signup error: " . $e->getMessage());
+    $error_message = "An error occurred. Please try again.";
 }
 ?>
 

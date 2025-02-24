@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $query = "INSERT INTO courses (title, description, price, duration, level, category, features, status, added_by) 
               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-              
+
     $stmt = $conn->prepare($query);
     $stmt->bind_param("ssdsssssi", $title, $description, $price, $duration, $level, $category, $features, $status, $added_by);
 
@@ -34,22 +34,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Course - Admin Dashboard</title>
+    <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
+
 <body>
     <div class="admin-container">
         <?php include 'components/sidebar.php'; ?>
-        
+
         <div class="main-content">
             <?php include 'components/header.php'; ?>
-            
+
             <div class="content-wrapper">
                 <div class="content-header">
                     <h1>Add New Course</h1>
@@ -180,10 +183,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/admin.js"></script>
     <script>
-    $(document).ready(function() {
-        // Add new feature field
-        $('#addFeature').click(function() {
-            const featureItem = `
+        $(document).ready(function() {
+            // Add new feature field
+            $('#addFeature').click(function() {
+                const featureItem = `
                 <div class="feature-item">
                     <input type="text" name="features[]" class="form-control" placeholder="Add feature">
                     <button type="button" class="btn btn-link text-danger remove-feature">
@@ -191,24 +194,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </button>
                 </div>
             `;
-            $('#featuresList').append(featureItem);
-        });
+                $('#featuresList').append(featureItem);
+            });
 
-        // Remove feature field
-        $(document).on('click', '.remove-feature', function() {
-            $(this).closest('.feature-item').remove();
-        });
+            // Remove feature field
+            $(document).on('click', '.remove-feature', function() {
+                $(this).closest('.feature-item').remove();
+            });
 
-        // Form validation
-        $('#courseForm').on('submit', function(e) {
-            const price = $('input[name="price"]').val();
-            if (price <= 0) {
-                e.preventDefault();
-                alert('Price must be greater than 0');
-                return false;
-            }
+            // Form validation
+            $('#courseForm').on('submit', function(e) {
+                const price = $('input[name="price"]').val();
+                if (price <= 0) {
+                    e.preventDefault();
+                    alert('Price must be greater than 0');
+                    return false;
+                }
+            });
         });
-    });
     </script>
 </body>
-</html> 
+
+</html>

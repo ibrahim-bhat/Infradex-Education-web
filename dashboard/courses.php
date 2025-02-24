@@ -12,7 +12,7 @@ $per_page = 10;
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($page - 1) * $per_page;
 
-$courses_query = "SELECT c.*, u.username as added_by_name 
+$courses_query = "SELECT c.*, u.full_name as added_by_name 
                  FROM courses c 
                  LEFT JOIN users u ON c.added_by = u.id 
                  ORDER BY c.created_at DESC LIMIT $start, $per_page";
@@ -27,22 +27,25 @@ $total_pages = ceil($total_courses / $per_page);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - Admin Dashboard</title>
+    <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
+
 <body>
     <div class="admin-container">
         <?php include 'components/sidebar.php'; ?>
-        
+
         <div class="main-content">
             <?php include 'components/header.php'; ?>
-            
+
             <div class="content-wrapper">
                 <div class="content-header">
                     <div class="d-flex justify-content-between align-items-center">
@@ -99,62 +102,62 @@ $total_pages = ceil($total_courses / $per_page);
 
                 <!-- Courses List -->
                 <div class="courses-grid">
-                    <?php while($course = $courses_result->fetch_assoc()): ?>
-                    <div class="course-card">
-                        <div class="course-status <?php echo $course['status']; ?>">
-                            <?php echo ucfirst($course['status']); ?>
-                        </div>
-                        <div class="course-header">
-                            <h3><?php echo htmlspecialchars($course['title']); ?></h3>
-                            <span class="course-category"><?php echo ucfirst($course['category']); ?></span>
-                        </div>
-                        <div class="course-body">
-                            <p class="course-description"><?php echo substr(htmlspecialchars($course['description']), 0, 100) . '...'; ?></p>
-                            <div class="course-meta">
-                                <span><i class="fas fa-clock"></i> <?php echo htmlspecialchars($course['duration']); ?></span>
-                                <span><i class="fas fa-signal"></i> <?php echo ucfirst($course['level']); ?></span>
-                                <span><i class="fas fa-rupee-sign"></i> <?php echo number_format($course['price'], 2); ?></span>
+                    <?php while ($course = $courses_result->fetch_assoc()): ?>
+                        <div class="course-card">
+                            <div class="course-status <?php echo $course['status']; ?>">
+                                <?php echo ucfirst($course['status']); ?>
                             </div>
-                            <div class="course-features">
-                                <?php 
-                                $features = json_decode($course['features'], true);
-                                if($features) {
-                                    foreach(array_slice($features, 0, 3) as $feature) {
-                                        echo "<span class='feature-tag'><i class='fas fa-check'></i> " . htmlspecialchars($feature) . "</span>";
+                            <div class="course-header">
+                                <h3><?php echo htmlspecialchars($course['title']); ?></h3>
+                                <span class="course-category"><?php echo ucfirst($course['category']); ?></span>
+                            </div>
+                            <div class="course-body">
+                                <p class="course-description"><?php echo substr(htmlspecialchars($course['description']), 0, 100) . '...'; ?></p>
+                                <div class="course-meta">
+                                    <span><i class="fas fa-clock"></i> <?php echo htmlspecialchars($course['duration']); ?></span>
+                                    <span><i class="fas fa-signal"></i> <?php echo ucfirst($course['level']); ?></span>
+                                    <span><i class="fas fa-rupee-sign"></i> <?php echo number_format($course['price'], 2); ?></span>
+                                </div>
+                                <div class="course-features">
+                                    <?php
+                                    $features = json_decode($course['features'], true);
+                                    if ($features) {
+                                        foreach (array_slice($features, 0, 3) as $feature) {
+                                            echo "<span class='feature-tag'><i class='fas fa-check'></i> " . htmlspecialchars($feature) . "</span>";
+                                        }
                                     }
-                                }
-                                ?>
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <small>Added by: <?php echo htmlspecialchars($course['added_by_name']); ?></small>
+                                <div class="course-actions">
+                                    <button class="btn btn-sm btn-info view-course" data-id="<?php echo $course['id']; ?>">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-primary edit-course" data-id="<?php echo $course['id']; ?>">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger delete-course" data-id="<?php echo $course['id']; ?>">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="course-footer">
-                            <small>Added by: <?php echo htmlspecialchars($course['added_by_name']); ?></small>
-                            <div class="course-actions">
-                                <button class="btn btn-sm btn-info view-course" data-id="<?php echo $course['id']; ?>">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="btn btn-sm btn-primary edit-course" data-id="<?php echo $course['id']; ?>">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-sm btn-danger delete-course" data-id="<?php echo $course['id']; ?>">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <?php endwhile; ?>
                 </div>
 
                 <!-- Pagination -->
-                <?php if($total_pages > 1): ?>
-                <nav aria-label="Page navigation" class="mt-4">
-                    <ul class="pagination justify-content-center">
-                        <?php for($i = 1; $i <= $total_pages; $i++): ?>
-                        <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
-                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                        </li>
-                        <?php endfor; ?>
-                    </ul>
-                </nav>
+                <?php if ($total_pages > 1): ?>
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                                <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
+                                    <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                </li>
+                            <?php endfor; ?>
+                        </ul>
+                    </nav>
                 <?php endif; ?>
             </div>
         </div>
@@ -179,71 +182,76 @@ $total_pages = ceil($total_courses / $per_page);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/admin.js"></script>
     <script>
-    $(document).ready(function() {
-        // View course details
-        $('.view-course').click(function() {
-            const courseId = $(this).data('id');
-            $.ajax({
-                url: 'ajax/get_course.php',
-                type: 'POST',
-                data: { id: courseId },
-                success: function(response) {
-                    $('#viewCourseModal .modal-body').html(response);
-                    $('#viewCourseModal').modal('show');
-                }
-            });
-        });
-
-        // Edit course
-        $('.edit-course').click(function() {
-            const courseId = $(this).data('id');
-            window.location.href = 'edit_course.php?id=' + courseId;
-        });
-
-        // Delete course
-        $('.delete-course').click(function() {
-            if(confirm('Are you sure you want to delete this course?')) {
+        $(document).ready(function() {
+            // View course details
+            $('.view-course').click(function() {
                 const courseId = $(this).data('id');
                 $.ajax({
-                    url: 'ajax/delete_course.php',
+                    url: 'ajax/get_course.php',
                     type: 'POST',
-                    data: { id: courseId },
+                    data: {
+                        id: courseId
+                    },
                     success: function(response) {
-                        const result = JSON.parse(response);
-                        if(result.success) {
-                            location.reload();
-                        } else {
-                            alert(result.message);
-                        }
+                        $('#viewCourseModal .modal-body').html(response);
+                        $('#viewCourseModal').modal('show');
                     }
                 });
-            }
-        });
+            });
 
-        // Search functionality
-        $('#searchCourse').on('keyup', function() {
-            const value = $(this).val().toLowerCase();
-            $('.course-card').filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            // Edit course
+            $('.edit-course').click(function() {
+                const courseId = $(this).data('id');
+                window.location.href = 'edit_course.php?id=' + courseId;
+            });
+
+            // Delete course
+            $('.delete-course').click(function() {
+                if (confirm('Are you sure you want to delete this course?')) {
+                    const courseId = $(this).data('id');
+                    $.ajax({
+                        url: 'ajax/delete_course.php',
+                        type: 'POST',
+                        data: {
+                            id: courseId
+                        },
+                        success: function(response) {
+                            const result = JSON.parse(response);
+                            if (result.success) {
+                                location.reload();
+                            } else {
+                                alert(result.message);
+                            }
+                        }
+                    });
+                }
+            });
+
+            // Search functionality
+            $('#searchCourse').on('keyup', function() {
+                const value = $(this).val().toLowerCase();
+                $('.course-card').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+
+            // Filters
+            $('#filterCategory, #filterLevel, #filterStatus').change(function() {
+                const category = $('#filterCategory').val();
+                const level = $('#filterLevel').val();
+                const status = $('#filterStatus').val();
+
+                $('.course-card').each(function() {
+                    const $card = $(this);
+                    const showCategory = !category || $card.find('.course-category').text().toLowerCase() === category;
+                    const showLevel = !level || $card.find('.course-meta').text().toLowerCase().includes(level);
+                    const showStatus = !status || $card.find('.course-status').text().toLowerCase() === status;
+
+                    $card.toggle(showCategory && showLevel && showStatus);
+                });
             });
         });
-
-        // Filters
-        $('#filterCategory, #filterLevel, #filterStatus').change(function() {
-            const category = $('#filterCategory').val();
-            const level = $('#filterLevel').val();
-            const status = $('#filterStatus').val();
-
-            $('.course-card').each(function() {
-                const $card = $(this);
-                const showCategory = !category || $card.find('.course-category').text().toLowerCase() === category;
-                const showLevel = !level || $card.find('.course-meta').text().toLowerCase().includes(level);
-                const showStatus = !status || $card.find('.course-status').text().toLowerCase() === status;
-
-                $card.toggle(showCategory && showLevel && showStatus);
-            });
-        });
-    });
     </script>
 </body>
-</html> 
+
+</html>
