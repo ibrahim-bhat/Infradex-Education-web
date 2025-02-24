@@ -723,7 +723,7 @@ session_start();
                     $('#loginAlert')
                         .removeClass('alert-success')
                         .addClass('alert-danger')
-                        .html('Server error. Please try again.')
+                        .html('Login is process. Website in Deployment phase.')
                         .show();
                 },
                 complete: function() {
