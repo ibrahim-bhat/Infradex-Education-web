@@ -3,19 +3,7 @@ class Header extends HTMLElement {
         super();
         this.innerHTML = `
             <nav class="top-nav">
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search...">
-                </div>
-                <div class="nav-actions">
-                    <button class="notification-btn">
-                        <i class="fas fa-bell"></i>
-                        <span class="badge">3</span>
-                    </button>
-                    <button class="settings-btn">
-                        <i class="fas fa-cog"></i>
-                    </button>
-                </div>
+               
                 <div class="mobile-nav">
                     <button class="hamburger-btn d-lg-none">
                         <i class="fas fa-bars"></i>
@@ -35,3 +23,21 @@ class Header extends HTMLElement {
 }
 
 customElements.define('dashboard-header', Header); 
+
+
+
+/* 
+ <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="nav-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="settings-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+                */

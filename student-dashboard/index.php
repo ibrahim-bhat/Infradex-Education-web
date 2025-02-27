@@ -89,6 +89,8 @@ $user = $result->fetch_assoc();
                     </div>
                 </div>
 
+                <?php include '../components/coming-soon.php'; ?>
+
                 <!-- <div class="courses-section">
                     <div class="section-header">
                         <h2>Active Courses</h2>
