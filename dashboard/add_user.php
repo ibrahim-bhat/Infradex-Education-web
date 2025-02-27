@@ -10,7 +10,6 @@ require_once '../config/db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $full_name = $conn->real_escape_string($_POST['full_name']);
-    $username = $conn->real_escape_string($_POST['username']);
     $email = $conn->real_escape_string($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $user_role = $conn->real_escape_string($_POST['user_role']);
@@ -22,15 +21,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    // Check if username or email already exists
-    $check_query = "SELECT id FROM users WHERE username = '$username' OR email = '$email'";
+    // Check if email already exists
+    $check_query = "SELECT id FROM users WHERE email = '$email'";
     $check_result = $conn->query($check_query);
 
     if ($check_result->num_rows > 0) {
-        $_SESSION['error'] = "Username or email already exists.";
+        $_SESSION['error'] = "Email already exists.";
     } else {
-        $query = "INSERT INTO users (full_name, username, email, password, user_role) 
-                  VALUES ('$full_name', '$username', '$email', '$password', '$user_role')";
+        $query = "INSERT INTO users (full_name, email, password, user_role) 
+                  VALUES ('$full_name', '$email', '$password', '$user_role')";
         
         if ($conn->query($query)) {
             $_SESSION['success'] = "User added successfully.";
@@ -93,25 +92,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <?php endif; ?>
 
                                 <form id="addUserForm" method="POST" action="">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
+                                    <div class="row mb-3">
+                                        <div class="col-md-12">
                                             <label class="form-label">Full Name</label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                                                 <input type="text" name="full_name" class="form-control" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label class="form-label">Username</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                <input type="text" name="username" class="form-control" required>
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">Email</label>
+                                        <label class="form-label">Email Address</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                             <input type="email" name="email" class="form-control" required>
