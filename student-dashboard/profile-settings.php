@@ -22,7 +22,7 @@ if ($result->num_rows === 0) {
                     VALUES (?, ?, ?, NOW())";
     $insert_stmt = $conn->prepare($insert_query);
     $insert_stmt->bind_param("ssi", $_SESSION['full_name'], $email, $_SESSION['user_id']);
-    
+
     if ($insert_stmt->execute()) {
         // Fetch the newly created student record
         $stmt->execute();
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($updates)) {
         $params[] = $email;
         $types .= "s";
-        
+
         $sql = "UPDATE students SET " . implode(", ", $updates) . " WHERE email = ?";
         $update_stmt = $conn->prepare($sql);
         $update_stmt->bind_param($types, ...$params);
@@ -120,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,6 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background: transparent !important;
             color: inherit !important;
         }
+
         .required-field::after {
             content: "*";
             color: red;
@@ -142,6 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     </style>
 </head>
+
 <body>
     <div class="glow-overlay"></div>
     <div class="scanlines"></div>
@@ -210,19 +213,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="form-grid">
                                     <div class="form-group">
                                         <label class="form-label required-field">Phone Number</label>
-                                        <input type="tel" name="phone_number" class="form-control" 
+                                        <input type="tel" name="phone_number" class="form-control"
                                             value="<?php echo htmlspecialchars($student['phone_number'] ?? ''); ?>"
                                             <?php echo !empty($student['phone_number']) ? 'readonly' : 'required'; ?>>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label required-field">Date of Birth</label>
-                                        <input type="date" name="dob" class="form-control" 
+                                        <input type="date" name="dob" class="form-control"
                                             value="<?php echo (!empty($student['dob']) && $student['dob'] != '0000-00-00') ? htmlspecialchars($student['dob']) : ''; ?>"
                                             <?php echo (!empty($student['dob']) && $student['dob'] != '0000-00-00') ? 'readonly' : 'required'; ?>>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label required-field">Gender</label>
-                                        <select name="gender" class="form-control" 
+                                        <select name="gender" class="form-control"
                                             <?php echo (!empty($student['gender']) && $student['gender'] != '') ? 'disabled' : 'required'; ?>>
                                             <option value="">Select Gender</option>
                                             <option value="male" <?php echo ($student['gender'] == 'male') ? 'selected' : ''; ?>>Male</option>
@@ -232,7 +235,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label required-field">Class</label>
-                                        <select name="class" class="form-control" 
+                                        <select name="class" class="form-control"
                                             <?php echo !empty($student['class']) ? 'readonly disabled' : 'required'; ?>>
                                             <option value="">Select Class</option>
                                             <option value="nursery" <?php echo ($student['class'] ?? '') == 'nursery' ? 'selected' : ''; ?>>Nursery</option>
@@ -245,37 +248,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label required-field">City</label>
-                                        <input type="text" name="city" class="form-control" 
+                                        <input type="text" name="city" class="form-control"
                                             value="<?php echo htmlspecialchars($student['city'] ?? ''); ?>"
                                             <?php echo !empty($student['city']) ? 'readonly' : 'required'; ?>>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label required-field">State</label>
-                                        <input type="text" name="state" class="form-control" 
+                                        <input type="text" name="state" class="form-control"
                                             value="<?php echo htmlspecialchars($student['state'] ?? ''); ?>"
                                             <?php echo !empty($student['state']) ? 'readonly' : 'required'; ?>>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Pin Code</label>
-                                        <input type="text" name="pincode" class="form-control" 
+                                        <input type="text" name="pincode" class="form-control"
                                             value="<?php echo htmlspecialchars($student['pincode'] ?? ''); ?>"
                                             <?php echo !empty($student['pincode']) ? 'readonly' : ''; ?>>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Colony/Area</label>
-                                        <input type="text" name="colony" class="form-control" 
+                                        <input type="text" name="colony" class="form-control"
                                             value="<?php echo htmlspecialchars($student['colony'] ?? ''); ?>"
                                             <?php echo !empty($student['colony']) ? 'readonly' : ''; ?>>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label required-field">Parent's Name</label>
-                                        <input type="text" name="parent_name" class="form-control" 
+                                        <input type="text" name="parent_name" class="form-control"
                                             value="<?php echo htmlspecialchars($student['parent_name'] ?? ''); ?>"
                                             <?php echo !empty($student['parent_name']) ? 'readonly' : 'required'; ?>>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label required-field">Parent's Phone</label>
-                                        <input type="tel" name="parent_phone" class="form-control" 
+                                        <input type="tel" name="parent_phone" class="form-control"
                                             value="<?php echo htmlspecialchars($student['parent_phone'] ?? ''); ?>"
                                             <?php echo !empty($student['parent_phone']) ? 'readonly' : 'required'; ?>>
                                     </div>
@@ -286,8 +289,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <button type="submit" class="btn-save">Save Changes</button>
                             </div>
                         </form>
-
-                        <div class="password-section">
+                                                <hr>
+                        <div class="password-section mt-4">
                             <h4>Change Password</h4>
                             <form class="password-form" method="POST" action="change-password.php">
                                 <div class="form-grid">
@@ -304,8 +307,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <input type="password" name="confirm_password" class="form-control" required minlength="6">
                                     </div>
                                 </div>
-                                <div class="form-actions">
-                                    <button type="submit" class="btn-change-password">Change Password</button>
+                                <div class="form-actions mt-3">
+                                    <button type="submit" class="btn-save">Change Password</button>
                                 </div>
                             </form>
                         </div>
@@ -319,4 +322,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="./components/header.js"></script>
     <script src="./js/dashboard.js"></script>
 </body>
+
 </html>

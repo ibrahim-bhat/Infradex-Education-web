@@ -116,7 +116,7 @@ $user = $result->fetch_assoc();
                     </div>
                 </div> -->
 
-                <div class="upcoming-section">
+                <!-- <div class="upcoming-section">
                     <div class="section-header">
                         <div class="header-left">
                             <h2>Upcoming Sessions</h2>
@@ -141,7 +141,7 @@ $user = $result->fetch_assoc();
                         </div>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </main>
     </div>

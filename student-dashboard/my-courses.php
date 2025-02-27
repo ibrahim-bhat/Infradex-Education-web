@@ -196,7 +196,8 @@ function getCourseProgress($course_id, $student_id, $conn) {
                           <button class="filter-btn">Completed</button>
                       </div> -->
             </div>
-
+            <?php include '../components/coming-soon.php'; ?>
+<!-- 
             <div class="content-wrapper">
      
 
@@ -243,7 +244,7 @@ function getCourseProgress($course_id, $student_id, $conn) {
                   </a>
                 </div>
               <?php endif; ?>
-            </div>
+            </div> -->
           </div>
         </main>
     </div>

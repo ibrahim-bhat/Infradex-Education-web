@@ -75,8 +75,9 @@ if ($payments->num_rows === 0) {
                 <div class="section-header">
                     <h2>Payment History</h2>
                 </div>
+                <?php include '../components/coming-soon.php'; ?>
 
-                <div class="payment-history">
+                <!-- <div class="payment-history">
                     <?php if ($payments && $payments->num_rows > 0): ?>
                         <?php while($payment = $payments->fetch_assoc()): ?>
                             <div class="payment-card">
@@ -132,7 +133,7 @@ if ($payments->num_rows === 0) {
                             </div>
                         </div>
                     <?php endif; ?>
-                </div>
+                </div> -->
 
                 <?php if ($payments && $payments->num_rows > 0): ?>
                 <div class="payment-summary mt-4">
