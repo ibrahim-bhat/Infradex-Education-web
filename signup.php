@@ -41,8 +41,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $user_id = $conn->insert_id;
 
-        // Insert into students table with basic info
-        $student_query = "INSERT INTO students (full_name, email, added_by, created_at) VALUES (?, ?, ?, NOW())";
+        // Insert into students table with basic info and default values
+        $student_query = "INSERT INTO students (
+            full_name, 
+            email, 
+            phone_number,
+            dob,
+            gender,
+            class,
+            city,
+            state,
+            pincode,
+            colony,
+            parent_name,
+            parent_phone,
+            added_by, 
+            created_at
+        ) VALUES (
+            ?, 
+            ?, 
+            '', /* default empty phone */
+            NULL, /* default null dob */
+            '', /* default empty gender */
+            '', /* default empty class */
+            '', /* default empty city */
+            '', /* default empty state */
+            '', /* default empty pincode */
+            '', /* default empty colony */
+            '', /* default empty parent name */
+            '', /* default empty parent phone */
+            ?,
+            NOW()
+        )";
         $student_stmt = $conn->prepare($student_query);
         $student_stmt->bind_param("ssi", $full_name, $email, $user_id);
         
