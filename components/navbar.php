@@ -9,19 +9,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">
+                        <a class="nav-link" href="index.php">
                             <i class="fas fa-home"></i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">
+                        <a class="nav-link" href="about.php">
                             <i class="fas fa-user"></i>
                             <span>About</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">
+                        <a class="nav-link" href="contact.php">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
                         </a>
