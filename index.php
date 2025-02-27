@@ -359,8 +359,10 @@ session_start();
                 <h2 class="display-5 fw-bold">Choose Your Class Package</h2>
                 <p class="text-muted">Comprehensive Educational Programs for Primary Students</p>
             </div>
+
+            <?php include 'components/coming-soon.php'; ?>
             
-            <div class="subscription-grid">
+            <!-- <div class="subscription-grid">
                 <div class="subscription-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-badge">Class 1-2</div>
                     <div class="card-header">
@@ -438,7 +440,7 @@ session_start();
                     </div>
                     <button class="btn-subscribe">Enroll Now</button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -579,9 +581,9 @@ session_start();
                         <div class="footer-widget">
                             <h4 class="widget-title">Our Services</h4>
                             <ul class="footer-links">
+                                <li><a href="#">5D Career Counseling</a></li>
                                 <li><a href="#">University Admissions</a></li>
                                 <li><a href="#">Visa Assistance</a></li>
-                                <li><a href="#">Career Counseling</a></li>
                                 <li><a href="#">Test Preparation</a></li>
                                 <li><a href="#">Immigration Services</a></li>
                             </ul>
@@ -595,20 +597,20 @@ session_start();
                             <div class="contact-info">
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <p>123 Education Street, Suite 500<br>New York, NY 10001</p>
+                                    <p>Sallar Complex ,Saraibal <br>Srinagar, J&K 190001</p>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
                                     <p>
-                                        <a href="tel:+1234567890">+1 (234) 567-890</a><br>
-                                        <a href="tel:+1234567890">+1 (234) 567-891</a>
+                                        <a href="tel:+919796931231">+91 979-6931-231</a><br>
+                                        <a href="tel:+919906931231">+91 990-6931-231</a>
                                     </p>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-envelope"></i>
                                     <p>
-                                        <a href="mailto:info@infradexeducation.com">info@infradexeducation.com</a><br>
-                                        <a href="mailto:support@infradexeducation.com">support@infradexeducation.com</a>
+                                        <a href="mailto:connect@infradex.in">connect@infradex.in</a><br>
+                                        <a href="mailto:">grievance@infradex.in</a>
                                     </p>
                                 </div>
                             </div>
