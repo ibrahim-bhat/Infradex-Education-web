@@ -124,19 +124,19 @@ $current_user = $user_result->fetch_assoc();
                 </div>
 
                 <div class="form-section">
-                    <?php if (isset($success_message)): ?>
+        <?php if (isset($success_message)): ?>
                         <div class="alert alert-success" role="alert">
                             <i class="fas fa-check-circle me-2"></i><?php echo $success_message; ?>
                         </div>
-                    <?php endif; ?>
-
-                    <?php if (isset($error_message)): ?>
+        <?php endif; ?>
+        
+        <?php if (isset($error_message)): ?>
                         <div class="alert alert-danger" role="alert">
                             <i class="fas fa-exclamation-circle me-2"></i><?php echo $error_message; ?>
                         </div>
-                    <?php endif; ?>
+        <?php endif; ?>
 
-                    <form method="POST" action="">
+        <form method="POST" action="">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -154,36 +154,36 @@ $current_user = $user_result->fetch_assoc();
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
                                     <input type="email" name="email" class="form-control" required>
-                                </div>
-                            </div>
+            </div>
+            </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Date of Birth</label>
                                     <input type="date" name="dob" class="form-control" required>
-                                </div>
-                            </div>
+            </div>
+            </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Gender</label>
                                     <select name="gender" class="form-select" required>
-                                        <option value="">Select Gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Class</label>
                                     <select name="class" class="form-select" required>
-                                        <option value="">Select Class</option>
-                                        <option value="nursery">Nursery</option>
+                    <option value="">Select Class</option>
+                    <option value="nursery">Nursery</option>
                                         <?php for ($i = 1; $i <= 12; $i++): ?>
-                                            <option value="<?php echo $i; ?>">Class <?php echo $i; ?></option>
-                                        <?php endfor; ?>
-                                    </select>
-                                </div>
+                        <option value="<?php echo $i; ?>">Class <?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -213,15 +213,15 @@ $current_user = $user_result->fetch_assoc();
                                 <div class="mb-3">
                                     <label class="form-label">Parent's Name</label>
                                     <input type="text" name="parent_name" class="form-control" required>
-                                </div>
-                            </div>
+            </div>
+            </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Parent's Phone Number</label>
                                     <input type="tel" name="parent_phone" class="form-control" required>
-                                </div>
-                            </div>
-                        </div>
+            </div>
+            </div>
+            </div>
 
                         <div class="form-actions mt-4">
                             <button type="button" class="btn btn-secondary me-2" onclick="history.back()">
@@ -230,7 +230,7 @@ $current_user = $user_result->fetch_assoc();
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-plus me-2"></i>Add Student
                             </button>
-                        </div>
+            </div>
                     </form>
                 </div>
             </div>
@@ -242,4 +242,4 @@ $current_user = $user_result->fetch_assoc();
     <script src="js/admin.js"></script>
 </body>
 
-</html>
+</html> 

@@ -37,10 +37,10 @@ $total_pages = ceil($total_students / $per_page);
 <body>
     <div class="admin-container">
         <?php include 'components/sidebar.php'; ?>
-
+        
         <div class="main-content">
             <?php include 'components/header.php'; ?>
-
+            
             <div class="content-wrapper">
                 <div class="content-header">
                     <div class="d-flex justify-content-between align-items-center">
@@ -89,37 +89,37 @@ $total_pages = ceil($total_students / $per_page);
                                 </thead>
                                 <tbody>
                                     <?php while ($student = $students_result->fetch_assoc()): ?>
-                                        <tr>
-                                            <td><?php echo htmlspecialchars($student['full_name']); ?></td>
-                                            <td><?php echo htmlspecialchars($student['class']); ?></td>
-                                            <td><?php echo htmlspecialchars($student['email']); ?></td>
-                                            <td><?php echo htmlspecialchars($student['phone_number']); ?></td>
-                                            <td><?php echo htmlspecialchars($student['parent_name']); ?></td>
-                                            <td>
-                                                <?php
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($student['full_name']); ?></td>
+                                        <td><?php echo htmlspecialchars($student['class']); ?></td>
+                                        <td><?php echo htmlspecialchars($student['email']); ?></td>
+                                        <td><?php echo htmlspecialchars($student['phone_number']); ?></td>
+                                        <td><?php echo htmlspecialchars($student['parent_name']); ?></td>
+                                        <td>
+                                            <?php 
                                                 $added_by_query = "SELECT full_name, user_role FROM users WHERE id = " . $student['added_by'];
-                                                $added_by_result = $conn->query($added_by_query);
-                                                $added_by_user = $added_by_result->fetch_assoc();
+                                            $added_by_result = $conn->query($added_by_query);
+                                            $added_by_user = $added_by_result->fetch_assoc();
                                                 echo htmlspecialchars($added_by_user['full_name']) . ' (' . ucfirst($added_by_user['user_role']) . ')';
-                                                ?>
-                                            </td>
-                                            <td>
-                                                <div class="student-actions">
-                                                    <button class="btn btn-info btn-sm view-student"
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <div class="student-actions">
+                                                <button class="btn btn-info btn-sm view-student" 
                                                         data-id="<?php echo $student['id']; ?>"
-                                                        data-bs-toggle="modal"
+                                                        data-bs-toggle="modal" 
                                                         data-bs-target="#viewStudentModal">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                    <button class="btn btn-warning btn-sm">
-                                                        <i class="fas fa-edit"></i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-sm">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-warning btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
                                     <?php endwhile; ?>
                                 </tbody>
                             </table>
@@ -127,15 +127,15 @@ $total_pages = ceil($total_students / $per_page);
 
                         <!-- Pagination -->
                         <?php if ($total_pages > 1): ?>
-                            <nav aria-label="Page navigation" class="mt-4">
-                                <ul class="pagination justify-content-center">
+                        <nav aria-label="Page navigation" class="mt-4">
+                            <ul class="pagination justify-content-center">
                                     <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                                        <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
-                                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                                        </li>
-                                    <?php endfor; ?>
-                                </ul>
-                            </nav>
+                                <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
+                                    <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                </li>
+                                <?php endfor; ?>
+                            </ul>
+                        </nav>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -162,14 +162,14 @@ $total_pages = ceil($total_students / $per_page);
                             <h6 class="mb-0">Personal Information</h6>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
                                     <div class="student-info mb-3">
-                                        <h6>Full Name</h6>
-                                        <p id="studentName"></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
+                                <h6>Full Name</h6>
+                                <p id="studentName"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                                     <div class="student-info mb-3">
                                         <h6>Phone Number</h6>
                                         <p id="studentPhone"></p>
@@ -195,10 +195,10 @@ $total_pages = ceil($total_students / $per_page);
                                 </div>
                                 <div class="col-md-6">
                                     <div class="student-info mb-3">
-                                        <h6>Class</h6>
-                                        <p id="studentClass"></p>
-                                    </div>
-                                </div>
+                                <h6>Class</h6>
+                                <p id="studentClass"></p>
+                            </div>
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -251,7 +251,7 @@ $total_pages = ceil($total_students / $per_page);
                                         <p id="parentName"></p>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                        <div class="col-md-6">
                                     <div class="student-info mb-3">
                                         <h6>Parent's Phone Number</h6>
                                         <p id="parentPhone"></p>
@@ -335,4 +335,4 @@ $total_pages = ceil($total_students / $per_page);
     <script src="js/students.js"></script>
 </body>
 
-</html>
+</html> 

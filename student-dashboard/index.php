@@ -1,11 +1,33 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'user') {
     header('Location: ../login.php');
     exit();
 }
 
 require_once '../config/db_connect.php';
+
+// Check if student profile is complete
+$check_profile_query = "SELECT phone_number, dob, gender, class, city, state, pincode, colony, parent_name, parent_phone 
+                       FROM students 
+                       WHERE email = ?";
+$check_stmt = $conn->prepare($check_profile_query);
+$check_stmt->bind_param("s", $_SESSION['email']);
+$check_stmt->execute();
+$result = $check_stmt->get_result();
+$student = $result->fetch_assoc();
+
+// Check if any required fields are empty
+$profile_incomplete = empty($student['phone_number']) || 
+                     empty($student['dob']) || 
+                     empty($student['gender']) || 
+                     empty($student['class']) || 
+                     empty($student['city']) || 
+                     empty($student['parent_name']) || 
+                     empty($student['parent_phone']);
+if ($profile_incomplete) {
+    $_SESSION['profile_message'] = '<div class="alert alert-danger">Please complete your profile in profile settings</div>';
+}
 
 // Fetch user details
 $user_id = $_SESSION['user_id'];

@@ -39,18 +39,18 @@ $total_pages = ceil($total_users / $per_page);
 <body>
     <div class="admin-container">
         <?php include 'components/sidebar.php'; ?>
-
+        
         <div class="main-content">
             <?php include 'components/header.php'; ?>
-
+            
             <div class="content-wrapper">
                 <div class="content-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <h1>Users Management</h1>
                         <?php if (in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])): ?>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
-                                <i class="fas fa-plus"></i> Add New User
-                            </button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                            <i class="fas fa-plus"></i> Add New User
+                        </button>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ $total_pages = ceil($total_users / $per_page);
                                 <select class="form-select" id="filterRole">
                                     <option value="">All Roles</option>
                                     <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
-                                        <option value="super_admin">Super Admin</option>
+                                    <option value="super_admin">Super Admin</option>
                                     <?php endif; ?>
                                     <option value="admin">Admin</option>
                                     <option value="management">Management</option>
@@ -92,32 +92,32 @@ $total_pages = ceil($total_users / $per_page);
                                 </thead>
                                 <tbody>
                                     <?php while ($user = $users_result->fetch_assoc()): ?>
-                                        <tr>
-                                            <td><?php echo htmlspecialchars($user['full_name']); ?></td>
-                                            <td><?php echo htmlspecialchars($user['email']); ?></td>
-                                            <td>
-                                                <span class="role-badge role-<?php echo $user['user_role']; ?>">
-                                                    <?php echo ucfirst($user['user_role']); ?>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-sm btn-info view-user" data-id="<?php echo $user['id']; ?>">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($user['full_name']); ?></td>
+                                        <td><?php echo htmlspecialchars($user['email']); ?></td>
+                                        <td>
+                                            <span class="role-badge role-<?php echo $user['user_role']; ?>">
+                                                <?php echo ucfirst($user['user_role']); ?>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-info view-user" data-id="<?php echo $user['id']; ?>">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
                                                     <?php if ($_SESSION['user_role'] == 'super_admin' || ($_SESSION['user_role'] == 'admin' && $user['user_role'] != 'super_admin') || ($_SESSION['user_role'] == 'management' && $user['user_role'] == 'user')): ?>
-                                                        <button class="btn btn-sm btn-primary edit-user" data-id="<?php echo $user['id']; ?>">
-                                                            <i class="fas fa-edit"></i>
-                                                        </button>
+                                                <button class="btn btn-sm btn-primary edit-user" data-id="<?php echo $user['id']; ?>">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
                                                     <?php endif; ?>
                                                     <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
-                                                        <button class="btn btn-sm btn-danger delete-user" data-id="<?php echo $user['id']; ?>">
-                                                            <i class="fas fa-trash"></i>
-                                                        </button>
-                                                    <?php endif; ?>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <button class="btn btn-sm btn-danger delete-user" data-id="<?php echo $user['id']; ?>">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                                <?php endif; ?>
+                                            </div>
+                                        </td>
+                                    </tr>
                                     <?php endwhile; ?>
                                 </tbody>
                             </table>
@@ -125,15 +125,15 @@ $total_pages = ceil($total_users / $per_page);
 
                         <!-- Pagination -->
                         <?php if ($total_pages > 1): ?>
-                            <nav aria-label="Page navigation" class="mt-4">
-                                <ul class="pagination justify-content-center">
+                        <nav aria-label="Page navigation" class="mt-4">
+                            <ul class="pagination justify-content-center">
                                     <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                                        <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
-                                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                                        </li>
-                                    <?php endfor; ?>
-                                </ul>
-                            </nav>
+                                <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
+                                    <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                </li>
+                                <?php endfor; ?>
+                            </ul>
+                        </nav>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -191,7 +191,7 @@ $total_pages = ceil($total_users / $per_page);
                     <div class="alert alert-success" id="editSuccess" style="display: none;"></div>
                     <form id="editUserForm">
                         <input type="hidden" id="editUserId" name="id">
-
+                        
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label class="form-label">Full Name</label>
@@ -272,4 +272,4 @@ $total_pages = ceil($total_users / $per_page);
     <script src="js/users.js"></script>
 </body>
 
-</html>
+</html> 

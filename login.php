@@ -4,12 +4,14 @@ if (isset($_SESSION['user_role'])) {
     // Redirect based on role
     if ($_SESSION['user_role'] == 'user') {
         header('Location: student-dashboard/index.php');
+        exit();
     } elseif ($_SESSION['user_role'] == 'ground_team') {
         header('Location: dashboard/userdash.php');
+        exit();
     } else {
         header('Location: dashboard/dashboard.php');
+        exit();
     }
-    exit();
 }
 
 require_once 'config/db_connect.php';

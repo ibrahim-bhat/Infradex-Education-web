@@ -27,12 +27,21 @@
                         </a>
                     </li>
                     <?php if (isset($_SESSION['user_role'])): ?>
+                        <?php if ($_SESSION['user_role'] == 'user'): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="student-dashboard/index.php">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <?php else: ?>
                         <li class="nav-item">
                             <a class="nav-link" href="dashboard/userdash.php">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
+                        <?php endif; ?>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">
                                 <i class="fas fa-sign-out-alt"></i>

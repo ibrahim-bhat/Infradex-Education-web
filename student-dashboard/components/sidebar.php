@@ -1,5 +1,14 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF'], '.php');
+
+// If $user is not passed, fetch it here
+if (!isset($user) && isset($_SESSION['user_id'])) {
+    $user_query = "SELECT * FROM users WHERE id = ?";
+    $stmt = $conn->prepare($user_query);
+    $stmt->bind_param("i", $_SESSION['user_id']);
+    $stmt->execute();
+    $user = $stmt->get_result()->fetch_assoc();
+}
 ?>
 
 <aside class="sidebar">
@@ -43,10 +52,10 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
 
         <div class="sidebar-footer">
             <div class="user-info">
-                <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($user['full_name']); ?>" alt="Profile" class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=<?php echo isset($user) ? urlencode($user['full_name']) : 'User'; ?>" alt="Profile" class="user-avatar">
                 <div class="user-details">
-                    <h6><?php echo htmlspecialchars($user['full_name']); ?></h6>
-                    <span>User</span>
+                    <h6><?php echo isset($user) ? htmlspecialchars($user['full_name']) : 'User'; ?></h6>
+                    <span>Student</span>
                 </div>
             </div>
         </div>
