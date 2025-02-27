@@ -49,19 +49,19 @@
                  <div class="col-lg-3 col-md-6">
                      <div class="footer-widget">
                          <h4 class="widget-title">Contact Info</h4>
-                         <div class="contact-info">
-                             <div class="contact-item">
+                         <div class="contact">
+                             <div class="contact-link">
                                  <i class="fas fa-map-marker-alt"></i>
                                  <p>Sallar Complex ,Saraibal <br>Srinagar, J&K 190001</p>
                              </div>
-                             <div class="contact-item">
+                             <div class="contact-link">
                                  <i class="fas fa-phone-alt"></i>
                                  <p>
                                      <a href="tel:+919796931231">+91 979-6931-231</a><br>
                                      <a href="tel:+919906931231">+91 990-6931-231</a>
                                  </p>
                              </div>
-                             <div class="contact-item">
+                             <div class="contact-link">
                                  <i class="fas fa-envelope"></i>
                                  <p>
                                      <a href="mailto:connect@infradex.in">connect@infradex.in</a><br>
