@@ -100,7 +100,7 @@
              <div class="row align-items-center">
                  <div class="col-md-6">
                      <p class="mb-md-0 text-center text-md-start">
-                         © 2023 Infradex Education. All Rights Reserved.
+                         © <?php echo date('Y'); ?> Infradex Education. All Rights Reserved.
                      </p>
                  </div>
                  <div class="col-md-6">

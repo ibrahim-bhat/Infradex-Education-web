@@ -23,8 +23,6 @@ class Mailer {
             $this->mailer->Password = MAIL_PASSWORD;
             $this->mailer->SMTPSecure = MAIL_ENCRYPTION;
             $this->mailer->Port = MAIL_PORT;
-
-            // Default sender
             $this->mailer->setFrom(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
         } catch (Exception $e) {
             error_log("Mail configuration error: " . $e->getMessage());
@@ -105,6 +103,52 @@ class Mailer {
         } catch (Exception $e) {
             error_log("Payment confirmation email error: " . $e->getMessage());
             return false;
+        }
+    }
+
+    // New method for sending contact form emails
+    public function sendContactFormEmail($name, $email, $phone, $subject, $message) {
+        try {
+            // Send to admin
+            $adminEmailBody = "
+                <h3>New Contact Form Submission</h3>
+                <p><strong>Name:</strong> {$name}</p>
+                <p><strong>Email:</strong> {$email}</p>
+                <p><strong>Phone:</strong> {$phone}</p>
+                <p><strong>Subject:</strong> {$subject}</p>
+                <p><strong>Message:</strong></p>
+                <p>{$message}</p>
+            ";
+
+            $this->mailer->clearAddresses();
+            $this->mailer->addAddress(MAIL_USERNAME);
+            $this->mailer->Subject = "New Contact Form Submission: {$subject}";
+            $this->mailer->Body = $adminEmailBody;
+            $this->mailer->isHTML(true);
+            $this->mailer->send();
+
+            // Send auto-reply to user
+            $userEmailBody = "
+                <h3>Thank you for contacting Infradex Education!</h3>
+                <p>Dear {$name},</p>
+                <p>We have received your message and will get back to you shortly.</p>
+                <p>Here's a copy of your message:</p>
+                <hr>
+                <p><strong>Subject:</strong> {$subject}</p>
+                <p>{$message}</p>
+                <hr>
+                <p>Best regards,<br>Infradex Education Team</p>
+            ";
+
+            $this->mailer->clearAddresses();
+            $this->mailer->addAddress($email, $name);
+            $this->mailer->Subject = "We've received your message - Infradex Education";
+            $this->mailer->Body = $userEmailBody;
+            return $this->mailer->send();
+
+        } catch (Exception $e) {
+            error_log("Contact form email error: " . $e->getMessage());
+            throw new Exception("Failed to send email");
         }
     }
 } 

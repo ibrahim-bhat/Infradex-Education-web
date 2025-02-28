@@ -1,3 +1,39 @@
+<?php
+require_once 'config/db_connect.php';
+require_once 'utils/Mailer.php';
+
+$success_message = '';
+$error_message = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data
+    $name = $conn->real_escape_string($_POST['name']);
+    $email = $conn->real_escape_string($_POST['email']);
+    $phone = $conn->real_escape_string($_POST['phone']);
+    $subject = $conn->real_escape_string($_POST['subject']);
+    $message = $conn->real_escape_string($_POST['message']);
+
+    try {
+        // Initialize mailer and send emails
+        $mailer = new Mailer();
+        $mailer->sendContactFormEmail($name, $email, $phone, $subject, $message);
+
+        // Store in database
+        $query = "INSERT INTO contact_messages (name, email, phone, subject, message, created_at) 
+                  VALUES (?, ?, ?, ?, ?, NOW())";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("sssss", $name, $email, $phone, $subject, $message);
+        $stmt->execute();
+
+        $success_message = "Thank you! Your message has been sent successfully.";
+
+    } catch (Exception $e) {
+        error_log("Contact form error: " . $e->getMessage());
+        $error_message = "Sorry, there was an error sending your message. Please try again later.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +66,8 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div>
                                     <h5>Our Location</h5>
-                                    <p>123 Education Street, Suite 500<br>New York, NY 10001</p>
+                                    <p>Sallar Complex ,Saraibal
+                                        Srinagar, J&K 190001</p>
                                 </div>
                             </div>
 
@@ -39,8 +76,8 @@
                                 <div>
                                     <h5>Phone Number</h5>
                                     <p>
-                                        <a href="tel:+1234567890">+1 (234) 567-890</a><br>
-                                        <a href="tel:+1234567891">+1 (234) 567-891</a>
+                                        <a href="tel:+919796931231">+91 979-6931-231</a><br>
+                                        <a href="tel:+919906931231">+91 990-6931-231</a>
                                     </p>
                                 </div>
                             </div>
@@ -50,8 +87,8 @@
                                 <div>
                                     <h5>Email Address</h5>
                                     <p>
-                                        <a href="mailto:info@infradexeducation.com">info@infradexeducation.com</a><br>
-                                        <a href="mailto:support@infradexeducation.com">support@infradexeducation.com</a>
+                                        <a href="mailto:connect@infradex.in">connect@infradex.in</a><br>
+                                        <a href="mailto:">grievance@infradex.in</a>
                                     </p>
                                 </div>
                             </div>
@@ -61,6 +98,18 @@
 
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="contact-form-wrapper">
+                        <?php if ($success_message): ?>
+                            <div class="alert alert-success">
+                                <i class="fas fa-check-circle"></i> <?php echo $success_message; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($error_message): ?>
+                            <div class="alert alert-danger">
+                                <i class="fas fa-exclamation-circle"></i> <?php echo $error_message; ?>
+                            </div>
+                        <?php endif; ?>
+
                         <form class="contact-form">
                             <div class="mb-4">
                                 <input type="text" class="form-control" placeholder="Your Name" required>
@@ -69,7 +118,7 @@
                                 <input type="email" class="form-control" placeholder="Your Email" required>
                             </div>
                             <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Subject" required>
+                                <input type="tel" class="form-control" placeholder="Phone Number" required>
                             </div>
                             <div class="mb-4">
                                 <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
@@ -110,7 +159,7 @@
     </section>
 
     <!-- Location Features -->
-    <section class="location-features py-5">
+    <!-- <section class="location-features py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
@@ -142,7 +191,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <footer class="footer-section">
         <?php include 'components/footer.php'; ?>
