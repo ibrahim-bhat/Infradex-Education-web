@@ -110,18 +110,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div>
                         <?php endif; ?>
 
-                        <form class="contact-form">
+                        <form class="contact-form" method="POST" action="">
                             <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                             </div>
                             <div class="mb-4">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                             </div>
                             <div class="mb-4">
-                                <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
                             </div>
                             <div class="mb-4">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Send Message</button>
                         </form>
