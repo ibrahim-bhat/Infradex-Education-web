@@ -801,4 +801,59 @@
 
 .position-relative {
     position: relative !important;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-active {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-blocked {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+/* Password Strength Indicator */
+#passwordStrength {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+#passwordStrength.weak {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+#passwordStrength.medium {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+#passwordStrength.strong {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+/* Toggle Status Button */
+.toggle-status.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+}
+
+.toggle-status.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+    color: #fff;
 } 

@@ -1,30 +1,67 @@
 <?php
-session_start();
-if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin'])) {
-    exit(json_encode(['error' => 'Unauthorized']));
-}
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+header('Content-Type: application/json');
 
-require_once '../../config/db_connect.php';
+try {
+    require_once '../../config/db_connect.php';
+    session_start();
 
-if(isset($_POST['id'])) {
-    $id = (int)$_POST['id'];
+    // Check if user has permission
+    if (!isset($_SESSION['user_role']) || !in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])) {
+        throw new Exception('Unauthorized access');
+    }
+
+    // Handle both GET and POST requests
+    $method = $_SERVER['REQUEST_METHOD'];
+    $userId = null;
     
-    // Don't select password field for security
-    $query = "SELECT id, username, email, full_name, user_role, created_at 
-              FROM users WHERE id = ?";
+    if ($method === 'GET' && isset($_GET['id'])) {
+        $userId = $_GET['id'];
+    } elseif ($method === 'POST' && isset($_POST['id'])) {
+        $userId = $_POST['id'];
+    } else {
+        throw new Exception('User ID is required');
+    }
     
+    $userId = $conn->real_escape_string($userId);
+    
+    $query = "SELECT id, full_name, email, user_role, status, created_at FROM users WHERE id = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
+    
+    if (!$stmt) {
+        throw new Exception('Failed to prepare statement: ' . $conn->error);
+    }
+    
+    $stmt->bind_param("i", $userId);
+    
+    if (!$stmt->execute()) {
+        throw new Exception('Failed to execute query: ' . $stmt->error);
+    }
+    
     $result = $stmt->get_result();
     
-    if($user = $result->fetch_assoc()) {
-        // Format dates and any other data processing
-        $user['created_at_formatted'] = date('M d, Y', strtotime($user['created_at']));
-        echo json_encode($user);
+    if ($user = $result->fetch_assoc()) {
+        // Format date if needed
+        if (isset($user['created_at'])) {
+            $user['created_at_formatted'] = date('M d, Y', strtotime($user['created_at']));
+        }
+        
+        echo json_encode([
+            'success' => true,
+            'user' => $user
+        ]);
     } else {
-        echo json_encode(['error' => 'User not found']);
+        echo json_encode([
+            'success' => false,
+            'message' => 'User not found'
+        ]);
     }
-} else {
-    echo json_encode(['error' => 'Invalid request']);
-} 
+
+} catch (Exception $e) {
+    echo json_encode([
+        'success' => false, 
+        'message' => $e->getMessage()
+    ]);
+}
+exit; 

@@ -1,47 +1,104 @@
 $(document).ready(function() {
-    $('.view-user').click(function() {
-        const userId = $(this).data('id');
-        $('#viewUserModal').modal('show');
+    // Initialize modals at the very beginning
+    const viewModal = new bootstrap.Modal(document.getElementById('viewUserModal'));
+    const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
 
+    // Add debug logs to check if modal element exists
+    console.log('Edit modal element:', document.getElementById('editUserModal'));
+    console.log('Edit modal instance:', editModal);
+
+    $('.view-user').click(function(e) {
+        e.preventDefault();
+        const userId = $(this).data('id');
         $.ajax({
-            url: 'ajax/get_user.php',
-            type: 'POST',
-            data: { id: userId },
+            url: 'ajax/update_user.php',
+            type: 'GET',
+            data: { 
+                id: userId,
+                _: new Date().getTime() // Cache-busting
+            },
+            dataType: 'json',
+            beforeSend: function() {
+                console.log('Fetching user data for view, ID:', userId);
+            },
             success: function(response) {
-                const user = JSON.parse(response);
-                $('#userName').text(user.full_name);
-                $('#userUsername').text(user.username);
-                $('#userEmail').text(user.email);
-                $('#userRole').text(user.user_role);
-                $('#userCreated').text(new Date(user.created_at).toLocaleDateString());
+                console.log('View user response:', response);
+                if (response.success) {
+                    const user = response.user;
+                    $('#userName').text(user.full_name);
+                    $('#userEmail').text(user.email);
+                    $('#userRole').text(user.user_role);
+                    $('#userStatus').text(user.status);
+                    // Use Bootstrap 5 modal show method
+                    viewModal.show();
+                } else {
+                    alert('Error loading user details: ' + response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('View Ajax error:', error);
+                console.error('Response text:', xhr.responseText);
+                alert('Error loading user details. Please check the console for more information.');
             }
         });
     });
 
-    $('.edit-user').click(function() {
+    $('.edit-user').click(function(e) {
+        e.preventDefault();
         const userId = $(this).data('id');
+        
+        // Add debug log to check if click handler is triggered
+        console.log('Edit user clicked, ID:', userId);
+        
+        // Reset form and messages
+        $('#editUserForm')[0].reset();
         $('#editError, #editSuccess').hide();
         $('#passwordFields').hide();
         $('#changePassword').prop('checked', false);
-        $('#newPassword').val('');
-
+        
+        // Get user data
         $.ajax({
-            url: 'ajax/get_user.php',
-            type: 'POST',
-            data: { id: userId },
+            url: 'ajax/update_user.php',
+            type: 'GET',
+            data: { 
+                id: userId,
+                _: new Date().getTime() // Cache-busting
+            },
+            dataType: 'json',
+            beforeSend: function() {
+                console.log('Fetching user data for edit, ID:', userId);
+            },
             success: function(response) {
-                const user = JSON.parse(response);
-                if (user.error) {
-                    alert(user.error);
-                    return;
+                console.log('Edit user response:', response);
+                if (response.success) {
+                    const user = response.user;
+                    
+                    // Populate form fields
+                    $('#editUserId').val(user.id);
+                    $('#editFullName').val(user.full_name);
+                    $('#editEmail').val(user.email);
+                    $('#editUserRole').val(user.user_role);
+                    $('#editUserStatus').val(user.status);
+                    
+                    // Add debug log before showing modal
+                    console.log('Attempting to show edit modal');
+                    
+                    try {
+                        // Show the modal
+                        editModal.show();
+                    } catch (err) {
+                        console.error('Error showing modal:', err);
+                        // Fallback to jQuery modal if Bootstrap modal fails
+                        $('#editUserModal').modal('show');
+                    }
+                } else {
+                    alert('Error loading user details: ' + response.message);
                 }
-
-                $('#editUserId').val(user.id);
-                $('#editFullName').val(user.full_name);
-                $('#editUsername').val(user.username);
-                $('#editEmail').val(user.email);
-                $('#editUserRole').val(user.user_role);
-                $('#editUserModal').modal('show');
+            },
+            error: function(xhr, status, error) {
+                console.error('Edit Ajax error:', error);
+                console.error('Response text:', xhr.responseText);
+                alert('Error loading user details. Please check the console for more information.');
             }
         });
     });
@@ -50,7 +107,7 @@ $(document).ready(function() {
         $('#passwordFields').toggle(this.checked);
         if (!this.checked) {
             $('#newPassword').val('');
-            $('#passwordStrength').html('');
+            $('#passwordStrength').text('').removeClass('weak medium strong');
         }
     });
 
@@ -69,53 +126,58 @@ $(document).ready(function() {
 
     $('#newPassword').on('input', function() {
         const password = $(this).val();
-        let strength = 0;
-        let message = '';
-
-        if (password.match(/[a-z]/)) strength++;
-        if (password.match(/[A-Z]/)) strength++;
-        if (password.match(/[0-9]/)) strength++;
-        if (password.match(/[^a-zA-Z0-9]/)) strength++;
-        if (password.length >= 8) strength++;
-
-        switch (strength) {
-            case 0:
-            case 1:
-                message = '<span class="text-danger"><i class="fas fa-times-circle"></i> Weak password</span>';
-                break;
-            case 2:
-            case 3:
-                message = '<span class="text-warning"><i class="fas fa-exclamation-circle"></i> Medium password</span>';
-                break;
-            case 4:
-            case 5:
-                message = '<span class="text-success"><i class="fas fa-check-circle"></i> Strong password</span>';
-                break;
+        const strength = checkPasswordStrength(password);
+        const strengthBar = $('#passwordStrength');
+        
+        strengthBar.removeClass('weak medium strong');
+        if (password.length > 0) {
+            strengthBar.addClass(strength.className);
+            strengthBar.text(strength.message);
+        } else {
+            strengthBar.text('');
         }
-
-        $('#passwordStrength').html(message);
     });
 
-    $('#saveUserChanges').click(function() {
-        const formData = new FormData($('#editUserForm')[0]);
-        
+    $('#saveUserChanges').click(function(e) {
+        e.preventDefault();
+        const userId = $('#editUserId').val();
+        const formData = {
+            id: userId,
+            full_name: $('#editFullName').val(),
+            email: $('#editEmail').val(),
+            user_role: $('#editUserRole').val(),
+            status: $('#editUserStatus').val()
+        };
+
+        if ($('#changePassword').is(':checked') && $('#newPassword').val()) {
+            formData.password = $('#newPassword').val();
+        }
+
         $.ajax({
             url: 'ajax/update_user.php',
             type: 'POST',
             data: formData,
-            processData: false,
-            contentType: false,
+            dataType: 'json',
             success: function(response) {
-                const result = JSON.parse(response);
-                if (result.success) {
-                    $('#editSuccess').html('<i class="fas fa-check-circle"></i> ' + result.message).show();
-                    setTimeout(() => {
-                        $('#editUserModal').modal('hide');
+                if (response.success) {
+                    $('#editSuccess').text(response.message).show();
+                    $('#editError').hide();
+                    setTimeout(function() {
+                        const editModal = bootstrap.Modal.getInstance(document.getElementById('editUserModal'));
+                        if (editModal) {
+                            editModal.hide();
+                        }
                         location.reload();
                     }, 1500);
                 } else {
-                    $('#editError').html('<i class="fas fa-exclamation-circle"></i> ' + result.message).show();
+                    $('#editError').text(response.message).show();
+                    $('#editSuccess').hide();
                 }
+            },
+            error: function(xhr, status, error) {
+                console.error('Save error:', error); // Debug log
+                $('#editError').text('An error occurred while saving changes').show();
+                $('#editSuccess').hide();
             }
         });
     });
@@ -146,15 +208,85 @@ $(document).ready(function() {
                 url: 'ajax/delete_user.php',
                 type: 'POST',
                 data: { id: userId },
+                dataType: 'json',
                 success: function(response) {
-                    const result = JSON.parse(response);
-                    if (result.success) {
+                    if (response.success) {
                         location.reload();
                     } else {
-                        alert(result.message);
+                        alert(response.message || 'Error deleting user');
                     }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Delete Ajax error:', error);
+                    console.error('Response text:', xhr.responseText);
+                    alert('Error deleting user. Please check the console for more information.');
                 }
             });
         }
     });
-}); 
+
+    $('.toggle-status').click(function() {
+        const userId = $(this).data('id');
+        const currentStatus = $(this).data('status');
+        const newStatus = currentStatus === 'active' ? 'blocked' : 'active';
+        const actionText = currentStatus === 'active' ? 'block' : 'unblock';
+        
+        if (confirm(`Are you sure you want to ${actionText} this user?`)) {
+            $.ajax({
+                url: 'ajax/toggle_user_status.php',
+                type: 'POST',
+                data: {
+                    id: userId,
+                    status: newStatus
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        location.reload();
+                    } else {
+                        alert(response.message || 'Error updating user status');
+                    }
+                },
+                error: function() {
+                    alert('An error occurred while updating user status');
+                }
+            });
+        }
+    });
+});
+
+function checkPasswordStrength(password) {
+    const length = password.length;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+    const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    
+    const strength = hasUpperCase + hasLowerCase + hasNumbers + hasSpecialChars;
+    
+    if (length < 8) {
+        return {
+            className: 'weak',
+            message: 'Password is too short'
+        };
+    }
+    
+    if (strength < 2) {
+        return {
+            className: 'weak',
+            message: 'Weak password'
+        };
+    }
+    
+    if (strength < 4) {
+        return {
+            className: 'medium',
+            message: 'Medium strength password'
+        };
+    }
+    
+    return {
+        className: 'strong',
+        message: 'Strong password'
+    };
+}

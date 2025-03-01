@@ -68,8 +68,9 @@ $total_pages = ceil($total_users / $per_page);
                                     <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
                                     <option value="super_admin">Super Admin</option>
                                     <?php endif; ?>
-                                    <option value="admin">Admin</option>
+                                    <option value="admin">Admin</option
                                     <option value="management">Management</option>
+                                    <option value="ground_team">Ground Team</option>
                                     <option value="user">User</option>
                                 </select>
                             </div>
@@ -87,6 +88,7 @@ $total_pages = ceil($total_users / $per_page);
                                         <th>Full Name</th>
                                         <th>Email</th>
                                         <th>Role</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -101,19 +103,31 @@ $total_pages = ceil($total_users / $per_page);
                                             </span>
                                         </td>
                                         <td>
+                                            <span class="status-badge status-<?php echo $user['status']; ?>">
+                                                <?php echo ucfirst($user['status']); ?>
+                                            </span>
+                                        </td>
+                                        <td>
                                             <div class="btn-group">
-                                                <button class="btn btn-sm btn-info view-user" data-id="<?php echo $user['id']; ?>">
+                                                <button class="btn btn-sm btn-info view-user" data-bs-toggle="modal" data-bs-target="#viewUserModal" data-id="<?php echo $user['id']; ?>">
                                                     <i class="fas fa-eye"></i>
                                                 </button>
-                                                    <?php if ($_SESSION['user_role'] == 'super_admin' || ($_SESSION['user_role'] == 'admin' && $user['user_role'] != 'super_admin') || ($_SESSION['user_role'] == 'management' && $user['user_role'] == 'user')): ?>
-                                                <button class="btn btn-sm btn-primary edit-user" data-id="<?php echo $user['id']; ?>">
+                                                <?php if ($_SESSION['user_role'] == 'super_admin' || ($_SESSION['user_role'] == 'admin' && $user['user_role'] != 'super_admin') || ($_SESSION['user_role'] == 'management' && $user['user_role'] == 'user')): ?>
+                                                <button class="btn btn-sm btn-primary edit-user" data-bs-toggle="modal" data-bs-target="#editUserModal" data-id="<?php echo $user['id']; ?>">
                                                     <i class="fas fa-edit"></i>
                                                 </button>
-                                                    <?php endif; ?>
-                                                    <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
+                                                <?php if ($user['user_role'] != 'super_admin'): ?>
+                                                <button class="btn btn-sm <?php echo $user['status'] === 'blocked' ? 'btn-success' : 'btn-warning'; ?> toggle-status" 
+                                                        data-id="<?php echo $user['id']; ?>"
+                                                        data-status="<?php echo $user['status']; ?>">
+                                                    <i class="fas <?php echo $user['status'] === 'blocked' ? 'fa-unlock' : 'fa-lock'; ?>"></i>
+                                                </button>
+                                                <?php endif; ?>
+                                                <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
                                                 <button class="btn btn-sm btn-danger delete-user" data-id="<?php echo $user['id']; ?>">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
+                                                <?php endif; ?>
                                                 <?php endif; ?>
                                             </div>
                                         </td>
@@ -127,7 +141,7 @@ $total_pages = ceil($total_users / $per_page);
                         <?php if ($total_pages > 1): ?>
                         <nav aria-label="Page navigation" class="mt-4">
                             <ul class="pagination justify-content-center">
-                                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
                                 <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
                                     <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
                                 </li>
@@ -141,50 +155,13 @@ $total_pages = ceil($total_users / $per_page);
         </div>
     </div>
 
-    <!-- View User Modal -->
-    <div class="modal fade" id="viewUserModal" tabindex="-1">
+    <!-- Edit User Modal -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">User Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center mb-4">
-                        <img src="../images/avatar.png" alt="User" class="student-avatar">
-                    </div>
-                    <div class="user-info">
-                        <h6>Full Name</h6>
-                        <p id="userName"></p>
-                    </div>
-                    <div class="user-info">
-                        <h6>Username</h6>
-                        <p id="userUsername"></p>
-                    </div>
-                    <div class="user-info">
-                        <h6>Email</h6>
-                        <p id="userEmail"></p>
-                    </div>
-                    <div class="user-info">
-                        <h6>Role</h6>
-                        <p id="userRole"></p>
-                    </div>
-                    <div class="user-info">
-                        <h6>Created Date</h6>
-                        <p id="userCreated"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Edit User Modal -->
-    <div class="modal fade" id="editUserModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title"><i class="fas fa-user-edit me-2"></i>Edit User</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-danger" id="editError" style="display: none;"></div>
@@ -192,25 +169,16 @@ $total_pages = ceil($total_users / $per_page);
                     <form id="editUserForm">
                         <input type="hidden" id="editUserId" name="id">
                         
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Full Name</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                    <input type="text" id="editFullName" name="full_name" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Username</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fas fa-at"></i></span>
-                                    <input type="text" id="editUsername" name="username" class="form-control" required>
-                                </div>
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" id="editFullName" name="full_name" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Email Address</label>
+                            <label class="form-label">Email</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                 <input type="email" id="editEmail" name="email" class="form-control" required>
@@ -225,11 +193,24 @@ $total_pages = ceil($total_users / $per_page);
                                     <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
                                         <option value="admin">Admin</option>
                                         <option value="management">Management</option>
+                                        <option value="ground_team">Ground Team</option>
                                         <option value="user">User</option>
                                     <?php else: ?>
                                         <option value="management">Management</option>
+                                        <option value="ground_team">Ground Team</option>
                                         <option value="user">User</option>
                                     <?php endif; ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Account Status</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-shield-alt"></i></span>
+                                <select id="editUserStatus" name="status" class="form-control" required>
+                                    <option value="active">Active</option>
+                                    <option value="blocked">Blocked</option>
                                 </select>
                             </div>
                         </div>
@@ -266,10 +247,40 @@ $total_pages = ceil($total_users / $per_page);
         </div>
     </div>
 
+    <!-- View User Modal -->
+    <div class="modal fade" id="viewUserModal" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">User Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-info mb-3">
+                        <h6>Full Name</h6>
+                        <p id="userName"></p>
+                    </div>
+                    <div class="user-info mb-3">
+                        <h6>Email</h6>
+                        <p id="userEmail"></p>
+                    </div>
+                    <div class="user-info mb-3">
+                        <h6>Role</h6>
+                        <p id="userRole"></p>
+                    </div>
+                    <div class="user-info mb-3">
+                        <h6>Status</h6>
+                        <p id="userStatus"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/admin.js"></script>
-    <script src="js/users.js"></script>
+    <script src="./js/admin.js"></script>
+    <script src="./js/users.js"></script>
 </body>
 
 </html> 
