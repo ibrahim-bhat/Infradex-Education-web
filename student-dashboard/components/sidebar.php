@@ -37,6 +37,11 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                         <i class="fas fa-history"></i> Payment History
                     </a>
                 </li>
+                <li class="<?php echo $current_page === 'document-uploads' ? 'active' : ''; ?>">
+                    <a href="document-uploads.php">
+                        <i class="fas fa-file-upload"></i> Document Uploads
+                    </a>
+                </li>
                 <li class="<?php echo $current_page === 'profile-settings' ? 'active' : ''; ?>">
                     <a href="profile-settings.php">
                         <i class="fas fa-user-cog"></i> Profile Settings
