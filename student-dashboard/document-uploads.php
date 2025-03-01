@@ -234,12 +234,12 @@ while ($row = $documents_result->fetch_assoc()) {
                     </ul>
                 </div>
 
-                <!-- 10th Class Documents Section -->
+                <!-- Class 10 Documents Section -->
                 <div class="document-section">
-                    <h3 class="section-title">10th Class Documents</h3>
+                    <h3 class="section-title">Class 10 Documents</h3>
 
                     <div class="document-card">
-                        <div class="document-title">10th Class Marks Sheet Certificate</div>
+                        <div class="document-title">Class 10 Marks Sheet Certificate</div>
                         <?php if (isset($documents['10th_marksheet'])): ?>
                             <div class="uploaded-file">
                                 <div class="file-info">
@@ -264,7 +264,7 @@ while ($row = $documents_result->fetch_assoc()) {
                     </div>
 
                     <div class="document-card">
-                        <div class="document-title">10th Class DOB Certificate</div>
+                        <div class="document-title">Class 10 DOB Certificate</div>
                         <?php if (isset($documents['10th_dob'])): ?>
                             <div class="uploaded-file">
                                 <div class="file-info">
@@ -289,12 +289,12 @@ while ($row = $documents_result->fetch_assoc()) {
                     </div>
                 </div>
 
-                <!-- 12th Class Documents Section -->
+                <!-- Class 12 Documents Section -->
                 <div class="document-section">
-                    <h3 class="section-title">12th Class Documents</h3>
+                    <h3 class="section-title">Class 12 Documents</h3>
 
                     <div class="document-card">
-                        <div class="document-title">12th Class Marks Sheet Certificate</div>
+                        <div class="document-title">Class 12 Marks Sheet Certificate</div>
                         <?php if (isset($documents['12th_marksheet'])): ?>
                             <div class="uploaded-file">
                                 <div class="file-info">
@@ -319,7 +319,7 @@ while ($row = $documents_result->fetch_assoc()) {
                     </div>
 
                     <div class="document-card">
-                        <div class="document-title">12th Class DOB Certificate</div>
+                        <div class="document-title">Class 12 DOB Certificate</div>
                         <?php if (isset($documents['12th_dob'])): ?>
                             <div class="uploaded-file">
                                 <div class="file-info">
@@ -392,6 +392,56 @@ while ($row = $documents_result->fetch_assoc()) {
                                         <input type="file" name="document" accept=".jpg,.jpeg,.png" required>
                                     </div>
                                     <div class="upload-status" id="status-aadhaar-back">No file chosen</div>
+                                    <button type="submit" class="btn btn-primary btn-sm mt-2">Upload Document</button>
+                                </div>
+                            </form>
+                        <?php endif; ?>
+                    </div>
+                    
+                    <div class="document-card">
+                        <div class="document-title">Passport (Front)</div>
+                        <?php if (isset($documents['passport_front'])): ?>
+                            <div class="uploaded-file">
+                                <div class="file-info">
+                                    <i class="fas fa-file-image"></i>
+                                    <span>Uploaded on <?php echo date('d M Y', strtotime($documents['passport_front']['upload_date'])); ?></span>
+                                </div>
+                                <!-- <span class="badge bg-success">Uploaded</span> -->
+                            </div>
+                        <?php else: ?>
+                            <form method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="document_type" value="passport_front">
+                                <div class="document-input-group">
+                                    <div class="file-input-wrapper">
+                                        <button class="upload-btn"><i class="fas fa-upload"></i> Choose File</button>
+                                        <input type="file" name="document" accept=".jpg,.jpeg,.png" required>
+                                    </div>
+                                    <div class="upload-status" id="status-passport-front">No file chosen</div>
+                                    <button type="submit" class="btn btn-primary btn-sm mt-2">Upload Document</button>
+                                </div>
+                            </form>
+                        <?php endif; ?>
+                    </div>
+                    
+                    <div class="document-card">
+                        <div class="document-title">Passport (Back)</div>
+                        <?php if (isset($documents['passport_back'])): ?>
+                            <div class="uploaded-file">
+                                <div class="file-info">
+                                    <i class="fas fa-file-image"></i>
+                                    <span>Uploaded on <?php echo date('d M Y', strtotime($documents['passport_back']['upload_date'])); ?></span>
+                                </div>
+                                <!-- <span class="badge bg-success">Uploaded</span> -->
+                            </div>
+                        <?php else: ?>
+                            <form method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="document_type" value="passport_back">
+                                <div class="document-input-group">
+                                    <div class="file-input-wrapper">
+                                        <button class="upload-btn"><i class="fas fa-upload"></i> Choose File</button>
+                                        <input type="file" name="document" accept=".jpg,.jpeg,.png" required>
+                                    </div>
+                                    <div class="upload-status" id="status-passport-back">No file chosen</div>
                                     <button type="submit" class="btn btn-primary btn-sm mt-2">Upload Document</button>
                                 </div>
                             </form>
