@@ -114,9 +114,9 @@ $total_pages = ceil($total_students / $per_page);
                                                 <button class="btn btn-warning btn-sm">
                                                     <i class="fas fa-edit"></i>
                                                 </button>
-                                                <button class="btn btn-danger btn-sm">
+                                                <!-- <button class="btn btn-danger btn-sm">
                                                     <i class="fas fa-trash"></i>
-                                                </button>
+                                                </button> -->
                                             </div>
                                         </td>
                                     </tr>

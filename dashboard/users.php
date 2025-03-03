@@ -124,8 +124,8 @@ $total_pages = ceil($total_users / $per_page);
                                                 </button>
                                                 <?php endif; ?>
                                                 <?php if ($_SESSION['user_role'] == 'super_admin'): ?>
-                                                <button class="btn btn-sm btn-danger delete-user" data-id="<?php echo $user['id']; ?>">
-                                                    <i class="fas fa-trash"></i>
+                                                <!-- <button class="btn btn-sm btn-danger delete-user" data-id="<?php echo $user['id']; ?>">
+                                                    <i class="fas fa-trash"></i> -->
                                                 </button>
                                                 <?php endif; ?>
                                                 <?php endif; ?>
