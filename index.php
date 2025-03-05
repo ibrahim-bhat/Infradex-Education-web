@@ -101,11 +101,12 @@ session_start();
     </div>
     <?php endif; ?>
 
-    <section class="hero-section">
+    <?php include 'components/coming-soon.php'; ?>
+
+    <!-- <section class="hero-section">
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
-                    <!-- <span class="badge bg-dark mb-3">Fullstack Developer Portfolio</span> -->
                     <h1 class="display-4 fw-bold">
                         Bridge <span class="text-primary">to Academic</span><br>
                         Excellence.
@@ -130,7 +131,6 @@ session_start();
         </div>
     </section>
 
-    <!-- Countries Section -->
     <section class="countries-section py-5" data-aos="fade-up">
         <div class="container">
             <div class="section-header text-center mb-5">
@@ -143,7 +143,6 @@ session_start();
                 <div class="floating-element element-4"></div>
             </div>
             <div class="countries-grid">
-                <!-- First row - 4 countries -->
                 <div class="countries-row">
                     <div class="country-card" data-aos="flip-left" data-aos-delay="100">
                         <div class="flag-wrapper">
@@ -198,7 +197,6 @@ session_start();
                     </div>
                 </div>
 
-                <!-- Second row - 3 countries -->
                 <div class="countries-row">
                     <div class="country-card" data-aos="flip-left" data-aos-delay="500">
                         <div class="flag-wrapper">
@@ -240,7 +238,6 @@ session_start();
                     </div>
                 </div>
 
-                <!-- Third row - 1 country -->
                 <div class="countries-row">
                     <div class="country-card" data-aos="flip-left" data-aos-delay="800">
                         <div class="flag-wrapper">
@@ -259,7 +256,6 @@ session_start();
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features-section py-5" data-aos="fade-up">
         <div class="container">
             <div class="floating-elements">
@@ -267,7 +263,6 @@ session_start();
                 <div class="floating-element element-5"></div>
             </div>
             <div class="row g-4">
-                <!-- Key Statistics -->
                 <div class="col-lg-4">
                     <div class="features-grid">
                         <div class="feature-stat">
@@ -288,7 +283,6 @@ session_start();
                     </div>
                 </div>
                 
-                <!-- Key Features -->
                 <div class="col-lg-8">
                     <div class="row g-4">
                         <div class="col-md-6">
@@ -351,7 +345,6 @@ session_start();
         </div>
     </section>
 
-    <!-- Educational Packages Section -->
     <section class="subscription-section py-5">
         <div class="container">
             <div class="section-header text-center mb-5">
@@ -361,90 +354,9 @@ session_start();
             </div>
 
             <?php include 'components/coming-soon.php'; ?>
-            
-            <!-- <div class="subscription-grid">
-                <div class="subscription-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-badge">Class 1-2</div>
-                    <div class="card-header">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-child"></i>
-                        </div>
-                        <h3>Foundation Package</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">199</span>
-                            <span class="duration">/month</span>
-                        </div>
-                    </div>
-                    <div class="card-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Basic English & Mathematics</li>
-                            <li><i class="fas fa-check"></i> Interactive Learning Games</li>
-                            <li><i class="fas fa-check"></i> Parent-Teacher Meetings</li>
-                            <li><i class="fas fa-check"></i> Monthly Progress Reports</li>
-                            <li class="disabled"><i class="fas fa-times"></i> Advanced Subject Support</li>
-                            <li class="disabled"><i class="fas fa-times"></i> One-on-One Tutoring</li>
-                        </ul>
-                    </div>
-                    <button class="btn-subscribe">Enroll Now</button>
-                </div>
-
-                <div class="subscription-card featured" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-badge">Class 3-4</div>
-                    <div class="card-header">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-book-reader"></i>
-                        </div>
-                        <h3>Intermediate Package</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">299</span>
-                            <span class="duration">/month</span>
-                        </div>
-                    </div>
-                    <div class="card-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> All Core Subjects</li>
-                            <li><i class="fas fa-check"></i> Science Projects & Activities</li>
-                            <li><i class="fas fa-check"></i> Weekly Assessments</li>
-                            <li><i class="fas fa-check"></i> Digital Learning Resources</li>
-                            <li><i class="fas fa-check"></i> Group Study Sessions</li>
-                            <li><i class="fas fa-check"></i> Homework Support</li>
-                        </ul>
-                    </div>
-                    <button class="btn-subscribe">Enroll Now</button>
-                </div>
-
-                <div class="subscription-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-badge">Class 5</div>
-                    <div class="card-header">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3>Advanced Package</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">399</span>
-                            <span class="duration">/month</span>
-                        </div>
-                    </div>
-                    <div class="card-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Comprehensive Subject Coverage</li>
-                            <li><i class="fas fa-check"></i> Entrance Exam Preparation</li>
-                            <li><i class="fas fa-check"></i> One-on-One Mentoring</li>
-                            <li><i class="fas fa-check"></i> Advanced Learning Materials</li>
-                            <li><i class="fas fa-check"></i> Performance Analytics</li>
-                            <li><i class="fas fa-check"></i> Parent Counseling Sessions</li>
-                        </ul>
-                    </div>
-                    <button class="btn-subscribe">Enroll Now</button>
-                </div>
-            </div> -->
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services-section py-5">
         <div class="container">
             <div class="section-header text-center mb-5">
@@ -483,7 +395,6 @@ session_start();
         </div>
     </section>
 
-    <!-- Statistics Section -->
     <section class="stats-section py-5">
         <div class="container">
             <div class="row text-center g-4">
@@ -515,7 +426,6 @@ session_start();
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section class="testimonials-section py-5">
         <div class="container">
             <div class="section-header text-center mb-5">
@@ -539,10 +449,9 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <!-- Add more testimonial cards as needed -->
             </div>
         </div>
-    </section>
+    </section>  -->
     <?php include 'components/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
