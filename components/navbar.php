@@ -14,7 +14,7 @@
                             <span>Home</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="about.php">
                             <i class="fas fa-user"></i>
                             <span>About</span>
@@ -25,7 +25,7 @@
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
                         </a>
-                    </li>
+                    </li> -->
                     <?php if (isset($_SESSION['user_role'])): ?>
                         <?php if ($_SESSION['user_role'] == 'user'): ?>
                         <li class="nav-item">

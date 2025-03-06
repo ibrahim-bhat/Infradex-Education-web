@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // If everything is successful, commit the transaction
         $conn->commit();
         $success_message = "Account created successfully! Please login.";
-        header("refresh:2;url=login.php");
+        header("refresh:2;url=login-new.php");
 
     } catch (Exception $e) {
         // If there's an error, rollback the transaction
@@ -343,7 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
                 
                 <div class="login-link">
-                    Already have an account? <a href="login.php">Sign in</a>
+                    Already have an account? <a href="login-new.php">Sign in</a>
                 </div>
             </div>
         </div>

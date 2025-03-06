@@ -18,7 +18,7 @@
                  </div>
 
                  <!-- Quick Links -->
-                 <div class="col-lg-2 col-md-6">
+                 <!-- <div class="col-lg-2 col-md-6">
                      <div class="footer-widget">
                          <h4 class="widget-title">Quick Links</h4>
                          <ul class="footer-links">
@@ -29,10 +29,10 @@
                              <li><a href="#contact">Contact</a></li>
                          </ul>
                      </div>
-                 </div>
+                 </div> -->
 
                  <!-- Our Services -->
-                 <div class="col-lg-3 col-md-6">
+                 <!-- <div class="col-lg-3 col-md-6">
                      <div class="footer-widget">
                          <h4 class="widget-title">Our Services</h4>
                          <ul class="footer-links">
@@ -43,7 +43,7 @@
                              <li><a href="#">Immigration Services</a></li>
                          </ul>
                      </div>
-                 </div>
+                 </div> -->
 
                  <!-- Contact Info -->
                  <div class="col-lg-3 col-md-6">
@@ -103,13 +103,13 @@
                          © <?php echo date('Y'); ?> Infradex Education. All Rights Reserved.
                      </p>
                  </div>
-                 <div class="col-md-6">
+                 <!-- <div class="col-md-6">
                      <ul class="terms-links">
                          <li><a href="#">Terms & Conditions</a></li>
                          <li><a href="#">Privacy Policy</a></li>
                          <li><a href="#">FAQ</a></li>
                      </ul>
-                 </div>
+                 </div> -->
              </div>
          </div>
      </div>

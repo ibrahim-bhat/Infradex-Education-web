@@ -27,7 +27,7 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                         <i class="fas fa-th-large"></i> Dashboard
                     </a>
                 </li>
-                <li class="<?php echo $current_page === 'my-courses' ? 'active' : ''; ?>">
+                <!-- <li class="<?php echo $current_page === 'my-courses' ? 'active' : ''; ?>">
                     <a href="my-courses.php">
                         <i class="fas fa-book"></i> My Courses
                     </a>
@@ -51,7 +51,7 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                     <a href="../">
                         <i class="fas fa-arrow-left"></i> Back to Web
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
 
