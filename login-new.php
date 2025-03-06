@@ -17,7 +17,8 @@ if (isset($_SESSION['user_role'])) {
 require_once 'config/db_connect.php';
 
 // Function to send JSON response
-function sendResponse($success, $message, $redirect = '') {
+function sendResponse($success, $message, $redirect = '')
+{
     header('Content-Type: application/json');
     echo json_encode([
         'success' => $success,
@@ -34,25 +35,25 @@ try {
         }
 
         $email = $conn->real_escape_string($_POST['email']);
-        $password = $_POST['password'];
-        
+        $password   = $_POST['password'];
+
         $query = "SELECT * FROM users WHERE email = ?";
         $stmt = $conn->prepare($query);
-        
+
         if (!$stmt) {
             error_log("Prepare failed: " . $conn->error);
             sendResponse(false, 'Database error occurred.');
         }
-        
+
         $stmt->bind_param("s", $email);
-        
+
         if (!$stmt->execute()) {
             error_log("Execute failed: " . $stmt->error);
             sendResponse(false, 'Database error occurred.');
         }
-        
+
         $result = $stmt->get_result();
-        
+
         if ($result->num_rows == 1) {
             $user = $result->fetch_assoc();
             if (password_verify($password, $user['password'])) {
@@ -60,7 +61,7 @@ try {
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['full_name'] = $user['full_name'];
                 $_SESSION['user_role'] = $user['user_role'];
-                
+
                 // Role-based redirection
                 if ($user['user_role'] == 'user') {
                     $redirect = 'student-dashboard/index.php';
@@ -69,7 +70,7 @@ try {
                 } else {
                     $redirect = 'dashboard/dashboard.php';
                 }
-                
+
                 sendResponse(true, 'Login successful', $redirect);
             } else {
                 sendResponse(false, 'Invalid password!');
@@ -86,11 +87,16 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Infradex Education</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Login - InfradexEducation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
             --primary-color: #4ecdc4;
@@ -102,13 +108,20 @@ try {
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            /* box-sizing: border-box; */
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--dark-color) 0%, #1a1a1a 100%);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* padding: 20px; */
+        }
+
+        .main-content {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -140,8 +153,13 @@ try {
         }
 
         @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
         }
 
         .logo-container {
@@ -256,60 +274,66 @@ try {
         }
     </style>
 </head>
+
 <body>
-    <div class="login-container">
-        <div class="logo-container">
-            <i class="fas fa-graduation-cap"></i>
-        </div>
-        <h1>Welcome Back</h1>
-        <div class="error-message" id="errorMessage"></div>
-        
-        <form id="loginForm" method="POST">
-            <div class="form-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" placeholder="Email Address" required>
+    <div class="main-content">
+        <div class="login-container">
+            <div class="logo-container">
+                <i class="fas fa-graduation-cap"></i>
             </div>
+            <h1>Welcome Back</h1>
+            <div class="error-message" id="errorMessage"></div>
 
-            <div class="form-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password" required>
+            <form id="loginForm" method="POST">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                <button type="submit">
+                    <span>Sign In</span>
+                </button>
+            </form>
+
+            <div class="signup-link">
+                Don't have an account? <a href="signup.php">Sign up</a>
             </div>
-
-            <button type="submit">
-                <span>Sign In</span>
-            </button>
-        </form>
-        
-        <div class="signup-link">
-            Don't have an account? <a href="signup.php">Sign up</a>
         </div>
     </div>
+
+    <?php include 'components/footer.php'; ?>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const formData = new FormData(this);
             const errorMessage = document.getElementById('errorMessage');
-            
+
             fetch('', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = data.redirect;
-                } else {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = data.redirect;
+                    } else {
+                        errorMessage.style.display = 'block';
+                        errorMessage.textContent = data.message;
+                    }
+                })
+                .catch(error => {
                     errorMessage.style.display = 'block';
-                    errorMessage.textContent = data.message;
-                }
-            })
-            .catch(error => {
-                errorMessage.style.display = 'block';
-                errorMessage.textContent = 'An error occurred. Please try again.';
-            });
+                    errorMessage.textContent = 'An error occurred. Please try again.';
+                });
         });
     </script>
 </body>
-</html> 
+
+</html>

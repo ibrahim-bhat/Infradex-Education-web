@@ -76,7 +76,7 @@
      </div>
 
      <!-- Newsletter Section -->
-     <div class="footer-middle py-4">
+     <!-- <div class="footer-middle py-4">
          <div class="container">
              <div class="row align-items-center">
                  <div class="col-lg-6">
@@ -92,7 +92,7 @@
                  </div>
              </div>
          </div>
-     </div>
+     </div> -->
 
      <!-- Copyright -->
      <div class="footer-bottom py-3">
