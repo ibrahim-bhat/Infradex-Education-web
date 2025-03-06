@@ -5,7 +5,7 @@ if (isset($_SESSION['user_role'])) {
     if ($_SESSION['user_role'] == 'user') {
         header('Location: student-dashboard/index.php');
         exit();
-    } elseif ($_SESSION['user_role'] == 'ground_team') {
+    } elseif (in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management', 'ground_team'])) {
         header('Location: dashboard/userdash.php');
         exit();
     } else {
@@ -35,25 +35,25 @@ try {
         }
 
         $email = $conn->real_escape_string($_POST['email']);
-        $password   = $_POST['password'];
-
+        $password = $_POST['password'];
+        
         $query = "SELECT * FROM users WHERE email = ?";
         $stmt = $conn->prepare($query);
-
+        
         if (!$stmt) {
             error_log("Prepare failed: " . $conn->error);
             sendResponse(false, 'Database error occurred.');
         }
-
+        
         $stmt->bind_param("s", $email);
-
+        
         if (!$stmt->execute()) {
             error_log("Execute failed: " . $stmt->error);
             sendResponse(false, 'Database error occurred.');
         }
-
+        
         $result = $stmt->get_result();
-
+        
         if ($result->num_rows == 1) {
             $user = $result->fetch_assoc();
             if (password_verify($password, $user['password'])) {
@@ -61,16 +61,16 @@ try {
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['full_name'] = $user['full_name'];
                 $_SESSION['user_role'] = $user['user_role'];
-
+                
                 // Role-based redirection
                 if ($user['user_role'] == 'user') {
                     $redirect = 'student-dashboard/index.php';
-                } elseif ($user['user_role'] == 'ground_team') {
+                } elseif (in_array($user['user_role'], ['super_admin', 'admin', 'management', 'ground_team'])) {
                     $redirect = 'dashboard/userdash.php';
                 } else {
                     $redirect = 'dashboard/dashboard.php';
                 }
-
+                
                 sendResponse(true, 'Login successful', $redirect);
             } else {
                 sendResponse(false, 'Invalid password!');

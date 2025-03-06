@@ -6,8 +6,15 @@ if (!isset($_SESSION['user_role'])) {
 }
 
 require_once '../config/db_connect.php';
+require_once '../includes/access_control.php';
 
 $user_id = $_SESSION['user_id'];
+
+// Define allowed roles for this page
+$allowed_roles = ['super_admin', 'admin', 'management', 'ground_team'];
+
+// Check if user has access
+checkUserAccess($allowed_roles);
 
 // Get user details
 $user_query = "SELECT * FROM users WHERE id = ?";
