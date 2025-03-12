@@ -111,9 +111,9 @@ $total_pages = ceil($total_students / $per_page);
                                                         data-bs-target="#viewStudentModal">
                                                     <i class="fas fa-eye"></i>
                                                 </button>
-                                                <button class="btn btn-warning btn-sm">
+                                                <a href="edit-student.php?id=<?php echo $student['id']; ?>" class="btn btn-warning btn-sm">
                                                     <i class="fas fa-edit"></i>
-                                                </button>
+                                                </a>
                                                 <!-- <button class="btn btn-danger btn-sm">
                                                     <i class="fas fa-trash"></i>
                                                 </button> -->

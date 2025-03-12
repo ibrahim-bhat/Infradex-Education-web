@@ -32,7 +32,7 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                         <i class="fas fa-graduation-cap"></i> Scholarships
                     </a>
                 </li>
-                <!-- <li class="<?php echo $current_page === 'my-courses' ? 'active' : ''; ?>">
+                <li class="<?php echo $current_page === 'my-courses' ? 'active' : ''; ?>">
                     <a href="my-courses.php">
                         <i class="fas fa-book"></i> My Courses
                     </a>
@@ -56,7 +56,7 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                     <a href="../">
                         <i class="fas fa-arrow-left"></i> Back to Web
                     </a>
-                </li> -->
+                </li>
                 <li class="logout-item">
                     <a href="logout.php" class="logout-link">
                         <i class="fas fa-sign-out-alt"></i> Logout
