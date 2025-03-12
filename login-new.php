@@ -281,7 +281,7 @@ try {
             <div class="logo-container">
                 <i class="fas fa-graduation-cap"></i>
             </div>
-            <h1>Welcome Back</h1>
+            <h1> Infradex Edu</h1>
             <div class="error-message" id="errorMessage"></div>
 
             <form id="loginForm" method="POST">
@@ -306,7 +306,6 @@ try {
         </div>
     </div>
 
-    <?php include 'components/footer.php'; ?>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {

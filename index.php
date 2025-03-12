@@ -1,7 +1,7 @@
 <?php
 session_start();
-header("Location: login-new.php");
-exit();
+// header("Location: login-new.php");
+// exit();
 ?>
 <!DOCTYPE html>
 <html lang="en">

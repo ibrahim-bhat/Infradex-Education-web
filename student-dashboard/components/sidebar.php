@@ -27,6 +27,11 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                         <i class="fas fa-th-large"></i> Dashboard
                     </a>
                 </li>
+                <li class="<?php echo $current_page === 'scholarship' ? 'active' : ''; ?>">
+                    <a href="scholarship.php">
+                        <i class="fas fa-graduation-cap"></i> Scholarships
+                    </a>
+                </li>
                 <!-- <li class="<?php echo $current_page === 'my-courses' ? 'active' : ''; ?>">
                     <a href="my-courses.php">
                         <i class="fas fa-book"></i> My Courses
@@ -52,6 +57,11 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                         <i class="fas fa-arrow-left"></i> Back to Web
                     </a>
                 </li> -->
+                <li class="logout-item">
+                    <a href="logout.php" class="logout-link">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -66,3 +76,30 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
         </div>
     </div>
 </aside>
+
+<style>
+.logout-item {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-link {
+    color: #dc3545 !important;
+    transition: all 0.3s ease;
+}
+
+.logout-link:hover {
+    background: rgba(220, 53, 69, 0.1) !important;
+    color: #dc3545 !important;
+}
+
+.logout-link i {
+    color: #dc3545 !important;
+}
+
+.sidebar-nav ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+</style>
