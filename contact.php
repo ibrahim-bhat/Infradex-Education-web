@@ -26,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
 
         $success_message = "Thank you! Your message has been sent successfully.";
-
     } catch (Exception $e) {
         error_log("Contact form error: " . $e->getMessage());
         $error_message = "Sorry, there was an error sending your message. Please try again later.";
@@ -96,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                 </div>
 
-                <div class="col-lg-6" data-aos="fade-left">
+                <!-- <div class="col-lg-6" data-aos="fade-left">
                     <div class="contact-form-wrapper">
                         <?php if ($success_message): ?>
                             <div class="alert alert-success">
@@ -129,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <button type="submit" class="btn btn-primary w-100">Send Message</button>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -141,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="map-overlay">
                     <div class="overlay-content">
                         <h3>Visit Our Office</h3>
-                        <p>123 Education Street, Suite 500<br>New York, NY 10001</p>
+                        <p>Sallar Complex ,Saraibal Srinagar, J&K 190001</p>
                         <button class="btn btn-primary btn-view-map">
                             <i class="fas fa-map-marked-alt"></i> View Full Map
                         </button>
@@ -149,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="map-frame">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25436351647!2d-74.11976404950947!3d40.69767006825552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1647627124741!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3414.407294873247!2d74.80368429293176!3d34.07032743565013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f00265cd1f3%3A0xd3b3d6c60aadcb5a!2sInfradex%20education!5e0!3m2!1sen!2sin!4v1741862204586!5m2!1sen!2sin"
                         width="100%"
                         height="450"
                         style="border:0;"

@@ -24,11 +24,10 @@
                  <div class="col-lg-6" data-aos="fade-right">
                      <span class="badge bg-primary mb-3">Our Story</span>
                      <h1 class="display-4 fw-bold mb-4">Transforming Education Through Innovation</h1>
-                     <p class="lead text-muted">Since 2010, we've been helping students achieve their academic dreams through expert guidance and comprehensive support.</p>
-                     <div class="mt-5 d-flex gap-3">
-                         <button class="btn btn-primary btn-lg">Our Services</button>
-                         <button class="btn btn-outline-light btn-lg">Meet Our Team</button>
-                     </div>
+                     <p class="lead text-muted">Smooth , Successful and Stress-Free Admission process all over the globe . This is our commitment to our students . At Infradex Education we not only provide guidance but we believe in setting examples</p>
+                     <!-- <div class="mt-5 d-flex gap-3">
+                         <button id="ourteam" class="btn btn-outline-light btn-lg">Meet Our Team</button>
+                     </div> -->
                  </div>
                  <div class="col-lg-6" data-aos="fade-left">
                      <div class="about-image-grid">
@@ -91,29 +90,25 @@
                  <div class="timeline-item" data-aos="fade-right">
                      <div class="timeline-dot"></div>
                      <div class="timeline-content">
-                         <h3>2010</h3>
-                         <p>Founded with a vision to transform education consulting</p>
+                         <p>Lack ofaccess to reliable information </p>
                      </div>
                  </div>
                  <div class="timeline-item" data-aos="fade-left">
                      <div class="timeline-dot"></div>
                      <div class="timeline-content">
-                         <h3>2015</h3>
-                         <p>Expanded to 10+ countries with 500+ successful placements</p>
+                         <p>Complex Admission process and financial uncertainties</p>
                      </div>
                  </div>
                  <div class="timeline-item" data-aos="fade-right">
                      <div class="timeline-dot"></div>
                      <div class="timeline-content">
-                         <h3>2018</h3>
-                         <p>Launched innovative digital counseling platform</p>
+                         <p>Such problems are faced by students and their parents</p>
                      </div>
                  </div>
                  <div class="timeline-item" data-aos="fade-left">
                      <div class="timeline-dot"></div>
                      <div class="timeline-content">
-                         <h3>2023</h3>
-                         <p>Achieved milestone of 10,000+ successful student placements</p>
+                         <p>Once we indentified the problem the emergence and rise of infradex Education began</p>
                      </div>
                  </div>
              </div>
@@ -129,19 +124,131 @@
                      <div class="team-card">
                          <div class="team-image">
                              <img src="./images/team1.jpg" alt="Team Member">
-                             <div class="social-overlay">
+                             <!-- <div class="social-overlay">
                                  <a href="#"><i class="fab fa-linkedin"></i></a>
                                  <a href="#"><i class="fab fa-twitter"></i></a>
                                  <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div>
+                             </div> -->
                          </div>
                          <div class="team-info">
-                             <h4>John Doe</h4>
+                             <h4>Dawood </h4>
                              <p>CEO & Founder</p>
                          </div>
                      </div>
                  </div>
-                 <!-- Add more team members similarly -->
+                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                     <div class="team-card">
+                         <div class="team-image">
+                             <img src="./images/team1.jpg" alt="Team Member">
+                             <!-- <div class="social-overlay">
+                                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fas fa-envelope"></i></a>
+                             </div> -->
+                         </div>
+                         <div class="team-info">
+                             <h4>Basit </h4>
+                             <p>CO-Founder</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                     <div class="team-card">
+                         <div class="team-image">
+                             <img src="./images/team1.jpg" alt="Team Member">
+                             <!-- <div class="social-overlay">
+                                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fas fa-envelope"></i></a>
+                             </div> -->
+                         </div>
+                         <div class="team-info">
+                             <h4>Haroon </h4>
+                             <p>General Manager</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                     <div class="team-card">
+                         <div class="team-image">
+                             <img src="./images/team1.jpg" alt="Team Member">
+                             <!-- <div class="social-overlay">
+                                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fas fa-envelope"></i></a>
+                             </div> -->
+                         </div>
+                         <div class="team-info">
+                             <h4>Tabish Aga </h4>
+                             <p>HR</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                     <div class="team-card">
+                         <div class="team-image">
+                             <img src="./images/team1.jpg" alt="Team Member">
+                             <!-- <div class="social-overlay">
+                                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fas fa-envelope"></i></a>
+                             </div> -->
+                         </div>
+                         <div class="team-info">
+                             <h4>Naveed </h4>
+                             <p>Content Writer</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                     <div class="team-card">
+                         <div class="team-image">
+                             <img src="./images/team1.jpg" alt="Team Member">
+                             <!-- <div class="social-overlay">
+                                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fas fa-envelope"></i></a>
+                             </div> -->
+                         </div>
+                         <div class="team-info">
+                             <h4>Moomin </h4>
+                             <p>Cinematographer</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                     <div class="team-card">
+                         <div class="team-image">
+                             <img src="./images/team1.jpg" alt="Team Member">
+                             <!-- <div class="social-overlay">
+                                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fas fa-envelope"></i></a>
+                             </div> -->
+                         </div>
+                         <div class="team-info">
+                             <h4>Junaid </h4>
+                             <p>Vedio Editor</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                     <div class="team-card">
+                         <div class="team-image">
+                             <img src="./images/team1.jpg" alt="Team Member">
+                             <!-- <div class="social-overlay">
+                                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fas fa-envelope"></i></a>
+                             </div> -->
+                         </div>
+                         <div class="team-info">
+                             <h4>Ibrahim </h4>
+                             <p>Software Developer</p>
+                         </div>
+                     </div>
+                 </div>
+
              </div>
          </div>
      </section>

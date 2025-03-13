@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="./images/eee.png" alt="Logo" class="logo">
@@ -9,12 +9,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">
+                        <a class="nav-link" href="https://infradexedu.in">
                             <i class="fas fa-home"></i>
                             <span>Home</span>
                         </a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="about.php">
                             <i class="fas fa-user"></i>
                             <span>About</span>
@@ -25,42 +25,19 @@
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
                         </a>
-                    </li> -->
-                    <?php if (isset($_SESSION['user_role'])): ?>
-                        <?php if ($_SESSION['user_role'] == 'user'): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="student-dashboard/index.php">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="dashboard/userdash.php">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <?php endif; ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-                    <?php else: ?>
-                        <li class="nav-item">
-                            <button class="btn btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </button>
-                        </li>
-                    <?php endif; ?>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login-new.php">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login/Dashboard</span>
+                        </a>
+                    </li>
                 </ul>
-                <div class="social-icons">
+                <!-- <div class="social-icons">
                     <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
+                </div> -->
             </div>
         </div>
     </nav>
