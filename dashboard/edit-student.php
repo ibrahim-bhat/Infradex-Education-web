@@ -44,36 +44,66 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pincode = trim($_POST['pincode']);
     $colony = trim($_POST['colony']);
 
-    // Update student data
-    $update_sql = "UPDATE students SET 
-        full_name = ?,
-        email = ?,
-        phone_number = ?,
-        class = ?,
-        date_of_birth = ?,
-        gender = ?,
-        parent_name = ?,
-        parent_phone = ?,
-        city = ?,
-        state = ?,
-        pincode = ?,
-        colony = ?,
-        updated_at = CURRENT_TIMESTAMP,
-        updated_by = ?
-        WHERE id = ?";
+    // Basic validation
+    $errors = array();
+    
+    if(empty($full_name)) {
+        $errors[] = "Full name is required";
+    }
+    if(empty($email)) {
+        $errors[] = "Email is required";
+    }
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format";
+    }
+    if(!preg_match("/^\d{10}$/", $phone_number)) {
+        $errors[] = "Phone number must be 10 digits";
+    }
+    if(!preg_match("/^\d{10}$/", $parent_phone)) {
+        $errors[] = "Parent phone number must be 10 digits";
+    }
+    if(!preg_match("/^\d{6}$/", $pincode)) {
+        $errors[] = "Pincode must be 6 digits";
+    }
 
-    $update_stmt = $conn->prepare($update_sql);
-    $update_stmt->bind_param("ssssssssssssii", 
-        $full_name, $email, $phone_number, $class, $dob, $gender,
-        $parent_name, $parent_phone, $city, $state, $pincode, $colony,
-        $_SESSION['user_id'], $student_id
-    );
+    if(empty($errors)) {
+        try {
+            // Update student data
+            $update_sql = "UPDATE students SET 
+                full_name = ?,
+                email = ?,
+                phone_number = ?,
+                class = ?,
+                dob = ?,
+                gender = ?,
+                parent_name = ?,
+                parent_phone = ?,
+                city = ?,
+                state = ?,
+                pincode = ?,
+                colony = ?,
+                updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?";
 
-    if ($update_stmt->execute()) {
-        header("Location: students.php?success=Student updated successfully");
-        exit();
+            $update_stmt = $conn->prepare($update_sql);
+            $update_stmt->bind_param("ssssssssssssi", 
+                $full_name, $email, $phone_number, $class, $dob, $gender,
+                $parent_name, $parent_phone, $city, $state, $pincode, $colony,
+                $student_id
+            );
+
+            if ($update_stmt->execute()) {
+                $_SESSION['success_msg'] = "Student updated successfully";
+                header("Location: students.php");
+                exit();
+            } else {
+                $error = "Error updating student information: " . $conn->error;
+            }
+        } catch (Exception $e) {
+            $error = "Error updating student: " . $e->getMessage();
+        }
     } else {
-        $error = "Error updating student information";
+        $error = implode("<br>", $errors);
     }
 }
 ?>
@@ -188,7 +218,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                         <?php endif; ?>
 
-                        <form method="POST" action="">
+                        <form method="POST" action="" id="editStudentForm">
                             <!-- Personal Information -->
                             <div class="form-section">
                                 <h2 class="section-title">Personal Information</h2>
@@ -222,7 +252,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <div class="col-md-6">
                                         <label for="dob" class="form-label">Date of Birth</label>
                                         <input type="date" class="form-control" id="dob" name="dob" 
-                                               value="<?php echo htmlspecialchars($student['date_of_birth']); ?>" required>
+                                               value="<?php echo htmlspecialchars($student['dob']); ?>" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="gender" class="form-label">Gender</label>
@@ -296,15 +326,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Form validation
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.getElementById('editStudentForm').addEventListener('submit', function(e) {
             const phoneRegex = /^\d{10}$/;
             const pincodeRegex = /^\d{6}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             
             const phone = document.getElementById('phone_number').value;
             const parentPhone = document.getElementById('parent_phone').value;
             const pincode = document.getElementById('pincode').value;
+            const email = document.getElementById('email').value;
 
             let errors = [];
+
+            if (!emailRegex.test(email)) {
+                errors.push('Please enter a valid email address');
+            }
 
             if (!phoneRegex.test(phone)) {
                 errors.push('Student phone number must be 10 digits');
