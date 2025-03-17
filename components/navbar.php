@@ -1,7 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./images/eee.png" alt="Logo" class="logo">
+                <?php
+                $basePath = '';
+                if (strpos($_SERVER['REQUEST_URI'], '/usp/countries-college') !== false) {
+                    $basePath = '../../';
+                } else if (strpos($_SERVER['REQUEST_URI'], '/usp') !== false) {
+                    $basePath = '../';
+                }
+                ?>
+                <img src="<?php echo $basePath; ?>images/eee.png" alt="Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -15,19 +23,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">
+                        <a class="nav-link" href="<?php echo $basePath; ?>about.php">
                             <i class="fas fa-user"></i>
                             <span>About</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">
+                        <a class="nav-link" href="<?php echo $basePath; ?>contact.php">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login-new.php">
+                        <a class="nav-link" href="<?php echo $basePath; ?>login-new.php">
                             <i class="fas fa-sign-in-alt"></i>
                             <span>Login/Dashboard</span>
                         </a>

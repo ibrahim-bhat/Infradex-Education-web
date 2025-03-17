@@ -6,13 +6,20 @@
                  <!-- Company Info -->
                  <div class="col-lg-4 col-md-6">
                      <div class="footer-widget">
-                         <img src="./images/eee.png" alt="Logo" class="footer-logo mb-4" width="150">
+                         <?php
+                         $basePath = '';
+                         if (strpos($_SERVER['REQUEST_URI'], '/usp/countries-college') !== false) {
+                             $basePath = '../../';
+                         } else if (strpos($_SERVER['REQUEST_URI'], '/usp') !== false) {
+                             $basePath = '../';
+                         }
+                         ?>
+                         <img src="<?php echo $basePath; ?>images/eee.png" alt="Logo" class="footer-logo mb-4" width="150">
                          <p class="mb-4">Empowering students to achieve their academic dreams through expert guidance and comprehensive support in international education.</p>
                          <div class="social-links">
-                             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                             <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                             <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                             <a href="https://www.facebook.com/profile.php?id=61560267472000" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                             <a href="https://www.instagram.com/infradexeducation?igsh=MWM2c2t6cHVoYnQ4aA==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                             <a href="http://www.youtube.com/@Infradexeducation" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
                          </div>
                      </div>
                  </div>
@@ -22,11 +29,11 @@
                      <div class="footer-widget">
                          <h4 class="widget-title">Quick Links</h4>
                          <ul class="footer-links">
-                             <li><a href="#home">Home</a></li>
-                             <li><a href="#about">About Us</a></li>
-                             <li><a href="#services">Services</a></li>
-                             <li><a href="#testimonials">Testimonials</a></li>
-                             <li><a href="#contact">Contact</a></li>
+                             <li><a href="<?php echo $basePath; ?>#home">Home</a></li>
+                             <li><a href="<?php echo $basePath; ?>#about">About Us</a></li>
+                             <li><a href="<?php echo $basePath; ?>#services">Services</a></li>
+                             <li><a href="<?php echo $basePath; ?>#testimonials">Testimonials</a></li>
+                             <li><a href="<?php echo $basePath; ?>#contact">Contact</a></li>
                          </ul>
                      </div>
                  </div>
@@ -36,11 +43,11 @@
                      <div class="footer-widget">
                          <h4 class="widget-title">Our Services</h4>
                          <ul class="footer-links">
-                             <li><a href="#">5D Career Counseling</a></li>
-                             <li><a href="#">University Admissions</a></li>
-                             <li><a href="#">Visa Assistance</a></li>
-                             <li><a href="#">Test Preparation</a></li>
-                             <li><a href="#">Immigration Services</a></li>
+                             <li><a href="<?php echo $basePath; ?>#">5D Career Counseling</a></li>
+                             <li><a href="<?php echo $basePath; ?>#">University Admissions</a></li>
+                             <li><a href="<?php echo $basePath; ?>#">Visa Assistance</a></li>
+                             <li><a href="<?php echo $basePath; ?>#">Test Preparation</a></li>
+                             <li><a href="<?php echo $basePath; ?>#">Immigration Services</a></li>
                          </ul>
                      </div>
                  </div>
@@ -100,14 +107,14 @@
              <div class="row align-items-center">
                  <div class="col-md-6">
                      <p class="mb-md-0 text-center text-md-start">
-                         © <?php echo date('Y'); ?> Infradex Education. All Rights Reserved.
+                         © <?php echo date('Y'); ?> Infradex Education. All Rights Reserved. | Developed by <a href="https://ibrahimbhat.com" target="_blank">Ibrahim</a>
                      </p>
                  </div>
                  <div class="col-md-6">
                      <ul class="terms-links">
-                         <li><a href="#">Terms & Conditions</a></li>
-                         <li><a href="#">Privacy Policy</a></li>
-                         <li><a href="#">FAQ</a></li>
+                         <li><a href="<?php echo $basePath; ?>#">Terms & Conditions</a></li>
+                         <li><a href="<?php echo $basePath; ?>#">Privacy Policy</a></li>
+                         <li><a href="<?php echo $basePath; ?>#">FAQ</a></li>
                      </ul>
                  </div>
              </div>

@@ -19,22 +19,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                     verified_by = ?, 
                     verification_date = NOW(),
                     notes = ?
-                    WHERE id = ?";
+                    WHERE id = ?";  
 
     $stmt = $conn->prepare($update_query);
     $stmt->bind_param("iiss", $verified, $_SESSION['user_id'], $notes, $doc_id);
     $stmt->execute();
 }
 
-// Fetch all student documents with user information
-$query = "SELECT sd.*, u.full_name as student_name, u.email as student_email,
+// Fetch all student documents with student information
+$query = "SELECT sd.*, s.full_name as student_name, s.email as student_email,
           v.full_name as verifier_name
           FROM student_documents sd
-          LEFT JOIN users u ON sd.user_id = u.id
+          LEFT JOIN students s ON sd.user_id = s.id 
           LEFT JOIN users v ON sd.verified_by = v.id
           ORDER BY sd.upload_date DESC";
 
 $result = $conn->query($query);
+
+if (!$result) {
+    die("Error fetching documents: " . $conn->error);
+}
 ?>
 
 <!DOCTYPE html>

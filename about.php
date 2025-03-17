@@ -1,289 +1,219 @@
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>About Us - InfradexEducation</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-     <link href="./css/styles.css" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
- </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - InfradexEducation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
 
- <body>
-     <div class="scanlines"></div>
-     <?php include 'components/navbar.php'; ?>
+<body>
+    <div class="scanlines"></div>
+    <?php include 'components/navbar.php'; ?>
 
+    <!-- Hero Section -->
+    <section class="about-hero-section">
+        <div class="container">
+            <div class="row align-items-center pt-5 pb-3">
+                <div class="col-lg-6">
+                    <span class="badge bg-primary mb-3">Our Story</span>
+                    <h1 class="display-4 fw-bold mb-4 text-white">From Challenges to Change</h1>
+                    <p class="lead mb-4">The birth of Infradex Education was not just a business idea—it was a mission. A mission to change lives and bring hope to students who feel lost in the maze of education.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="video-container">
+                        <video autoplay muted loop playsinline class="hero-video w-100 rounded shadow">
+                            <source src="./images/saturn.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-     <!-- Hero Section -->
-     <section class="about-hero-section">
-         <div class="container">
-             <div class="row align-items-center min-vh-100">
-                 <div class="col-lg-6" data-aos="fade-right">
-                     <span class="badge bg-primary mb-3">Our Story</span>
-                     <h1 class="display-4 fw-bold mb-4">Transforming Education Through Innovation</h1>
-                     <p class="lead text-muted">Smooth , Successful and Stress-Free Admission process all over the globe . This is our commitment to our students . At Infradex Education we not only provide guidance but we believe in setting examples</p>
-                     <!-- <div class="mt-5 d-flex gap-3">
-                         <button id="ourteam" class="btn btn-outline-light btn-lg">Meet Our Team</button>
-                     </div> -->
-                 </div>
-                 <div class="col-lg-6" data-aos="fade-left">
-                     <div class="about-image-grid">
-                         <div class="grid-item item1">
-                             <img src="./images/about1.jpg" alt="Students">
-                         </div>
-                         <div class="grid-item item2">
-                             <img src="./images/about2.jpg" alt="Campus">
-                         </div>
-                         <div class="grid-item item3">
-                             <img src="./images/about3.jpg" alt="Library">
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
+    <!-- Our Journey Section -->
+    <section class="journey-section py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="journey-content">
+                        <p class="mb-3">For years, we saw bright, ambitious students struggle—not because they lacked potential, but because they lacked access to reliable information, expert guidance, and financial clarity. Many students and their parents found themselves trapped in confusion, unsure of where to begin, which university to choose, and how to manage expenses.</p>
+                        <p class="mb-3">We knew something had to change.</p>
+                        <p class="mb-3">That's when Infradex Education was born to bridge this gap, break down barriers, and make quality education accessible to students from all backgrounds. What started as a vision has now grown into a trusted platform that has helped countless students achieve their dreams of studying at top universities worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-     <!-- Mission Vision Section -->
-     <section class="mission-vision-section py-5">
-         <div class="container">
-             <div class="row g-4">
-                 <div class="col-md-6" data-aos="fade-up">
-                     <div class="mission-card">
-                         <div class="card-icon">
-                             <i class="fas fa-rocket"></i>
-                         </div>
-                         <h3>Our Mission</h3>
-                         <p>To empower students with knowledge and guidance, helping them make informed decisions about their academic future and achieve their educational goals.</p>
-                         <ul class="mission-points">
-                             <li><i class="fas fa-check-circle"></i> Quality Education Guidance</li>
-                             <li><i class="fas fa-check-circle"></i> Student-Centric Approach</li>
-                             <li><i class="fas fa-check-circle"></i> Global Educational Network</li>
-                         </ul>
-                     </div>
-                 </div>
-                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                     <div class="vision-card">
-                         <div class="card-icon">
-                             <i class="fas fa-eye"></i>
-                         </div>
-                         <h3>Our Vision</h3>
-                         <p>To be the leading global education consultant, creating pathways for students to access quality education worldwide.</p>
-                         <ul class="vision-points">
-                             <li><i class="fas fa-star"></i> International Recognition</li>
-                             <li><i class="fas fa-star"></i> Innovation in Education</li>
-                             <li><i class="fas fa-star"></i> Student Success Stories</li>
-                         </ul>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
+    <!-- Success Pillars Section -->
+    <section class="success-pillars-section py-3">
+        <div class="container">
+            <h2 class="text-center mb-4 text-white">Our Definition of Success</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="pillar-card">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Knowledge Empowerment</h4>
+                        <p>Empowering students with knowledge so they can make the best choices for their future.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pillar-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Emotional Support</h4>
+                        <p>Providing emotional and moral support because we understand that the journey isn't just academic—it's personal.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pillar-card">
+                        <div class="card-icon">
+                            <i class="fas fa-hand-holding-dollar"></i>
+                        </div>
+                        <h4>Financial Guidance</h4>
+                        <p>Guiding families through financial uncertainties with transparent advice on scholarships, loans, and funding opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pillar-card">
+                        <div class="card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Milestone Celebration</h4>
+                        <p>Celebrating every milestone from application start to university admission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-     <!-- Timeline Section -->
-     <section class="timeline-section py-5">
-         <div class="container">
-             <h2 class="text-center mb-5" data-aos="fade-up">Our Journey</h2>
-             <div class="timeline">
-                 <div class="timeline-item" data-aos="fade-right">
-                     <div class="timeline-dot"></div>
-                     <div class="timeline-content">
-                         <p>Lack ofaccess to reliable information </p>
-                     </div>
-                 </div>
-                 <div class="timeline-item" data-aos="fade-left">
-                     <div class="timeline-dot"></div>
-                     <div class="timeline-content">
-                         <p>Complex Admission process and financial uncertainties</p>
-                     </div>
-                 </div>
-                 <div class="timeline-item" data-aos="fade-right">
-                     <div class="timeline-dot"></div>
-                     <div class="timeline-content">
-                         <p>Such problems are faced by students and their parents</p>
-                     </div>
-                 </div>
-                 <div class="timeline-item" data-aos="fade-left">
-                     <div class="timeline-dot"></div>
-                     <div class="timeline-content">
-                         <p>Once we indentified the problem the emergence and rise of infradex Education began</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
+    <!-- Closing Message Section -->
+    <section class="closing-message-section ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="message-content">
+                        <p class="lead mb-3">Today, as we look back at our journey, we are filled with pride, not just for the students we have helped but for the dreams we have turned into reality.</p>
+                        <p class="lead mb-3">If you have a dream, you are not alone. We are here to guide you, support you, and ensure that no obstacle stands in the way of your success.</p>
+                        <p class="lead fw-bold text-white">Your journey begins here, and we are honored to be a part of it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-     <!-- Team Section -->
-     <section class="team-section py-5">
-         <div class="container">
-             <h2 class="text-center mb-5" data-aos="fade-up">Meet Our Team</h2>
-             <div class="row g-4">
-                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/team1.jpg" alt="Team Member">
-                             <!-- <div class="social-overlay">
-                                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div> -->
-                         </div>
-                         <div class="team-info">
-                             <h4>Dawood </h4>
-                             <p>CEO & Founder</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/team1.jpg" alt="Team Member">
-                             <!-- <div class="social-overlay">
-                                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div> -->
-                         </div>
-                         <div class="team-info">
-                             <h4>Basit </h4>
-                             <p>CO-Founder</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/team1.jpg" alt="Team Member">
-                             <!-- <div class="social-overlay">
-                                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div> -->
-                         </div>
-                         <div class="team-info">
-                             <h4>Haroon </h4>
-                             <p>General Manager</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/team1.jpg" alt="Team Member">
-                             <!-- <div class="social-overlay">
-                                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div> -->
-                         </div>
-                         <div class="team-info">
-                             <h4>Tabish Aga </h4>
-                             <p>HR</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/team1.jpg" alt="Team Member">
-                             <!-- <div class="social-overlay">
-                                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div> -->
-                         </div>
-                         <div class="team-info">
-                             <h4>Naveed </h4>
-                             <p>Content Writer</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/team1.jpg" alt="Team Member">
-                             <!-- <div class="social-overlay">
-                                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div> -->
-                         </div>
-                         <div class="team-info">
-                             <h4>Moomin </h4>
-                             <p>Cinematographer</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/team1.jpg" alt="Team Member">
-                             <!-- <div class="social-overlay">
-                                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div> -->
-                         </div>
-                         <div class="team-info">
-                             <h4>Junaid </h4>
-                             <p>Vedio Editor</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/team1.jpg" alt="Team Member">
-                             <!-- <div class="social-overlay">
-                                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-envelope"></i></a>
-                             </div> -->
-                         </div>
-                         <div class="team-info">
-                             <h4>Ibrahim </h4>
-                             <p>Software Developer</p>
-                         </div>
-                     </div>
-                 </div>
+    <!-- Team Section -->
+    <section class="team-section py-3">
+        <div class="container">
+            <h2 class="text-center mb-4 text-white">Meet Our Team</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="./images/team1.jpg" alt="Team Member">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="text-white">Dawood </h4>
+                            <p>CEO & Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="./images/team1.jpg" alt="Team Member">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="text-white">Basit </h4>
+                            <p>CO-Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="./images/team1.jpg" alt="Team Member">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="text-white">Haroon </h4>
+                            <p>General Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="./images/team1.jpg" alt="Team Member">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="text-white">Tabish Aga </h4>
+                            <p>HR</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="./images/team1.jpg" alt="Team Member">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="text-white">Naveed </h4>
+                            <p>Content Writer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="./images/team1.jpg" alt="Team Member">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="text-white">Moomin </h4>
+                            <p>Cinematographer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="./images/team1.jpg" alt="Team Member">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="text-white">Junaid </h4>
+                            <p>Video Editor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="./images/team1.jpg" alt="Team Member">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="text-white">Ibrahim </h4>
+                            <p>Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-             </div>
-         </div>
-     </section>
+    <footer class="footer-section">
+        <?php include 'components/footer.php'; ?>
+    </footer>
 
-     <!-- Values Section -->
-     <section class="values-section py-5">
-         <div class="container">
-             <h2 class="text-center mb-5" data-aos="fade-up">Our Core Values</h2>
-             <div class="values-grid">
-                 <div class="value-card" data-aos="zoom-in">
-                     <div class="value-icon">
-                         <i class="fas fa-heart"></i>
-                     </div>
-                     <h4>Integrity</h4>
-                     <p>We maintain the highest standards of honesty and transparency in all our dealings.</p>
-                 </div>
-                 <!-- Add more value cards -->
-             </div>
-         </div>
-     </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/navbar-scroll.js"></script>
+</body>
 
-     <!-- Footer -->
-     <footer class="footer-section">
-         <?php include 'components/footer.php'; ?>
-     </footer>
-
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script>
-         AOS.init({
-             duration: 1000,
-             once: true,
-             offset: 100
-         });
-     </script>
- </body>
-
- </html>
+</html>

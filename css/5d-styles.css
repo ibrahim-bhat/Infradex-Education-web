@@ -1,0 +1,107 @@
+.five-d-section {
+    padding: 80px 0;
+    /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
+}
+
+.five-d-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.five-d-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.five-d-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.section-title {
+    /* color: #2c3e50; */
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dimension-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.dimension-card:hover {
+    transform: translateY(-5px);
+}
+
+.dimension-card h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.dimension-card p {
+    color: #596575;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.feature-list li {
+    color: #596575;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.feature-list li:before {
+    content: "•";
+    color: #3498db;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.dimension-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.academic-icon { color: #e74c3c; }
+.mental-icon { color: #2ecc71; }
+.financial-icon { color: #f1c40f; }
+.passion-icon { color: #9b59b6; }
+.empowerment-icon { color: #3498db; }
+
+@media (max-width: 768px) {
+    .five-d-header h2 {
+        font-size: 2rem;
+    }
+    
+    .dimension-card {
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+} 

@@ -124,5 +124,40 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </ul>
             </div>
         <?php endif; ?>
+
+        <div class="nav-section">
+            <h6 class="nav-section-title">CONTENT MANAGEMENT</h6>
+            <ul>
+                <li class="<?php echo in_array($current_page, ['blog-posts.php', 'add-blog-post.php', 'blog-categories.php']) ? 'active' : ''; ?>">
+                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapseBlog" aria-expanded="false">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Management</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <div id="collapseBlog" class="collapse">
+                        <ul class="sub-menu">
+                            <li class="<?php echo $current_page == 'blog-posts.php' ? 'active' : ''; ?>">
+                                <a href="blog-posts.php">
+                                    <i class="fas fa-list-alt"></i>
+                                    <span>All Posts</span>
+                                </a>
+                            </li>
+                            <li class="<?php echo $current_page == 'add-blog-post.php' ? 'active' : ''; ?>">
+                                <a href="add-blog-post.php">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Add New Post</span>
+                                </a>
+                            </li>
+                            <li class="<?php echo $current_page == 'blog-categories.php' ? 'active' : ''; ?>">
+                                <a href="blog-categories.php">
+                                    <i class="fas fa-tags"></i>
+                                    <span>Categories</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
 </div>

@@ -103,11 +103,12 @@ body {
         height: 40px;
     }
 .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(128, 0, 255, 0.1);
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(128, 0, 255, 0.2);
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-section {
@@ -2036,10 +2037,10 @@ section {
 
 /* About Page Styles */
 .about-hero-section {
-    padding-top: 100px;
+    padding-top: 80px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(45deg, #000000, #0a0a14);
+    background: #06060d;
 }
 
 .about-image-grid {
@@ -2304,4 +2305,324 @@ section {
     .about-image-grid {
         height: 250px;
     }
+}
+
+/* About Page Specific Styles */
+.about-hero-section {
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #000000, #0a0a14);
+}
+
+.about-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(138, 43, 226, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.journey-section {
+    background: linear-gradient(45deg, #000000, #0a0a14);
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.journey-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(128, 0, 255, 0.1), transparent 70%),
+        radial-gradient(circle at 70% 70%, rgba(74, 0, 224, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.journey-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.journey-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    /* margin-bottom: 2rem; */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.success-pillars-section {
+    background: linear-gradient(45deg, #000000, #0a0a14);
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.success-pillars-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(128, 0, 255, 0.15), transparent 70%),
+        radial-gradient(circle at 80% 80%, rgba(74, 0, 224, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.pillar-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 0, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(128, 0, 255, 0.1), rgba(74, 0, 224, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(128, 0, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(128, 0, 255, 0.15);
+}
+
+.pillar-card:hover::before {
+    opacity: 1;
+}
+
+.pillar-card .card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, rgba(128, 0, 255, 0.2), rgba(74, 0, 224, 0.2));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.pillar-card .card-icon i {
+    font-size: 1.8rem;
+    color: #8a2be2;
+    filter: drop-shadow(0 0 10px rgba(128, 0, 255, 0.5));
+}
+
+.pillar-card h4 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.pillar-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.closing-message-section {
+    background: linear-gradient(45deg, #000000, #0a0a14);
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.closing-message-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(128, 0, 255, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.message-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.message-content .lead {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.message-content .lead.fw-bold {
+    color: white;
+}
+
+/* About Page Responsive Styles */
+@media (max-width: 768px) {
+    .journey-content p {
+        font-size: 1rem;
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    .pillar-card {
+        padding: 20px;
+    }
+
+    .pillar-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .message-content {
+        padding: 0 20px;
+    }
+
+    .message-content .lead {
+        font-size: 1rem;
+    }
+}
+
+/* About Image Grid Styles */
+.about-image-grid {
+    position: relative;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    perspective: 1000px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    border: 1px solid rgba(128, 0, 255, 0.2);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.grid-item:hover {
+    transform: translateZ(20px);
+    border-color: rgba(128, 0, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(128, 0, 255, 0.2);
+}
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+.item1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+.item2, .item3 {
+    grid-row: 2 / 3;
+}
+
+@media (max-width: 992px) {
+    .about-image-grid {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-image-grid {
+        height: 300px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .item1 {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-image-grid {
+        height: 250px;
+    }
+}
+
+/* Fix for horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%;
+}
+
+/* Fix for team cards possibly causing overflow */
+.team-card, .dimension-card, .pillar-card {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Video styles for About page */
+.video-container {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hero-video:hover {
+    transform: scale(1.02);
 }

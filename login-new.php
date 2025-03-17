@@ -164,7 +164,7 @@ try {
 
         .logo-container {
             text-align: center;
-            margin-bottom: 30px;
+            padding-bottom: -30px;
         }
 
         .logo-container i {
@@ -278,10 +278,10 @@ try {
 <body>
     <div class="main-content">
         <div class="login-container">
-            <div class="logo-container">
+            <div class="logo-container mb-0">
                 <i class="fas fa-graduation-cap"></i>
             </div>
-            <h1> Infradex Edu</h1>
+            <h1 class="mt-0"> INFRADEX Edu.</h1>
             <div class="error-message" id="errorMessage"></div>
 
             <form id="loginForm" method="POST">
