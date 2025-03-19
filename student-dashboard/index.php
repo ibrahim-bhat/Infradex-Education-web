@@ -136,9 +136,9 @@ $user = $result->fetch_assoc();
                                 <i class="fas fa-clock"></i>
                                 <span>Application Deadline: July 30, 2025</span>
                             </div> -->
-                            <button class="continue-btn apply-btn">
-                                <i class="fas fa-paper-plane"></i>
-                                Apply Now
+                            <button class="continue-btn apply-btn" onclick="window.location.href='tel:9796931231'">
+                                <i class="fas fa-phone"></i>
+                                Call Now: 979-693-1231
                             </button>
                         </div>
 
@@ -176,9 +176,9 @@ $user = $result->fetch_assoc();
                                 <i class="fas fa-clock"></i>
                                 <span>Application Deadline: August 15, 2024</span>
                             </div> -->
-                            <button class="continue-btn apply-btn">
-                                <i class="fas fa-paper-plane"></i>
-                                Apply Now
+                            <button class="continue-btn apply-btn" onclick="window.location.href='tel:9796931231'">
+                                <i class="fas fa-phone"></i>
+                                Call Now: 979-693-1231
                             </button>
                         </div>
                     </div>
