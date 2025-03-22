@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="https://infradexedu.in">
                 <?php
                 $basePath = '';
                 if (strpos($_SERVER['REQUEST_URI'], '/usp/countries-college') !== false) {
+                    $basePath = '../../';
+                } else if (strpos($_SERVER['REQUEST_URI'], '/usp/info-cards') !== false) {
                     $basePath = '../../';
                 } else if (strpos($_SERVER['REQUEST_URI'], '/usp') !== false) {
                     $basePath = '../';

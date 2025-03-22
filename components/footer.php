@@ -4,11 +4,13 @@
          <div class="container">
              <div class="row g-4">
                  <!-- Company Info -->
-                 <div class="col-lg-4 col-md-6">
+                 <div class="col-lg-2 col-md-6">
                      <div class="footer-widget">
                          <?php
                          $basePath = '';
                          if (strpos($_SERVER['REQUEST_URI'], '/usp/countries-college') !== false) {
+                             $basePath = '../../';
+                         } else if (strpos($_SERVER['REQUEST_URI'], '/usp/info-cards') !== false) {
                              $basePath = '../../';
                          } else if (strpos($_SERVER['REQUEST_URI'], '/usp') !== false) {
                              $basePath = '../';
@@ -31,29 +33,66 @@
                          <ul class="footer-links">
                              <li><a href="<?php echo $basePath; ?>#home">Home</a></li>
                              <li><a href="<?php echo $basePath; ?>#about">About Us</a></li>
-                             <li><a href="<?php echo $basePath; ?>#services">Services</a></li>
-                             <li><a href="<?php echo $basePath; ?>#testimonials">Testimonials</a></li>
                              <li><a href="<?php echo $basePath; ?>#contact">Contact</a></li>
                          </ul>
                      </div>
                  </div>
 
-                 <!-- Our Services -->
-                 <div class="col-lg-3 col-md-6">
+                 <!-- Study Destinations -->
+                 <div class="col-lg-2 col-md-6">
                      <div class="footer-widget">
-                         <h4 class="widget-title">Our Services</h4>
+                         <h4 class="widget-title">Study Destinations</h4>
                          <ul class="footer-links">
-                             <li><a href="<?php echo $basePath; ?>#">5D Career Counseling</a></li>
-                             <li><a href="<?php echo $basePath; ?>#">University Admissions</a></li>
-                             <li><a href="<?php echo $basePath; ?>#">Visa Assistance</a></li>
-                             <li><a href="<?php echo $basePath; ?>#">Test Preparation</a></li>
-                             <li><a href="<?php echo $basePath; ?>#">Immigration Services</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/usa.php">Study in USA</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/uk.php">Study in UK</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/canada.php">Study in Canada</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/australia.php">Study in Australia</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/china.php">Study in China</a></li>
+                         </ul>
+                     </div>
+                     <div class="footer-widget mt-3">
+                         <h4 class="widget-title">More Countries</h4>
+                         <ul class="footer-links">
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/egypt.php">Study in Egypt</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/iran.php">Study in Iran</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/kazakhstan.php">Study in Kazakhstan</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/bangladesh.php">Study in Bangladesh</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/countries-college/india.php">Study in India</a></li>
+                         </ul>
+                     </div>
+                 </div>
+
+                 <!-- USP Links -->
+                 <div class="col-lg-2 col-md-6">
+                     <div class="footer-widget">
+                         <h4 class="widget-title">Our USPs</h4>
+                         <ul class="footer-links">
+                             <li><a href="<?php echo $basePath; ?>usp/5d.php">5D Career Counseling</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/universityandcourse.php">University & Course Selection</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/documentandvisaguidance.php">Document & Visa Guidance</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/financialplanningscholarships.php">Financial Planning & Scholarships</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/strongnetworkandpartnerships.php">Network & Partnerships</a></li>
+                         </ul>
+                     </div>
+                 </div>
+
+                 <!-- Info Cards -->
+                 <div class="col-lg-2 col-md-6">
+                     <div class="footer-widget">
+                         <h4 class="widget-title">Student Resources</h4>
+                         <ul class="footer-links">
+                             <li><a href="<?php echo $basePath; ?>usp/info-cards/assessmentbasedcareercounseling.php">Career Counseling</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/info-cards/programselection.php">Program Selection</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/info-cards/admissionprocedures.php">Admission Procedures</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/info-cards/scholarships.php">Scholarships</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/info-cards/visadocuments.php">Visa Documents</a></li>
+                             <li><a href="<?php echo $basePath; ?>usp/info-cards/travel.php">Travel Guide</a></li>
                          </ul>
                      </div>
                  </div>
 
                  <!-- Contact Info -->
-                 <div class="col-lg-3 col-md-6">
+                 <div class="col-lg-2 col-md-6">
                      <div class="footer-widget">
                          <h4 class="widget-title">Contact Info</h4>
                          <div class="contact">
