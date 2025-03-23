@@ -160,7 +160,7 @@
                  <div class="col-lg-3 col-md-6">
                      <div class="team-card">
                          <div class="team-image">
-                             <img src="./images/moumin.jpg" alt="Team Member">
+                             <img src="./images/Moumin.jpg" alt="Team Member">
                          </div>
                          <div class="team-info">
                              <h4 class="text-white">Moumin Fayaz Rather </h4>
