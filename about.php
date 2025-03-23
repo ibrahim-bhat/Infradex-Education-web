@@ -24,14 +24,11 @@
                      <h1 class="display-4 fw-bold mb-4 text-white">From Challenges to Change</h1>
                      <p class="lead mb-4">The birth of Infradex Education was not just a business idea—it was a mission. A mission to change lives and bring hope to students who feel lost in the maze of education.</p>
                  </div>
-                 <!-- <div class="col-lg-6">
+                 <div class="col-lg-6">
                     <div class="video-container">
-                        <video autoplay muted loop playsinline class="hero-video w-100 rounded shadow">
-                            <source src="./images/saturn.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                     </div>
-                 </div> -->
+                        <img src="./images/INFRA EDU 3D LOGO.png" alt="About Us Logo" class="img-fluid" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
+                    </div>
+                 </div>
              </div>
          </div>
      </section>

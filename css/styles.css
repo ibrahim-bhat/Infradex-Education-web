@@ -2040,7 +2040,7 @@ section {
     padding-top: 80px;
     position: relative;
     overflow: hidden;
-    background: #06060d;
+    background: linear-gradient(45deg, #000000, #0a0a14);
 }
 
 .about-image-grid {
@@ -2182,66 +2182,61 @@ section {
 /* Team Section */
 .team-card {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(128, 0, 255, 0.1);
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
+    margin-bottom: 2rem;
 }
 
 .team-image {
     position: relative;
     overflow: hidden;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .team-image img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.social-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(128, 0, 255, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    opacity: 0;
-    transition: all 0.3s ease;
+.team-image i {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 5rem;
 }
 
-.team-card:hover .social-overlay {
-    opacity: 1;
-}
-
-.social-overlay a {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-overlay a:hover {
-    background: white;
-    color: var(--primary-color);
-    transform: translateY(-5px);
+.team-card:hover .team-image img {
+    transform: scale(1.1);
 }
 
 .team-info {
     padding: 1.5rem;
     text-align: center;
+}
+
+.team-info h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.team-info p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-image {
+        max-width: 100%;
+    }
+    
+    .team-card {
+        margin-bottom: 1.5rem;
+    }
 }
 
 /* Values Section */
@@ -2602,27 +2597,113 @@ html, body {
     overflow: hidden;
 }
 
-/* Video styles for About page */
+/* Image styles for About page */
 .video-container {
-    overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
     position: relative;
-    height: 0;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
 .hero-video:hover {
     transform: scale(1.02);
+}
+
+/* Video/Image container styles */
+.video-container {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero image styles */
+.hero-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+/* Team section styles */
+.team-section {
+    padding: 3rem 0;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.team-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-image i {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 5rem;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.1);
+}
+
+.team-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.team-info h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.team-info p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-image {
+        max-width: 100%;
+    }
+    
+    .team-card {
+        margin-bottom: 1.5rem;
+    }
 }
