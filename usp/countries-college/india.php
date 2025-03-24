@@ -28,7 +28,7 @@
         </div>
 
         <!-- Filter Section -->
-        <div class="filter-section mb-4">
+        <!-- <div class="filter-section mb-4">
             <h4 class="text-white mb-3"><i class="fas fa-filter me-2"></i>Filter by State</h4>
             <div class="d-flex flex-wrap">
                 <button class="btn btn-primary filter-btn active" data-filter="all">All States</button>
@@ -41,7 +41,7 @@
                 <button class="btn btn-primary filter-btn" data-filter="kerala">Kerala</button>
                 <button class="btn btn-primary filter-btn" data-filter="other">Other States</button>
             </div>
-        </div>
+        </div> -->
 
         <?php include 'india-states/maharashtra.php'; ?>
         <?php include 'india-states/bangalore.php'; ?>
