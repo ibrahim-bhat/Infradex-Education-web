@@ -24,7 +24,6 @@
             <div class="container">
                 <h1 class="display-4 fw-bold"><i class="fas fa-landmark me-3"></i>MBBS in Bangladesh</h1>
                 <p class="lead">Comprehensive Guide for MBBS Program in Bangladesh (Session 2025)</p>
-                <p class="author-text mt-2">By Dawood Aslam | INFRADEX EDUCATION</p>
             </div>
         </div>
 

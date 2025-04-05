@@ -115,7 +115,7 @@
              <div class="row g-4">
                  <div class="col-lg-3 col-md-6">
                      <div class="team-card">
-                         <div class="team-image">
+                         <div class="team-image"> 
                              <img src="./images/dawood.jpg" alt="Team Member">
                          </div>
                          <div class="team-info">
@@ -152,7 +152,7 @@
                              <img src="./images/heena.jpg" alt="Team Member">
                          </div>
                          <div class="team-info">
-                             <h4 class="text-white">Heena Aga</h4>
+                             <h4 class="text-white">Heena Javed Aga</h4>
                              <p>Life Coach</p>
                          </div>
                      </div>
@@ -187,17 +187,6 @@
                          <div class="team-info">
                              <h4 class="text-white">Ibrahim Bhat</h4>
                              <p>Software Developer</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <i class="fas fa-user-graduate fa-9x text-center"></i>
-                         </div>
-                         <div class="team-info">
-                             <h4 class="text-white">Sohileen Shabir</h4>
-                             <p>Intern</p>
                          </div>
                      </div>
                  </div>

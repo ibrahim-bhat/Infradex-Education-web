@@ -91,7 +91,7 @@
                                     <i class="fas fa-certificate"></i>
                                     <div>
                                         <strong>Doctor of Dental Surgery (D.D.S.)</strong><br>
-                                        Duration: 6 years<br>
+                                        Duration: 5 years + 1 year internship<br>
                                         Medium of Instruction: English
                                     </div>
                                 </li>
@@ -99,7 +99,7 @@
                                     <i class="fas fa-certificate"></i>
                                     <div>
                                         <strong>Doctor of Pharmacy (PharMBBS.)</strong><br>
-                                        Duration: 5 years<br>
+                                        Duration: 5 years + 1 year internship<br>
                                         Medium of Instruction: English
                                     </div>
                                 </li>
@@ -362,14 +362,14 @@
                                     <i class="fas fa-certificate"></i>
                                     <div>
                                         <strong>Dentistry (D.D.S.)</strong><br>
-                                        Duration: 6 years
+                                        Duration: 5 years + 1 year internship
                                     </div>
                                 </li>
                                 <li>
                                     <i class="fas fa-certificate"></i>
                                     <div>
                                         <strong>Pharmacy (PharMBBS.)</strong><br>
-                                        Duration: 6 years
+                                        Duration: 5 years + 1 year internship
                                     </div>
                                 </li>
                             </ul>
@@ -767,7 +767,7 @@
                                     <i class="fas fa-certificate"></i>
                                     <div>
                                         <strong>Dentistry (D.D.S.)</strong><br>
-                                        Duration: 6 years<br>
+                                        Duration: 5 years + 1 year internship<br>
                                         Medium of Instruction: English
                                     </div>
                                 </li>

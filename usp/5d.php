@@ -70,6 +70,21 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Book a Counseling Session -->
+            <div class="booking-section text-center mt-5 mb-5">
+                <div class="dimension-card">
+                    <i class="fas fa-calendar-check dimension-icon booking-icon"></i>
+                    <h3>Book a Counseling Session</h3>
+                    <p>Get personalized guidance from our expert counselors to shape your academic and career journey.</p>
+                    <div class="contact-info mt-4">
+                        <h4>Contact our Expert Guidance Team</h4>
+                        <a href="tel:+919796931231" class="btn btn-primary btn-lg mt-3">
+                            <i class="fas fa-phone-alt me-2"></i>+91 9796931231
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

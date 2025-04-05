@@ -239,6 +239,7 @@
             </div>
         </div>
 
+        <!-- unversity start -->
         <!-- University of Melbourne Card -->
         <div class="university-card mb-5">
             <div class="card-header">
@@ -646,6 +647,629 @@
                 </div>
             </div>
         </div>
+
+        <!-- University of Queensland Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>UQ</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">University of Queensland</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Brisbane, Queensland, Australia</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>QS World Ranking 2025: #40</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>1st Year Tuition Fees</th>
+                                <th>Duration & Eligibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MBA/PGDM (35 courses)</td>
+                                <td>INR 17 L - 35 L</td>
+                                <td>Duration: 1-2 years<br>IELTS: 6.5-7, TOEFL: 87+, PTE: 64+</td>
+                            </tr>
+                            <tr>
+                                <td>MS (58 courses)</td>
+                                <td>INR 18 L - 37 L</td>
+                                <td>Duration: 1-2.5 years<br>IELTS: 6.5-7, TOEFL: 87-100, PTE: 64-72</td>
+                            </tr>
+                            <tr>
+                                <td>B.E./B.Tech (24 courses)</td>
+                                <td>INR 23 L - 30 L</td>
+                                <td>Duration: 1-5.5 years<br>IELTS: 6.5-7, TOEFL: 87+, PTE: 64+</td>
+                            </tr>
+                            <tr>
+                                <td>B.Sc. (38 courses)</td>
+                                <td>INR 21 L - 44 L</td>
+                                <td>Duration: 1-5 years<br>IELTS: 6.5-7.5, TOEFL: 87+, PTE: 64+</td>
+                            </tr>
+                            <tr>
+                                <td>BBA (31 courses)</td>
+                                <td>INR 19 L - 30 L</td>
+                                <td>Duration: 1-5 years<br>IELTS: 6.5-7, TOEFL: 87+, PTE: 64+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Rankings</h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>QS Ranking</h5>
+                                <span class="rank">#40</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>US News Ranking</h5>
+                                <span class="rank">#41</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>ARWU Ranking</h5>
+                                <span class="rank">#63</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>THE Ranking</h5>
+                                <span class="rank">#77</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions & Enrollment</h4>
+                    <ul class="program-list">
+                        <li><i class="fas fa-calendar-alt"></i><div>Semester 2 Deadline: May 31, 2025</div></li>
+                        <li><i class="fas fa-percentage"></i><div>Overall Acceptance Rate: 40%</div></li>
+                        <li><i class="fas fa-globe"></i><div>International Student Acceptance Rate: 39%</div></li>
+                        <li><i class="fas fa-users"></i><div>Total Students: 55,441 (21,574 International)</div></li>
+                    </ul>
+
+                    <h5 class="text-white mt-4 mb-3">Admission Requirements</h5>
+                    <ul class="program-list">
+                        <li><i class="fas fa-check-circle"></i><div>Letters of Recommendation (LORs)</div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Application Essay & Personal Statement</div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Standardized Test Scores</div></li>
+                        <li><i class="fas fa-check-circle"></i><div>English Proficiency Test Scores</div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Program-Specific Prerequisites</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Australian National University Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>ANU</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">Australian National University (ANU)</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Canberra, Australian Capital Territory, Australia</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>QS World Ranking 2025: #30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Number of Courses</th>
+                                <th>1st Year Tuition Fees</th>
+                                <th>Duration & Eligibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MBA/PGDM</td>
+                                <td>20</td>
+                                <td>INR 24L - 30L</td>
+                                <td>Duration: 12-30 months<br>IELTS: 6.5+, TOEFL: 80+, PTE: 64+</td>
+                            </tr>
+                            <tr>
+                                <td>B.A.</td>
+                                <td>78</td>
+                                <td>INR 21L - 27L</td>
+                                <td>Duration: 3-4 years<br>IELTS: 6.5+, TOEFL: 80+, PTE: 64+</td>
+                            </tr>
+                            <tr>
+                                <td>B.Sc.</td>
+                                <td>31</td>
+                                <td>INR 23L - 29L</td>
+                                <td>Duration: 3-4 years<br>IELTS: 6.5+, TOEFL: 80+, PTE: 64+</td>
+                            </tr>
+                            <tr>
+                                <td>MS</td>
+                                <td>29</td>
+                                <td>INR 21L - 30L</td>
+                                <td>Duration: 12 months - 2 years<br>IELTS: 6.5+, TOEFL: 80+, PTE: 64+</td>
+                            </tr>
+                            <tr>
+                                <td>MIM</td>
+                                <td>19</td>
+                                <td>INR 24L - 30L</td>
+                                <td>Duration: 12-30 months<br>IELTS: 6.5+, TOEFL: 80+, PTE: 64+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="text-white mt-4 mb-3">Rankings</h4>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <div class="ranking-box">
+                            <h5>QS Ranking</h5>
+                            <span class="rank">#30</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="ranking-box">
+                            <h5>THE Ranking</h5>
+                            <span class="rank">#73</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="ranking-box">
+                            <h5>US News Ranking</h5>
+                            <span class="rank">#85</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="ranking-box">
+                            <h5>ARWU Ranking</h5>
+                            <span class="rank">#101</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions & Enrollment</h4>
+                    <ul class="program-list">
+                        <li><i class="fas fa-calendar-alt"></i><div>Applications open throughout the year for both UG and PG courses</div></li>
+                        <li><i class="fas fa-percentage"></i><div>Overall Acceptance Rate: 35%</div></li>
+                        <li><i class="fas fa-users"></i><div>Student Body: 10,000+ undergraduate and 7,000+ graduate students</div></li>
+                        <li><i class="fas fa-globe"></i><div>International Students from 100+ countries</div></li>
+                    </ul>
+
+                    <h5 class="text-white mt-4 mb-3">Tuition Fees Range</h5>
+                    <ul class="program-list">
+                        <li><i class="fas fa-money-bill"></i><div>Undergraduate: INR 20.8L - 25L per year</div></li>
+                        <li><i class="fas fa-money-bill"></i><div>Postgraduate: INR 21.2L - 25.4L per year</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- University of Technology Sydney Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>UTS</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">University of Technology Sydney</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Ultimo, New South Wales, Australia</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>QS World Ranking 2025: #47</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>1st Year Tuition Fees</th>
+                                <th>Duration & Eligibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MBA/PGDM (22 courses)</td>
+                                <td>INR 18 L - 34 L</td>
+                                <td>Duration: 1-2 years<br>IELTS: 6.5 & Above, TOEFL: 79 & Above, PTE: 58 & Above</td>
+                            </tr>
+                            <tr>
+                                <td>MS (30 courses)</td>
+                                <td>INR 17 L - 31 L</td>
+                                <td>Duration: 1-3 years<br>IELTS: 6.5 - 7, TOEFL: 79 - 94, PTE: 58 - 65</td>
+                            </tr>
+                            <tr>
+                                <td>B.E. / B.Tech (42 courses)</td>
+                                <td>INR 18 L - 28 L</td>
+                                <td>Duration: 3 years - 78 months<br>IELTS: 6.5 - 7.5, TOEFL: 79 - 102, PTE: 58 - 73</td>
+                            </tr>
+                            <tr>
+                                <td>PG Certificate (44 courses)</td>
+                                <td>INR 9 L - 13 L</td>
+                                <td>Duration: 14 weeks - 6 months<br>IELTS: 6.5 - 7, TOEFL: 79 & Above, PTE: 58 & Above</td>
+                            </tr>
+                            <tr>
+                                <td>B.Sc. (44 courses)</td>
+                                <td>INR 18 L - 28 L</td>
+                                <td>Duration: 3-5 years<br>IELTS: 6.5 - 7.5, TOEFL: 79 - 102, PTE: 58 - 73</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Rankings</h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>QS Ranking</h5>
+                                <span class="rank">#47</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>US News Ranking</h5>
+                                <span class="rank">#85</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>THE Ranking</h5>
+                                <span class="rank">#154</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>ARWU Ranking</h5>
+                                <span class="rank">#201</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Application Deadlines</h4>
+                    <ul class="program-list">
+                        <li><i class="fas fa-calendar-alt"></i><div>Spring Session: April 30, 2025</div></li>
+                        <li><i class="fas fa-calendar-alt"></i><div>Summer Session: August 30, 2025</div></li>
+                        <li><i class="fas fa-calendar-alt"></i><div>Autumn Session: November 30, 2025 (tentative)</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- University of Adelaide Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>UA</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">The University of Adelaide</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Adelaide, South Australia, Australia</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>QS World Ranking 2025: #82</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>1st Year Tuition Fees</th>
+                                <th>Duration & Eligibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MBA/PGDM (25 courses)</td>
+                                <td>INR 20 L - 27 L</td>
+                                <td>Duration: 18 months - 2 years<br>TOEFL: 79+, IELTS: 6.5+, PTE: 58+</td>
+                            </tr>
+                            <tr>
+                                <td>MS (33 courses)</td>
+                                <td>INR 21 L - 29 L</td>
+                                <td>Duration: 1-3 years<br>TOEFL: 79-94, IELTS: 6.5+, PTE: 58+</td>
+                            </tr>
+                            <tr>
+                                <td>B.E./B.Tech (48 courses)</td>
+                                <td>INR 21 L - 27 L</td>
+                                <td>Duration: 2-5 years<br>TOEFL: 79+, IELTS: 6.5+, PTE: 58+</td>
+                            </tr>
+                            <tr>
+                                <td>B.Sc. (40 courses)</td>
+                                <td>INR 19 L - 41 L</td>
+                                <td>Duration: 3-4 years<br>TOEFL: 79-94, IELTS: 6.5+, PTE: 58+</td>
+                            </tr>
+                            <tr>
+                                <td>PG Diploma (48 courses)</td>
+                                <td>INR 9 L - 32 L</td>
+                                <td>Duration: 1 year<br>TOEFL: 79-94, IELTS: 6.5-7, PTE: 58-65</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Rankings</h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>QS Ranking</h5>
+                                <span class="rank">#82</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>US News Ranking</h5>
+                                <span class="rank">#92</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>THE Ranking</h5>
+                                <span class="rank">#128</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>ARWU Ranking</h5>
+                                <span class="rank">#151</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions</h4>
+                    <ul class="program-list">
+                        <li><i class="fas fa-calendar-alt"></i><div>Master of Teaching (Secondary), Semester 2, 2025 Deadline: July 21, 2025</div></li>
+                        <li><i class="fas fa-info-circle"></i><div>Deadlines vary by program and semester</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- University of Western Australia Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>UWA</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">The University of Western Australia (UWA)</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Perth, Western Australia, Australia</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>QS World Ranking 2025: #77</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>1st Year Tuition Fees</th>
+                                <th>Duration & Eligibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MBA/PGDM (13 courses)</td>
+                                <td>INR 20 L - 32 L</td>
+                                <td>Duration: 12 months - 2 years<br>IELTS: 6.5-7, TOEFL: 82-100, PTE: 64-71</td>
+                            </tr>
+                            <tr>
+                                <td>B.Sc. (92 courses)</td>
+                                <td>INR 18 L - 27 L</td>
+                                <td>Duration: 3-4 years<br>IELTS: 6.5 & Above, TOEFL: 82 & Above, PTE: 64 & Above</td>
+                            </tr>
+                            <tr>
+                                <td>MS (31 courses)</td>
+                                <td>INR 18 L - 43 L</td>
+                                <td>Duration: 1-4 years<br>IELTS: 6.5-7, TOEFL: 82 & Above, PTE: 64 & Above</td>
+                            </tr>
+                            <tr>
+                                <td>B.E./B.Tech (14 courses)</td>
+                                <td>INR 21 L - 27 L</td>
+                                <td>Duration: 3-4 years<br>IELTS: 6.5 & Above, TOEFL: 82 & Above, PTE: 64 & Above</td>
+                            </tr>
+                            <tr>
+                                <td>PG Diploma (13 courses)</td>
+                                <td>INR 11 L - 41 L</td>
+                                <td>Duration: 6 months - 1 year<br>IELTS: 6.5-7, TOEFL: 82 & Above, PTE: 64 & Above</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Rankings</h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>QS Ranking</h5>
+                                <span class="rank">#77</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>US News Ranking</h5>
+                                <span class="rank">#91</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>THE Ranking</h5>
+                                <span class="rank">#149</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>ARWU Ranking</h5>
+                                <span class="rank">#101</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions</h4>
+                    <ul class="program-list">
+                        <li><i class="fas fa-calendar-alt"></i><div>Semester 2, 2025 Deadline: May 26, 2025</div></li>
+                        <li><i class="fas fa-info-circle"></i><div>Applications accepted for Semester 1 and Semester 2</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Macquarie University Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>MQ</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">Macquarie University</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Sydney, New South Wales, Australia</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>QS World Ranking 2025: #59</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>1st Year Tuition Fees</th>
+                                <th>Duration & Eligibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MBA/PGDM (34 courses)</td>
+                                <td>INR 17 L - 26 L</td>
+                                <td>Duration: 12 months - 2 years<br>TOEFL: 83+, IELTS: 6.5+, PTE: 58+</td>
+                            </tr>
+                            <tr>
+                                <td>MIM (33 courses)</td>
+                                <td>INR 17 L - 26 L</td>
+                                <td>Duration: 12 months - 2 years<br>TOEFL: 83+, IELTS: 6.5+, PTE: 58+</td>
+                            </tr>
+                            <tr>
+                                <td>MS (27 courses)</td>
+                                <td>INR 20 L - 31 L</td>
+                                <td>Duration: 12 months - 3 years<br>IELTS: 6.5-7, TOEFL: 83-98, PTE: 58-65</td>
+                            </tr>
+                            <tr>
+                                <td>B.Sc. (22 courses)</td>
+                                <td>INR 19 L - 34 L</td>
+                                <td>Duration: 2-5 years<br>IELTS: 6.5-7.5, TOEFL: 83-105, PTE: 58-73</td>
+                            </tr>
+                            <tr>
+                                <td>BBA (16 courses)</td>
+                                <td>INR 20 L - 23 L</td>
+                                <td>Duration: 3-4 years<br>IELTS: 6.5+, TOEFL: 83+, PTE: 58+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Rankings</h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>QS Ranking</h5>
+                                <span class="rank">#59</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>THE Ranking</h5>
+                                <span class="rank">#178</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>US News Ranking</h5>
+                                <span class="rank">#192</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="ranking-box">
+                                <h5>ARWU Ranking</h5>
+                                <span class="rank">#201</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Key Statistics</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="stat-box">
+                                <h5>Total Students</h5>
+                                <span>44,000+</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-box">
+                                <h5>International Students</h5>
+                                <span>10,000+</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-box">
+                                <h5>Acceptance Rate</h5>
+                                <span>54%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions</h4>
+                    <ul class="program-list">
+                        <li><i class="fas fa-calendar-alt"></i><div>Session 2 Deadline (UG): July 07, 2025</div></li>
+                        <li><i class="fas fa-calendar-alt"></i><div>MBA Round 2 Deadline: March 17, 2025</div></li>
+                        <li><i class="fas fa-gift"></i><div>Scholarships available for Indian Students worth INR 5.44 L</div></li>
+                        <li><i class="fas fa-info-circle"></i><div>10 new specializations in Master of Commerce for international students</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- unversity end -->
 
         <!-- Top Programs by Subject -->
         <h2 class="text-center mb-4"><i class="fas fa-graduation-cap me-2"></i>Top Programs by Subject</h2>
