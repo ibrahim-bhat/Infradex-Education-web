@@ -417,7 +417,7 @@
                                 <tr>
                                     <td>University of Pennsylvania</td>
                                     <td>11</td>
-                                    <td>=14</td>
+                                    <td>14</td>
                                 </tr>
                                 <tr>
                                     <td>University of California, Berkeley (UCB)</td>
@@ -432,7 +432,7 @@
                                 <tr>
                                     <td>University of Chicago</td>
                                     <td>21</td>
-                                    <td>=14</td>
+                                    <td>14</td>
                                 </tr>
                                 <tr>
                                     <td>Princeton University</td>
@@ -482,7 +482,7 @@
                                         </tr>
                                         <tr>
                                             <td>Purdue University</td>
-                                            <td>=17</td>
+                                            <td>17</td>
                                         </tr>
                                     </tbody>
                                 </table>

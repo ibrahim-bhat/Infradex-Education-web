@@ -153,7 +153,7 @@
                          </div>
                          <div class="team-info">
                              <h4 class="text-white">Heena Javed Aga</h4>
-                             <p>Life Coach</p>
+                             <p>Team lead / Life Coach</p>
                          </div>
                      </div>
                  </div>
@@ -197,7 +197,7 @@
                          </div>
                          <div class="team-info">
                              <h4 class="text-white">Khushboo Lone</h4>
-                             <p>Intern</p>
+                             <p>Intern / Frontend Developer</p>
                          </div>
                      </div>
                  </div>

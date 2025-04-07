@@ -577,6 +577,282 @@
             </div>
         </div>
 
+        <!-- University of Science and Technology of China Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>USTC</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">University of Science and Technology of China</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Hefei, Anhui, China</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>Leading Science & Technology University</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sciences</td>
+                                <td>Physics, Chemistry, Biology</td>
+                            </tr>
+                            <tr>
+                                <td>Engineering</td>
+                                <td>Various Engineering Disciplines</td>
+                            </tr>
+                            <tr>
+                                <td>Computer Science</td>
+                                <td>Programming, AI, Data Science</td>
+                            </tr>
+                            <tr>
+                                <td>Management</td>
+                                <td>Business Administration, Finance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="text-white mb-3">Requirements</h5>
+                            <ul class="program-list">
+                                <li><i class="fas fa-check-circle"></i><div>Outstanding academic records</div></li>
+                                <li><i class="fas fa-language"></i><div>English proficiency proof</div></li>
+                                <li><i class="fas fa-percentage"></i><div>Acceptance Rate: 10-15%</div></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-white mb-3">Scholarships</h5>
+                            <ul class="program-list">
+                                <li><i class="fas fa-award"></i><div>Chinese Government Scholarship</div></li>
+                                <li><i class="fas fa-award"></i><div>USTC Fellowship</div></li>
+                                <li><i class="fas fa-award"></i><div>Merit-based Awards</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nanjing University Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>NJU</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">Nanjing University</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Nanjing, Jiangsu, China</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>Comprehensive Research University</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sciences</td>
+                                <td>Natural Sciences, Applied Sciences</td>
+                            </tr>
+                            <tr>
+                                <td>Engineering</td>
+                                <td>Multiple Engineering Fields</td>
+                            </tr>
+                            <tr>
+                                <td>Medicine</td>
+                                <td>Clinical Medicine, Medical Sciences</td>
+                            </tr>
+                            <tr>
+                                <td>Arts & Social Sciences</td>
+                                <td>Humanities, Social Studies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="text-white mb-3">Requirements</h5>
+                            <ul class="program-list">
+                                <li><i class="fas fa-check-circle"></i><div>Strong academic performance</div></li>
+                                <li><i class="fas fa-language"></i><div>English language proficiency</div></li>
+                                <li><i class="fas fa-percentage"></i><div>Acceptance Rate: 25-30%</div></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-white mb-3">Scholarships</h5>
+                            <ul class="program-list">
+                                <li><i class="fas fa-award"></i><div>Chinese Government Scholarship</div></li>
+                                <li><i class="fas fa-award"></i><div>Nanjing University Scholarship</div></li>
+                                <li><i class="fas fa-award"></i><div>Financial Support Options</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wuhan University Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>WHU</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">Wuhan University</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Wuhan, Hubei, China</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>Comprehensive Research University</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Economics</td>
+                                <td>Finance, Business Economics</td>
+                            </tr>
+                            <tr>
+                                <td>Law</td>
+                                <td>Civil Law, International Law</td>
+                            </tr>
+                            <tr>
+                                <td>Education</td>
+                                <td>Teaching, Educational Management</td>
+                            </tr>
+                            <tr>
+                                <td>Medicine</td>
+                                <td>Clinical Medicine, Medical Sciences</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="text-white mb-3">Requirements</h5>
+                            <ul class="program-list">
+                                <li><i class="fas fa-check-circle"></i><div>Good academic standing</div></li>
+                                <li><i class="fas fa-language"></i><div>English proficiency</div></li>
+                                <li><i class="fas fa-percentage"></i><div>Acceptance Rate: 80%</div></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-white mb-3">Scholarships</h5>
+                            <ul class="program-list">
+                                <li><i class="fas fa-award"></i><div>Chinese Government Scholarship</div></li>
+                                <li><i class="fas fa-award"></i><div>Wuhan University Scholarship</div></li>
+                                <li><i class="fas fa-award"></i><div>Regional Scholarships</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beijing Normal University Card -->
+        <div class="university-card mb-5">
+            <div class="card-header">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="university-logo">
+                        <span>BNU</span>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-2">Beijing Normal University</h2>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Beijing, China</p>
+                        <p class="mb-0"><i class="fas fa-trophy me-2"></i>Leading Teacher Training University</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text-white mb-3">Available Courses</h4>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Education</td>
+                                <td>Teaching, Educational Leadership</td>
+                            </tr>
+                            <tr>
+                                <td>Psychology</td>
+                                <td>Clinical, Educational Psychology</td>
+                            </tr>
+                            <tr>
+                                <td>History & Geography</td>
+                                <td>Chinese History, Geographic Studies</td>
+                            </tr>
+                            <tr>
+                                <td>Environmental Sciences</td>
+                                <td>Environmental Studies, Conservation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Admissions</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="text-white mb-3">Requirements</h5>
+                            <ul class="program-list">
+                                <li><i class="fas fa-check-circle"></i><div>High academic credentials</div></li>
+                                <li><i class="fas fa-language"></i><div>English language proficiency</div></li>
+                                <li><i class="fas fa-file-alt"></i><div>Program-specific criteria</div></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-white mb-3">Scholarships</h5>
+                            <ul class="program-list">
+                                <li><i class="fas fa-award"></i><div>Chinese Government Scholarship</div></li>
+                                <li><i class="fas fa-award"></i><div>BNU International Student Scholarship</div></li>
+                                <li><i class="fas fa-award"></i><div>Merit-based Scholarships</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <footer class="footer-section">

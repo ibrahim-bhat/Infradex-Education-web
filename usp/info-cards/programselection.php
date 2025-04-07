@@ -21,77 +21,119 @@
         <div class="career-counseling-header text-center">
             <h1 class="text-white mb-4">
                 <i class="fas fa-university me-3"></i>
-                University & Program Selection
+                Courses After Class 12
             </h1>
             <p class="text-light lead px-4">
-                Expert guidance to help you choose the right university and program aligned with your career goals, academic background, and interests
+                Explore various higher education opportunities and make informed decisions about your academic future
             </p>
         </div>
 
-        <div class="career-counseling-content">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <i class="fas fa-search"></i>
-                        <h3>Personalized Matching</h3>
-                        <p>Tailored recommendations based on your academic profile, career aspirations, and personal preferences.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <i class="fas fa-balance-scale"></i>
-                        <h3>Comprehensive Evaluation</h3>
-                        <p>In-depth analysis of universities based on rankings, faculty quality, infrastructure, and research opportunities.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <i class="fas fa-file-signature"></i>
-                        <h3>Application Support</h3>
-                        <p>Expert assistance with application procedures, statement of purpose, and recommendation letters.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="career-counseling-content text-light">
+            <p class="mb-4">
+                Class 12 marks a significant transition for students, opening doors to various higher education opportunities. At this stage, students often have questions such as:
+            </p>
 
-            <div class="text-light mt-4">
-                <h2 class="mb-4 highlight-text">Making Informed Academic Decisions</h2>
-                <p class="mb-4">
-                    University and program selection is a crucial step in shaping your academic and professional future. Our personalized assistance ensures that you choose the right university and program aligned with your career goals, academic background, and interests.
-                </p>
+            <ul class="mb-4">
+                <li>Should I specialize now or later?</li>
+                <li>Should I choose a popular course or explore emerging fields?</li>
+                <li>Which entrance exams do I need to take for a particular course?</li>
+            </ul>
 
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <h3 class="highlight-text mb-3">What We Offer</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><i class="fas fa-check-circle me-2 text-success"></i> University evaluation and ranking analysis</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2 text-success"></i> Program curriculum assessment</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2 text-success"></i> Admission requirements guidance</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2 text-success"></i> Financial planning and scholarship information</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2 text-success"></i> Application documentation support</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="highlight-text mb-3">Benefits</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><i class="fas fa-star me-2 text-warning"></i> Aligned academic and career path</li>
-                            <li class="mb-3"><i class="fas fa-star me-2 text-warning"></i> Increased admission chances</li>
-                            <li class="mb-3"><i class="fas fa-star me-2 text-warning"></i> Optimized investment in education</li>
-                            <li class="mb-3"><i class="fas fa-star me-2 text-warning"></i> Access to global opportunities</li>
-                            <li class="mb-3"><i class="fas fa-star me-2 text-warning"></i> Smooth transition to academic life</li>
-                        </ul>
-                    </div>
-                </div>
+            <p class="mb-4">
+                To assist students in making informed decisions, Shiksha provides guidance on a wide range of courses and career options available. Let's explore these possibilities.
+            </p>
 
-                <div class="mt-5">
-                    <h3 class="highlight-text mb-4">Our Comprehensive Approach</h3>
-                    <p>
-                        We provide expert guidance on evaluating universities based on rankings, faculty, infrastructure, and research opportunities. Understanding admission requirements, eligibility criteria, and application procedures helps streamline the selection process. We consider factors such as tuition fees, scholarships, and cost of living to ensure affordability.
-                    </p>
-                    <p class="mt-3">
-                        Our tailored approach includes guidance on course curriculum and specialization options, insights into global career prospects, and industry demand to give you a competitive edge. Whether you're aiming for undergraduate, postgraduate, or professional courses, we support you at every step - from application writing and visa processes to accommodation facilities. With our expert advice, you can confidently embark on your educational journey.
-                    </p>
-                </div>
-            </div>
+            <h2 class="highlight-text mb-4">Courses After Class 12 for Science Students</h2>
+            <p>For students who have studied Science with Mathematics (PCM/PCMB) in Class 11 and 12, popular courses include:</p>
+            <ul class="mb-4">
+                <li>BTech/BE</li>
+                <li>Integrated MTech</li>
+                <li>BCA</li>
+                <li>BArch</li>
+                <li>BSc</li>
+            </ul>
+
+            <p>Students with a PCM/PCMB background can also pursue careers in the aviation industry as a Commercial Pilot or apply to the National Defence Academy (NDA), Pune.</p>
+
+            <p>For those who have studied Science with Biology (PCB/PCMB), common courses are:</p>
+            <ul class="mb-4">
+                <li>MBBS</li>
+                <li>BDS</li>
+                <li>BPharma</li>
+                <li>Nursing</li>
+                <li>Paramedical fields</li>
+            </ul>
+
+            <p>Additionally, Science students may opt for courses in areas like:</p>
+            <ul class="mb-4">
+                <li>Law</li>
+                <li>Management</li>
+                <li>Mass Communication</li>
+                <li>Animation</li>
+                <li>Graphic Designing</li>
+                <li>Travel & Tourism</li>
+                <li>Hospitality</li>
+                <li>Fashion Designing</li>
+            </ul>
+
+            <h3 class="highlight-text mb-3">Top Entrance Exams for Science Courses After 12th</h3>
+            <ul class="mb-4">
+                <li><strong>Engineering Exams:</strong> JEE Main, JEE Advanced</li>
+                <li><strong>Medical Exams:</strong> NEET UG, NEET PG, AIIMS MBBS</li>
+                <li><strong>Science Exams:</strong> NEST, IIT JAM, JEST</li>
+            </ul>
+
+            <h2 class="highlight-text mb-4">Courses After Class 12 for Commerce Students</h2>
+            <p>For Commerce students (with or without Mathematics), popular undergraduate courses include:</p>
+            <ul class="mb-4">
+                <li>BCom, BCom (Hons), Eco (Hons)</li>
+                <li>BBA/BMS</li>
+                <li>Integrated MBA</li>
+                <li>CFP, CA, and CS</li>
+            </ul>
+
+            <p>Commerce students can also pursue competitive exams for Banking, Defence, and Civil Services. Other available options include:</p>
+            <ul class="mb-4">
+                <li>BStat</li>
+                <li>BJMC</li>
+                <li>BBA LLB</li>
+                <li>BCA</li>
+                <li>BHM</li>
+                <li>Travel & Tourism</li>
+                <li>Fashion Designing</li>
+                <li>Advertising</li>
+            </ul>
+
+            <h3 class="highlight-text mb-3">Top Entrance Exams for Commerce Courses After 12th</h3>
+            <ul class="mb-4">
+                <li><strong>Accounting & Commerce Exams:</strong> ICWAI, ICSI, ICAI</li>
+            </ul>
+
+            <h2 class="highlight-text mb-4">Courses After Class 12 for Arts Students</h2>
+            <p>Arts students have a broad range of course options to consider, such as:</p>
+            <ul class="mb-4">
+                <li>BA in Humanities & Social Sciences</li>
+                <li>BA in Arts (Fine/Visual/Performing)</li>
+                <li>Bachelor of Fine Arts (BFA)</li>
+                <li>BDes in Animation</li>
+                <li>BA LLB</li>
+                <li>BDes in Design</li>
+                <li>BSc in Hospitality & Travel</li>
+                <li>BSc in Design</li>
+                <li>BJMC, BMM (Journalism & Mass Communication)</li>
+                <li>BHM (Hospitality & Travel)</li>
+            </ul>
+
+            <p>Additionally, Arts students can explore fields like Linguistics, Foreign Languages, Fashion Designing, Theatre Studies, Film Making, Art History, and more.</p>
+
+            <h3 class="highlight-text mb-3">List of Entrance Exams for Arts Courses After 12th</h3>
+            <ul class="mb-4">
+                <li><strong>Law Exams:</strong> CLAT, AILET, LSAT</li>
+                <li><strong>Design Exams:</strong> NID, NIFT</li>
+                <li><strong>Hospitality Exams:</strong> NCHMCT JEE</li>
+                <li><strong>Mass Communication Exams:</strong> IIMC, JMI, XIC- OET</li>
+                <li><strong>Humanities Exams:</strong> JNUEE, DUET, PUBDET</li>
+            </ul>
         </div>
     </div>
 
