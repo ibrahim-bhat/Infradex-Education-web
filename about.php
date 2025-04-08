@@ -138,7 +138,7 @@
                  <div class="col-lg-3 col-md-6">
                      <div class="team-card">
                          <div class="team-image">
-                             <img src="./images/tabish.jpg" alt="Team Member">
+                             <img src="./images/tabish.jpeg" alt="Team Member">
                          </div>
                          <div class="team-info">
                              <h4 class="text-white">Tabish Aga </h4>
@@ -153,25 +153,15 @@
                          </div>
                          <div class="team-info">
                              <h4 class="text-white">Heena Javed Aga</h4>
-                             <p>Team lead / Life Coach</p>
+                             <p>Team lead & Life Coach</p>
                          </div>
                      </div>
                  </div>
+                
                  <div class="col-lg-3 col-md-6">
                      <div class="team-card">
                          <div class="team-image">
-                             <img src="./images/Moumin.jpg" alt="Team Member">
-                         </div>
-                         <div class="team-info">
-                             <h4 class="text-white">Moumin Fayaz Rather </h4>
-                             <p>Cinematographer</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6">
-                     <div class="team-card">
-                         <div class="team-image">
-                             <img src="./images/junaid.jpg" alt="Team Member">
+                             <img src="./images/junaid.jpeg" alt="Team Member">
                          </div>
                          <div class="team-info">
                              <h4 class="text-white">Junaid Bashir Wani</h4>
