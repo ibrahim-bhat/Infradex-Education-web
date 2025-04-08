@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strong Network & Partnerships - InfradexEducation</title>
+    <title>Why Us - InfradexEducation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
     <link href="../css/5d-styles.css" rel="stylesheet">
@@ -20,7 +20,7 @@
     <section class="five-d-section">
         <div class="container">
             <div class="five-d-header">
-                <h2>Strong Network & Partnerships</h2>
+                <h2>Why Us</h2>
             </div>
     
             <div class="row">

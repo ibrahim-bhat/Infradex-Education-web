@@ -71,17 +71,73 @@
                 </div>
             </div>
 
-            <!-- Book a Counseling Session -->
-            <div class="booking-section text-center mt-5 mb-5">
-                <div class="dimension-card">
-                    <i class="fas fa-calendar-check dimension-icon booking-icon"></i>
-                    <h3>Book a Counseling Session</h3>
-                    <p>Get personalized guidance from our expert counselors to shape your academic and career journey.</p>
-                    <div class="contact-info mt-4">
-                        <h4>Contact our Expert Guidance Team</h4>
-                        <a href="tel:+919796931231" class="btn btn-primary btn-lg mt-3">
-                            <i class="fas fa-phone-alt me-2"></i>+91 9796931231
-                        </a>
+            <!-- Counselors Section -->
+            <div class="counselors-section mt-5 mb-5">
+                <h3 class="text-center mb-4 text-dark">On-Demand Counselors</h3>
+                <div class="row">
+                    <!-- Dawood Bin Aslam -->
+                    <div class="col-md-4 mb-4">
+                        <div class="dimension-card h-100">
+                            <i class="fas fa-user-tie dimension-icon"></i>
+                            <h4 class="text-dark">Dawood Bin Aslam</h4>
+                            <p class="text-muted">Senior Career Strategist & Education Consultant</p>
+                            <ul class="list-unstyled text-dark">
+                                <li><i class="fas fa-check me-2"></i>20+ years counseling experience</li>
+                                <li><i class="fas fa-check me-2"></i>Guided 10,000+ students</li>
+                                <li><i class="fas fa-check me-2"></i>Expert in university admissions</li>
+                                <li><i class="fas fa-check me-2"></i>Psychometric assessment specialist</li>
+                            </ul>
+                            <div class="pricing mt-3">
+                                <h5 class="text-dark">$99 for 3 sessions</h5>
+                                <span class="badge bg-primary">Premium</span>
+                            </div>
+                            <a href="tel:+919796931231" class="btn btn-success mt-3">
+                                <i class="fas fa-phone-alt me-2"></i>Call Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- AbdulBasit Bedar -->
+                    <div class="col-md-4 mb-4">
+                        <div class="dimension-card h-100">
+                            <i class="fas fa-user-tie dimension-icon"></i>
+                            <h4 class="text-dark">Abdul Basit Bedar</h4>
+                            <p class="text-muted">Academic & Professional Growth Mentor</p>
+                            <ul class="list-unstyled text-dark">
+                                <li><i class="fas fa-check me-2"></i>10 years counseling experience</li>
+                                <li><i class="fas fa-check me-2"></i>Counseled 3,000+ students</li>
+                                <li><i class="fas fa-check me-2"></i>Study abroad expert</li>
+                                <li><i class="fas fa-check me-2"></i>Career strategy specialist</li>
+                            </ul>
+                            <div class="pricing mt-3">
+                                <h5 class="text-dark">$99 for 3 sessions</h5>
+                                <span class="badge bg-primary">Premium</span>
+                            </div>
+                            <a href="tel:+919796931231" class="btn btn-success mt-3">
+                                <i class="fas fa-phone-alt me-2"></i>Call Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Heena Javed Aga -->
+                    <div class="col-md-4 mb-4">
+                        <div class="dimension-card h-100">
+                            <i class="fas fa-user-tie dimension-icon"></i>
+                            <h4 class="text-dark">Heena Javed Aga</h4>
+                            <p class="text-muted">Mental Wellness & Life Coach</p>
+                            <ul class="list-unstyled text-dark">
+                                <li><i class="fas fa-check me-2"></i>PhD Scholar (Medical Science)</li>
+                                <li><i class="fas fa-check me-2"></i>Helped 50+ individuals globally</li>
+                                <li><i class="fas fa-check me-2"></i>Mental wellness expert</li>
+                                <li><i class="fas fa-check me-2"></i>Holistic counseling approach</li>
+                            </ul>
+                            <div class="pricing mt-3">
+                                <h5 class="text-dark">Free Consultation</h5>
+                            </div>
+                            <a href="tel:+919796931231" class="btn btn-success mt-3">
+                                <i class="fas fa-phone-alt me-2"></i>Call Now
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
