@@ -146,7 +146,7 @@
              <div class="row align-items-center">
                  <div class="col-md-6">
                      <p class="mb-md-0 text-center text-md-start">
-                         © <?php echo date('Y'); ?> Infradex Education. All Rights Reserved. | Developed by <a href="https://ibrahimbhat.com" target="_blank">Ibrahim</a>
+                         © <?php echo date('Y'); ?> Infradex Education. All Rights Reserved. | Developed by IT Team Infradex</a>
                      </p>
                  </div>
                  <div class="col-md-6">

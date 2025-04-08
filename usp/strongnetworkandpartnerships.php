@@ -33,14 +33,7 @@
                     </div>
                 </div>
 
-                <!-- Official Representation -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="dimension-card">
-                        <i class="fas fa-id-badge dimension-icon financial-icon"></i>
-                        <h3>Official Representation</h3>
-                        <p>Some consultancies become authorized representatives of universities, making the process smoother for applicants.</p>
-                    </div>
-                </div>
+              
 
                 <!-- Priority Applications -->
                 <div class="col-md-6 col-lg-4 mb-4">

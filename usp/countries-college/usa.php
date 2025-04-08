@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-            < class="card-body">
+            <div class="card-body">
                 <p>The United States is a leading destination for international students, hosting prestigious institutions such as Harvard University, Yale University, and Princeton University. Renowned for academic excellence, cutting-edge research, and distinguished faculty, U.S. universities consistently rank among the best worldwide. The country is home to elite business, law, and medical schools, with institutions like the Massachusetts Institute of Technology (MIT), Harvard, Stanford, and the University of California, Berkeley (UCB) securing positions in the top 10 global rankings.</p>
 
                 <p>A remarkable 195 top U.S. colleges have earned spots in the QS World University Rankings 2025. With over 1,000 prestigious universities to choose from, international students have diverse opportunities for higher education in the United States. The cost of studying varies depending on the program and living expenses. The primary admission cycle, the Fall intake, begins in September and is the most popular academic session for students applying to U.S. universities.</p>

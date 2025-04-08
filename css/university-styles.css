@@ -55,7 +55,7 @@
     height: 100px;
     background-color: white;
     border-radius: 50%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     margin-right: 20px;
