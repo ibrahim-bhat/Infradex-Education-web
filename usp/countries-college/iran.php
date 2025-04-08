@@ -482,6 +482,13 @@
                                 <li>
                                     <i class="fas fa-certificate"></i>
                                     <div>
+                                        <strong>Doctor of Medicine (MBBS.)</strong><br>
+                                        Duration: 5 years + 1 year internship
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-certificate"></i>
+                                    <div>
                                         <strong>Engineering Programs</strong><br>
                                         Civil, Mechanical, Electrical, Computer, Chemical Engineering
                                     </div>
@@ -1159,8 +1166,9 @@
                                 <li>
                                     <i class="fas fa-certificate"></i>
                                     <div>
-                                        <strong>Medical Programs</strong><br>
-                                        Medicine, Dentistry, Pharmacy
+                                    <strong>Doctor of Medicine (MBBS.)</strong><br>
+                                    Duration: 5 years + 1 year internship<br>
+                                     
                                     </div>
                                 </li>
                                 <li>
@@ -1286,11 +1294,8 @@
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>Major Programs</h4>
                             <ul class="program-list">
                                 <li>
-                                    <i class="fas fa-certificate"></i>
-                                    <div>
                                         <strong>Medical Programs</strong><br>
-                                        Medicine, Dentistry, Pharmacy
-                                    </div>
+                                        Medicine (MBBS - 5 years + 1 year internship), Dentistry, Pharmacy
                                 </li>
                                 <li>
                                     <i class="fas fa-certificate"></i>
@@ -1364,13 +1369,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- University Card: Hamadan University of Medical Sciences (UMSHA) -->
-        <div class="university-card" data-state="hamadan">
-            <div class="card-header">
-                <div class="d-flex flex-wrap align-items-center">
-                    <div class="university-logo">
-                        <span>UMSHA</span>
 
         <!-- University Card: Hamadan University of Medical Sciences (UMSHA) -->
         <div class="university-card" data-state="hamadan">
@@ -1641,8 +1639,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
         </div>
 
     <footer class="footer-section mt-5">

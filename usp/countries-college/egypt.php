@@ -158,24 +158,24 @@
             <div class="card-body">
                 <p>Cairo University's Faculty of Medicine, known as Kasr Al-Ainy School of Medicine, is one of the oldest and most prestigious medical schools in Africa and the Middle East. The institution is ranked 1st in Egypt and 546th globally.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="cairoTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="cairo-courses-tab" data-bs-toggle="tab" data-bs-target="#cairo-courses" type="button" role="tab" aria-controls="cairo-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="cairo-admission-tab" data-bs-toggle="tab" data-bs-target="#cairo-admission" type="button" role="tab" aria-controls="cairo-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="cairo-fees-tab" data-bs-toggle="tab" data-bs-target="#cairo-fees" type="button" role="tab" aria-controls="cairo-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="cairo-facilities-tab" data-bs-toggle="tab" data-bs-target="#cairo-facilities" type="button" role="tab" aria-controls="cairo-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="cairoTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="cairo-courses" role="tabpanel" aria-labelledby="cairo-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <ul class="program-list">
@@ -198,7 +198,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="cairo-admission" role="tabpanel" aria-labelledby="cairo-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -238,7 +238,7 @@
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="cairo-fees" role="tabpanel" aria-labelledby="cairo-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -261,7 +261,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="cairo-facilities" role="tabpanel" aria-labelledby="cairo-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
                             <ul class="list-unstyled">
@@ -292,26 +292,26 @@
                 </div>
             </div>
             <div class="card-body">
-                <p>Ain Shams University Faculty of Medicine is one of Egypt's leading medical schools, offering a wide range of undergraduate and postgraduate programs in medicine and allied health sciences. The university is consistently ranked among the top universities in Egypt and the Arab region.</p>
+                <p>Founded in 1947, Ain Shams University Faculty of Medicine is one of Egypt's leading medical schools, offering a wide range of undergraduate and postgraduate programs in medicine and allied health sciences. The university is consistently ranked among the top universities in Egypt and the Arab region, with a history of producing graduates who have excelled in various medical fields.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="ainShamsTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="ainShams-courses-tab" data-bs-toggle="tab" data-bs-target="#ainShams-courses" type="button" role="tab" aria-controls="ainShams-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="ainShams-admission-tab" data-bs-toggle="tab" data-bs-target="#ainShams-admission" type="button" role="tab" aria-controls="ainShams-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="ainShams-fees-tab" data-bs-toggle="tab" data-bs-target="#ainShams-fees" type="button" role="tab" aria-controls="ainShams-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="ainShams-facilities-tab" data-bs-toggle="tab" data-bs-target="#ainShams-facilities" type="button" role="tab" aria-controls="ainShams-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="ainShamsTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="ainShams-courses" role="tabpanel" aria-labelledby="ainShams-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <ul class="program-list">
@@ -334,7 +334,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="ainShams-admission" role="tabpanel" aria-labelledby="ainShams-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -364,17 +364,17 @@
                             <h5 class="mt-4 mb-3">Required Documents</h5>
                             <ul class="list-unstyled">
                                 <li><i class="fas fa-file-alt me-2"></i>Completed application form</li>
-                                <li><i class="fas fa-file-alt me-2"></i>High school diploma</li>
-                                <li><i class="fas fa-file-alt me-2"></i>Academic transcripts</li>
-                                <li><i class="fas fa-file-alt me-2"></i>English proficiency proof</li>
-                                <li><i class="fas fa-passport me-2"></i>Passport copy</li>
-                                <li><i class="fas fa-image me-2"></i>Passport-sized photographs</li>
+                                <li><i class="fas fa-file-alt me-2"></i>High school diploma or equivalent</li>
+                                <li><i class="fas fa-file-alt me-2"></i>Transcripts of academic records</li>
+                                <li><i class="fas fa-file-alt me-2"></i>Proof of English language proficiency</li>
+                                <li><i class="fas fa-passport me-2"></i>Copy of passport</li>
+                                <li><i class="fas fa-image me-2"></i>Recent passport-sized photographs</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="ainShams-fees" role="tabpanel" aria-labelledby="ainShams-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -397,9 +397,10 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="ainShams-facilities" role="tabpanel" aria-labelledby="ainShams-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
+                            <p>The university offers hostel accommodations equipped with necessary amenities to ensure a conducive living environment for students.</p>
                             <ul class="list-unstyled">
                                 <li><i class="fas fa-check me-2"></i>Separate male and female accommodations</li>
                                 <li><i class="fas fa-check me-2"></i>Well-furnished rooms</li>
@@ -413,7 +414,7 @@
             </div>
         </div>
 
-        <div class="university-card" data-state="cairo">
+        <div class="university-card" data-state="alexandria">
             <div class="card-header">
                 <div class="d-flex flex-wrap align-items-center">
                     <div class="university-logo">
@@ -427,26 +428,26 @@
                 </div>
             </div>
             <div class="card-body">
-                <p>Alexandria University Faculty of Medicine serves as a major center for medical education in the northern region of Egypt. The university is recognized among the top universities in Egypt and holds a reputable position globally.</p>
+                <p>Established in 1942, Alexandria University Faculty of Medicine serves as a major center for medical education in the northern region of Egypt. The university is recognized among the top universities in Egypt and holds a reputable position globally.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="alexandriaTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="alexandria-courses-tab" data-bs-toggle="tab" data-bs-target="#alexandria-courses" type="button" role="tab" aria-controls="alexandria-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="alexandria-admission-tab" data-bs-toggle="tab" data-bs-target="#alexandria-admission" type="button" role="tab" aria-controls="alexandria-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="alexandria-fees-tab" data-bs-toggle="tab" data-bs-target="#alexandria-fees" type="button" role="tab" aria-controls="alexandria-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="alexandria-facilities-tab" data-bs-toggle="tab" data-bs-target="#alexandria-facilities" type="button" role="tab" aria-controls="alexandria-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="alexandriaTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="alexandria-courses" role="tabpanel" aria-labelledby="alexandria-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <ul class="program-list">
@@ -469,7 +470,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="alexandria-admission" role="tabpanel" aria-labelledby="alexandria-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -509,7 +510,7 @@
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="alexandria-fees" role="tabpanel" aria-labelledby="alexandria-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -532,7 +533,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="alexandria-facilities" role="tabpanel" aria-labelledby="alexandria-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
                             <p>The university provides hostel facilities with essential amenities to ensure a comfortable living environment for students.</p>
@@ -565,24 +566,24 @@
             <div class="card-body">
                 <p>Mansoura University is renowned for its Faculty of Medicine, which has become a leading medical institution in Egypt. The university has significantly contributed to cultural, scientific, and educational development in the region and has produced numerous distinguished alumni who have made significant contributions to medicine and healthcare.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="mansouraTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="mansoura-courses-tab" data-bs-toggle="tab" data-bs-target="#mansoura-courses" type="button" role="tab" aria-controls="mansoura-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="mansoura-admission-tab" data-bs-toggle="tab" data-bs-target="#mansoura-admission" type="button" role="tab" aria-controls="mansoura-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="mansoura-fees-tab" data-bs-toggle="tab" data-bs-target="#mansoura-fees" type="button" role="tab" aria-controls="mansoura-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="mansoura-facilities-tab" data-bs-toggle="tab" data-bs-target="#mansoura-facilities" type="button" role="tab" aria-controls="mansoura-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="mansouraTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="mansoura-courses" role="tabpanel" aria-labelledby="mansoura-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <ul class="program-list">
@@ -612,7 +613,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="mansoura-admission" role="tabpanel" aria-labelledby="mansoura-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -654,7 +655,7 @@
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="mansoura-fees" role="tabpanel" aria-labelledby="mansoura-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -677,7 +678,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="mansoura-facilities" role="tabpanel" aria-labelledby="mansoura-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
                             <p>The university provides hostel accommodations equipped with necessary amenities to ensure a conducive living environment for students.</p>
@@ -710,24 +711,24 @@
             <div class="card-body">
                 <p>Assiut University is the first university in Upper Egypt, serving as a major center for medical education in the region. The Faculty of Medicine offers a range of undergraduate and postgraduate programs in medicine and allied health sciences. The university is ranked #489 in Best Global Universities.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="assiutTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="assiut-courses-tab" data-bs-toggle="tab" data-bs-target="#assiut-courses" type="button" role="tab" aria-controls="assiut-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="assiut-admission-tab" data-bs-toggle="tab" data-bs-target="#assiut-admission" type="button" role="tab" aria-controls="assiut-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="assiut-fees-tab" data-bs-toggle="tab" data-bs-target="#assiut-fees" type="button" role="tab" aria-controls="assiut-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="assiut-facilities-tab" data-bs-toggle="tab" data-bs-target="#assiut-facilities" type="button" role="tab" aria-controls="assiut-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="assiutTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="assiut-courses" role="tabpanel" aria-labelledby="assiut-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <ul class="program-list">
@@ -750,7 +751,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="assiut-admission" role="tabpanel" aria-labelledby="assiut-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -792,7 +793,7 @@
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="assiut-fees" role="tabpanel" aria-labelledby="assiut-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -815,7 +816,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="assiut-facilities" role="tabpanel" aria-labelledby="assiut-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
                             <p>The university provides hostel accommodations equipped with necessary amenities to ensure a conducive living environment for students.</p>
@@ -848,24 +849,24 @@
             <div class="card-body">
                 <p>Tanta University is a prominent public university located in Tanta, Egypt. The Faculty of Medicine is one of its leading faculties, offering comprehensive medical education and training to both local and international students. The university is ranked 14th among medical faculties in Egypt and 4397th globally.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="tantaTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="tanta-courses-tab" data-bs-toggle="tab" data-bs-target="#tanta-courses" type="button" role="tab" aria-controls="tanta-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="tanta-admission-tab" data-bs-toggle="tab" data-bs-target="#tanta-admission" type="button" role="tab" aria-controls="tanta-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="tanta-fees-tab" data-bs-toggle="tab" data-bs-target="#tanta-fees" type="button" role="tab" aria-controls="tanta-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="tanta-facilities-tab" data-bs-toggle="tab" data-bs-target="#tanta-facilities" type="button" role="tab" aria-controls="tanta-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="tantaTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="tanta-courses" role="tabpanel" aria-labelledby="tanta-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <ul class="program-list">
@@ -888,7 +889,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="tanta-admission" role="tabpanel" aria-labelledby="tanta-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -928,7 +929,7 @@
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="tanta-fees" role="tabpanel" aria-labelledby="tanta-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -951,7 +952,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="tanta-facilities" role="tabpanel" aria-labelledby="tanta-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
                             <p>The university offers hostel accommodations equipped with necessary amenities to ensure a conducive living environment for students.</p>
@@ -984,24 +985,24 @@
             <div class="card-body">
                 <p>Zagazig University is a prominent public university located in Zagazig, Egypt. The Faculty of Medicine is one of its leading faculties, offering comprehensive medical education and training to both local and international students. The university holds a significant position among Egyptian medical faculties, reflecting its commitment to quality education and research.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="zagazigTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="zagazig-courses-tab" data-bs-toggle="tab" data-bs-target="#zagazig-courses" type="button" role="tab" aria-controls="zagazig-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="zagazig-admission-tab" data-bs-toggle="tab" data-bs-target="#zagazig-admission" type="button" role="tab" aria-controls="zagazig-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="zagazig-fees-tab" data-bs-toggle="tab" data-bs-target="#zagazig-fees" type="button" role="tab" aria-controls="zagazig-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="zagazig-facilities-tab" data-bs-toggle="tab" data-bs-target="#zagazig-facilities" type="button" role="tab" aria-controls="zagazig-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="zagazigTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="zagazig-courses" role="tabpanel" aria-labelledby="zagazig-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <p>The Faculty of Medicine offers a comprehensive MBBS program designed to provide extensive theoretical knowledge and practical clinical experience.</p>
@@ -1025,7 +1026,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="zagazig-admission" role="tabpanel" aria-labelledby="zagazig-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -1065,7 +1066,7 @@
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="zagazig-fees" role="tabpanel" aria-labelledby="zagazig-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -1088,7 +1089,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="zagazig-facilities" role="tabpanel" aria-labelledby="zagazig-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
                             <p>The university provides hostel accommodations equipped with necessary amenities to ensure a conducive living environment for students.</p>
@@ -1121,24 +1122,24 @@
             <div class="card-body">
                 <p>Helwan University is a public university located in Helwan, Egypt. The Faculty of Medicine is dedicated to providing quality medical education and research opportunities. The university is recognized for its contributions to medical education and research within Egypt.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="helwanTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="helwan-courses-tab" data-bs-toggle="tab" data-bs-target="#helwan-courses" type="button" role="tab" aria-controls="helwan-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="helwan-admission-tab" data-bs-toggle="tab" data-bs-target="#helwan-admission" type="button" role="tab" aria-controls="helwan-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="helwan-fees-tab" data-bs-toggle="tab" data-bs-target="#helwan-fees" type="button" role="tab" aria-controls="helwan-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="helwan-facilities-tab" data-bs-toggle="tab" data-bs-target="#helwan-facilities" type="button" role="tab" aria-controls="helwan-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="helwanTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="helwan-courses" role="tabpanel" aria-labelledby="helwan-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <p>The Faculty of Medicine offers an MBBS program designed to equip students with comprehensive medical knowledge and clinical skills.</p>
@@ -1162,7 +1163,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="helwan-admission" role="tabpanel" aria-labelledby="helwan-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -1201,7 +1202,7 @@
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="helwan-fees" role="tabpanel" aria-labelledby="helwan-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -1224,7 +1225,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="helwan-facilities" role="tabpanel" aria-labelledby="helwan-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
                             <p>The university offers hostel accommodations with essential amenities to ensure a comfortable living environment for students.</p>
@@ -1260,24 +1261,24 @@
             <div class="card-body">
                 <p>Beni-Suef University is a public university located in Beni-Suef, Egypt. The Faculty of Medicine aims to provide high-quality medical education and promote research initiatives. The university is gaining recognition for its commitment to medical education and research.</p>
 
-                <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <ul class="nav nav-tabs" id="beniSuefTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+                        <button class="nav-link active" id="beniSuef-courses-tab" data-bs-toggle="tab" data-bs-target="#beniSuef-courses" type="button" role="tab" aria-controls="beniSuef-courses" aria-selected="true">Courses</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="false">Admission</button>
+                        <button class="nav-link" id="beniSuef-admission-tab" data-bs-toggle="tab" data-bs-target="#beniSuef-admission" type="button" role="tab" aria-controls="beniSuef-admission" aria-selected="false">Admission</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">Fees</button>
+                        <button class="nav-link" id="beniSuef-fees-tab" data-bs-toggle="tab" data-bs-target="#beniSuef-fees" type="button" role="tab" aria-controls="beniSuef-fees" aria-selected="false">Fees</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="tab" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        <button class="nav-link" id="beniSuef-facilities-tab" data-bs-toggle="tab" data-bs-target="#beniSuef-facilities" type="button" role="tab" aria-controls="beniSuef-facilities" aria-selected="false">Facilities</button>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="programTabsContent">
+                <div class="tab-content" id="beniSuefTabsContent">
                     <!-- Courses -->
-                    <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                    <div class="tab-pane fade show active" id="beniSuef-courses" role="tabpanel" aria-labelledby="beniSuef-courses-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>MBBS Program</h4>
                             <p>The Faculty of Medicine offers an MBBS program that integrates theoretical knowledge with practical clinical training.</p>
@@ -1301,7 +1302,7 @@
                     </div>
 
                     <!-- Admission -->
-                    <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                    <div class="tab-pane fade" id="beniSuef-admission" role="tabpanel" aria-labelledby="beniSuef-admission-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Requirements</h4>
                             <ul class="program-list">
@@ -1340,7 +1341,7 @@
                     </div>
 
                     <!-- Fees -->
-                    <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+                    <div class="tab-pane fade" id="beniSuef-fees" role="tabpanel" aria-labelledby="beniSuef-fees-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-money-bill-wave me-2"></i>Fee Structure</h4>
                             <ul class="program-list">
@@ -1363,7 +1364,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab">
+                    <div class="tab-pane fade" id="beniSuef-facilities" role="tabpanel" aria-labelledby="beniSuef-facilities-tab">
                         <div class="program-card">
                             <h4 class="program-title"><i class="fas fa-building me-2"></i>Hostel Facilities</h4>
                             <p>The university provides hostel facilities equipped with necessary amenities to support students' living and learning experiences.</p>

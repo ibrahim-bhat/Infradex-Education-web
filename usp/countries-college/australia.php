@@ -329,7 +329,7 @@
                     <h4 class="text-white mb-3">Admissions</h4>
                     <ul class="program-list">
                         <li><i class="fas fa-calendar-alt"></i><div>Semester 2 Deadline: April 30, 2025</div></li>
-                        <li><i class="fas fa-percentage"></i><div>Acceptance Rate: 70-80%</div></li>
+                        <li><i class="fas fa-percentage"></i><div>Acceptance Rate: 70-80% (The University of Melbourne attracts a large number of applications from prospective undergraduate and graduate students. With an acceptance rate ranging between 70% and 80%, the university maintains a moderate level of competitiveness, admitting approximately 70 to 80 students out of every 100 applicants.)</div></li>
                         <li><i class="fas fa-check-circle"></i><div>Graduate admission deadlines vary by program</div></li>
                     </ul>
                 </div>
@@ -424,8 +424,34 @@
                 <div class="mt-4">
                     <h4 class="text-white mb-3">Admissions</h4>
                     <ul class="program-list">
-                        <li><i class="fas fa-calendar-alt"></i><div>Undergraduate Deadline (Semester 2): May 15, 2025</div></li>
-                        <li><i class="fas fa-calendar-check"></i><div>MBA Admission Deadline: February 23, 2025</div></li>
+                        <li>
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>Undergraduate Deadline (Semester 2): May 15, 2025</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-percentage"></i>
+                            <div>
+                                <p>The University of New South Wales (UNSW) has a student body exceeding 66,000, with more than 36,000 students enrolled in undergraduate programs across various disciplines and over 29,000 pursuing postgraduate studies. The estimated acceptance rate of UNSW is around 60%. However, it is important to note that the university does not officially disclose enrollment data, and the figures provided are based on unofficial sources.</p>
+                                <p>Enrollment Statistics at UNSW:</p>
+                                <ul>
+                                    <li>Total Students: 66,464</li>
+                                    <li>Undergraduate Students: 36,332</li>
+                                    <li>Graduate Students: 29,229</li>
+                                </ul>
+                                <p>Acceptance Rate for International Students:</p>
+                                <p>UNSW has an enrollment of over 66,000 students, including more than 42,000 domestic and 23,000 international students. The following table provides a breakdown:</p>
+                                <ul>
+                                    <li>Total Students: 66,464</li>
+                                    <li>Domestic Students: 42,750</li>
+                                    <li>International Students: 23,714</li>
+                                    <li>Acceptance Rate: 60%</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-calendar-check"></i>
+                            <div>MBA Admission Deadline: February 23, 2025</div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -638,11 +664,88 @@
                 </div>
 
                 <div class="mt-4">
+                    <h4 class="text-white mb-3">Campus Statistics</h4>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Campus</th>
+                                    <th>Students (2022)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Clayton</td>
+                                    <td>16,188</td>
+                                </tr>
+                                <tr>
+                                    <td>Caulfield</td>
+                                    <td>49,366</td>
+                                </tr>
+                                <tr>
+                                    <td>Gippsland</td>
+                                    <td>403</td>
+                                </tr>
+                                <tr>
+                                    <td>Parkville</td>
+                                    <td>2,238</td>
+                                </tr>
+                                <tr>
+                                    <td>Peninsula</td>
+                                    <td>3,959</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="text-white mb-3">Student Demographics</h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-box">
+                                <h5>Total Students</h5>
+                                <span>58,725</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-box">
+                                <h5>International Students</h5>
+                                <span>23,835</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-box">
+                                <h5>Graduate Students</h5>
+                                <span>6,683</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-box">
+                                <h5>Undergraduate Students</h5>
+                                <span>11,630</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
                     <h4 class="text-white mb-3">Admissions</h4>
                     <ul class="program-list">
-                        <li><i class="fas fa-calendar-alt"></i><div>Semester 2 Deadline: April 30, 2025</div></li>
-                        <li><i class="fas fa-percentage"></i><div>Acceptance Rate: 70-80%</div></li>
-                        <li><i class="fas fa-check-circle"></i><div>Graduate admission deadlines vary by program</div></li>
+                        <li><i class="fas fa-percentage"></i><div>Acceptance Rate: 40% (Moderately Selective)</div></li>
+                        <li><i class="fas fa-globe"></i><div>Students from 170+ countries worldwide</div></li>
+                        <li><i class="fas fa-graduation-cap"></i><div>Undergraduate Requirements:<br>
+                            - Age 17 or above<br>
+                            - Completed secondary school<br>
+                            - English proficiency<br>
+                            - Satisfactory IB score</div></li>
+                        <li><i class="fas fa-user-graduate"></i><div>Postgraduate Requirements:<br>
+                            - Bachelor's degree in related field<br>
+                            - English proficiency</div></li>
+                        <li><i class="fas fa-language"></i><div>English Requirements:<br>
+                            - IELTS: 6.5 (no band below 6.0)<br>
+                            - TOEFL iBT: 79 (R:13, L:12, W:21, S:18)<br>
+                            - PTE: 58</div></li>
                     </ul>
                 </div>
             </div>
@@ -734,21 +837,42 @@
                 </div>
 
                 <div class="mt-4">
-                    <h4 class="text-white mb-3">Admissions & Enrollment</h4>
+                    <h4 class="text-white mb-3">Enrollment Statistics (2022-2023)</h4>
                     <ul class="program-list">
-                        <li><i class="fas fa-calendar-alt"></i><div>Semester 2 Deadline: May 31, 2025</div></li>
-                        <li><i class="fas fa-percentage"></i><div>Overall Acceptance Rate: 40%</div></li>
-                        <li><i class="fas fa-globe"></i><div>International Student Acceptance Rate: 39%</div></li>
-                        <li><i class="fas fa-users"></i><div>Total Students: 55,441 (21,574 International)</div></li>
+                        <li><i class="fas fa-users"></i><div>Total Students: 55,441</div></li>
+                        <li><i class="fas fa-user-graduate"></i><div>Undergraduate Students: 34,338</div></li>
+                        <li><i class="fas fa-graduation-cap"></i><div>Graduate Students: 20,957</div></li>
+                        <li><i class="fas fa-globe"></i><div>International Students: 21,574</div></li>
                     </ul>
 
-                    <h5 class="text-white mt-4 mb-3">Admission Requirements</h5>
+                    <h5 class="text-white mt-4 mb-3">Acceptance Rates</h5>
+                    <ul class="program-list">
+                        <li><i class="fas fa-percentage"></i><div>Overall Acceptance Rate: 40% (Moderately Competitive)</div></li>
+                        <li><i class="fas fa-globe"></i><div>International Student Acceptance Rate: 39%</div></li>
+                    </ul>
+
+                    <h5 class="text-white mt-4 mb-3">Admission Requirements for International Students</h5>
                     <ul class="program-list">
                         <li><i class="fas fa-check-circle"></i><div>Letters of Recommendation (LORs)</div></li>
                         <li><i class="fas fa-check-circle"></i><div>Application Essay & Personal Statement</div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Resume (if applicable)</div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Volunteer Work Experience</div></li>
                         <li><i class="fas fa-check-circle"></i><div>Standardized Test Scores</div></li>
                         <li><i class="fas fa-check-circle"></i><div>English Proficiency Test Scores</div></li>
+                        <li><i class="fas fa-check-circle"></i><div>Financial Documents</div></li>
                         <li><i class="fas fa-check-circle"></i><div>Program-Specific Prerequisites</div></li>
+                    </ul>
+
+                    <h5 class="text-white mt-4 mb-3">Tips for Increasing Admission Chances</h5>
+                    <ul class="program-list">
+                        <li><i class="fas fa-star"></i><div>Academic Excellence:<br>
+                            - Meet program prerequisites and entry score requirements<br>
+                            - Consider advanced courses in your field</div></li>
+                        <li><i class="fas fa-route"></i><div>Alternative Pathways:<br>
+                            - Explore pathway programs or foundation courses if needed</div></li>
+                        <li><i class="fas fa-tasks"></i><div>Extracurricular Activities:<br>
+                            - Participate in relevant volunteer work and competitions<br>
+                            - Develop strong communication and writing skills</div></li>
                     </ul>
                 </div>
             </div>
@@ -1251,16 +1375,18 @@
                         </div>
                         <div class="col-md-4">
                             <div class="stat-box">
-                                <h5>Acceptance Rate</h5>
-                                <span>54%</span>
+                                <h5>Countries Represented</h5>
+                                <span>170</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-4">
-                    <h4 class="text-white mb-3">Admissions</h4>
+                    <h4 class="text-white mb-3">Acceptance Rate & Admissions</h4>
                     <ul class="program-list">
+                        <li><i class="fas fa-percentage"></i><div>Overall acceptance rate of 54% (Moderately competitive)</div></li>
+                        <li><i class="fas fa-user-graduate"></i><div>Around 10,000 degrees awarded annually</div></li>
                         <li><i class="fas fa-calendar-alt"></i><div>Session 2 Deadline (UG): July 07, 2025</div></li>
                         <li><i class="fas fa-calendar-alt"></i><div>MBA Round 2 Deadline: March 17, 2025</div></li>
                         <li><i class="fas fa-gift"></i><div>Scholarships available for Indian Students worth INR 5.44 L</div></li>
