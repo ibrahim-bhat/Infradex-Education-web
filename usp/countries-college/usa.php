@@ -2297,21 +2297,21 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                        <ul class="nav nav-tabs" id="princetonTabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="programs-tab" data-bs-toggle="tab" data-bs-target="#programs" type="button" role="tab" aria-controls="programs" aria-selected="true">Programs</button>
+                                <button class="nav-link active" id="princeton-programs-tab" data-bs-toggle="tab" data-bs-target="#princeton-programs" type="button" role="tab" aria-controls="princeton-programs" aria-selected="true">Programs</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="admissions-tab" data-bs-toggle="tab" data-bs-target="#admissions" type="button" role="tab" aria-controls="admissions" aria-selected="false">Admissions</button>
+                                <button class="nav-link" id="princeton-admissions-tab" data-bs-toggle="tab" data-bs-target="#princeton-admissions" type="button" role="tab" aria-controls="princeton-admissions" aria-selected="false">Admissions</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="rankings-tab" data-bs-toggle="tab" data-bs-target="#rankings" type="button" role="tab" aria-controls="rankings" aria-selected="false">Rankings</button>
+                                <button class="nav-link" id="princeton-rankings-tab" data-bs-toggle="tab" data-bs-target="#princeton-rankings" type="button" role="tab" aria-controls="princeton-rankings" aria-selected="false">Rankings</button>
                             </li>
                         </ul>
 
-                        <div class="tab-content" id="programTabsContent">
+                        <div class="tab-content" id="princetonTabsContent">
                             <!-- Programs Tab -->
-                            <div class="tab-pane fade show active" id="programs" role="tabpanel" aria-labelledby="programs-tab">
+                            <div class="tab-pane fade show active" id="princeton-programs" role="tabpanel" aria-labelledby="princeton-programs-tab">
                                 <div class="program-card">
                                     <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>Available Programs</h4>
                         <ul class="program-list">
@@ -2374,7 +2374,7 @@
                 </div>
 
                             <!-- Admissions Tab -->
-                            <div class="tab-pane fade" id="admissions" role="tabpanel" aria-labelledby="admissions-tab">
+                            <div class="tab-pane fade" id="princeton-admissions" role="tabpanel" aria-labelledby="princeton-admissions-tab">
                                 <div class="program-card">
                                     <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Details</h4>
 
@@ -2424,7 +2424,7 @@
                             </div>
 
                             <!-- Rankings Tab -->
-                <div class="tab-pane fade" id="rankings" role="tabpanel" aria-labelledby="rankings-tab">
+                <div class="tab-pane fade" id="princeton-rankings" role="tabpanel" aria-labelledby="princeton-rankings-tab">
                             <div class="program-card">
                                     <h4 class="program-title"><i class="fas fa-award me-2"></i>Global Rankings</h4>
                                 <div class="mb-4">
@@ -2456,29 +2456,29 @@
                         <div class="d-flex flex-wrap align-items-center">
                             <div class="university-logo">
                                 <span>COLUMBIA</span>
-                                </div>
+                            </div>
                             <div>
                                 <h2 class="fw-bold mb-2">Columbia University</h2>
                                 <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>New York, New York, USA</p>
-                                    </div>
-                                </div>
                             </div>
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                        <ul class="nav nav-tabs" id="columbiaTabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="programs-tab" data-bs-toggle="tab" data-bs-target="#programs" type="button" role="tab" aria-controls="programs" aria-selected="true">Programs</button>
+                                <button class="nav-link active" id="columbia-programs-tab" data-bs-toggle="tab" data-bs-target="#columbia-programs" type="button" role="tab" aria-controls="columbia-programs" aria-selected="true">Programs</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="admissions-tab" data-bs-toggle="tab" data-bs-target="#admissions" type="button" role="tab" aria-controls="admissions" aria-selected="false">Admissions</button>
+                                <button class="nav-link" id="columbia-admissions-tab" data-bs-toggle="tab" data-bs-target="#columbia-admissions" type="button" role="tab" aria-controls="columbia-admissions" aria-selected="false">Admissions</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="rankings-tab" data-bs-toggle="tab" data-bs-target="#rankings" type="button" role="tab" aria-controls="rankings" aria-selected="false">Rankings</button>
+                                <button class="nav-link" id="columbia-rankings-tab" data-bs-toggle="tab" data-bs-target="#columbia-rankings" type="button" role="tab" aria-controls="columbia-rankings" aria-selected="false">Rankings</button>
                             </li>
                         </ul>
 
-                        <div class="tab-content" id="programTabsContent">
+                        <div class="tab-content" id="columbiaTabsContent">
                             <!-- Programs Tab -->
-                            <div class="tab-pane fade show active" id="programs" role="tabpanel" aria-labelledby="programs-tab">
+                            <div class="tab-pane fade show active" id="columbia-programs" role="tabpanel" aria-labelledby="columbia-programs-tab">
                                 <div class="program-card">
                                     <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>Available Programs</h4>
                                     <ul class="program-list">
@@ -2649,7 +2649,7 @@
     </div>
 
                             <!-- Admissions Tab -->
-                            <div class="tab-pane fade" id="admissions" role="tabpanel" aria-labelledby="admissions-tab">
+                            <div class="tab-pane fade" id="columbia-admissions" role="tabpanel" aria-labelledby="columbia-admissions-tab">
                                 <div class="program-card">
                                     <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Information</h4>
                                     
@@ -2707,7 +2707,7 @@
                             </div>
 
                             <!-- Rankings Tab -->
-                            <div class="tab-pane fade" id="rankings" role="tabpanel" aria-labelledby="rankings-tab">
+                            <div class="tab-pane fade" id="columbia-rankings" role="tabpanel" aria-labelledby="columbia-rankings-tab">
                                 <div class="program-card">
                                     <h4 class="program-title"><i class="fas fa-award me-2"></i>Global Rankings</h4>
                                     <div class="mb-4">
