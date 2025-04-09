@@ -203,7 +203,7 @@
 
     <style>
     .custom-table {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(10px);
         border-radius: 15px;
         overflow: hidden;
@@ -212,28 +212,29 @@
     }
 
     .custom-table thead {
-        background: linear-gradient(45deg, rgba(128, 0, 255, 0.2), rgba(74, 0, 224, 0.2));
+        background: linear-gradient(45deg, rgba(128, 0, 255, 0.3), rgba(74, 0, 224, 0.3));
     }
 
     .custom-table th {
-        color: white;
+        color: #ffffff;
         font-weight: 600;
         padding: 1rem;
         border-bottom: 1px solid rgba(128, 0, 255, 0.2);
     }
 
     .custom-table td {
-        color: rgba(255, 255, 255, 0.8);
+        color: #ffffff;
         padding: 1rem;
         border-bottom: 1px solid rgba(128, 0, 255, 0.1);
     }
 
     .custom-table tbody tr {
         transition: all 0.3s ease;
+        background: rgba(0, 0, 0, 0.5);
     }
 
     .custom-table tbody tr:hover {
-        background: rgba(128, 0, 255, 0.1);
+        background: rgba(128, 0, 255, 0.2);
         transform: translateX(5px);
     }
 
