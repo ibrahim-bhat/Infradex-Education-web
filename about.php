@@ -109,7 +109,7 @@
      </section>
 
      <!-- Team Section -->
-     <section class="team-section py-3">
+     <!-- <section class="team-section py-3">
          <div class="container">
              <h2 class="text-center mb-4 text-white">Meet Our Team</h2>
              <div class="row g-4">
@@ -193,7 +193,7 @@
                  </div>
              </div>
          </div>
-     </section>
+     </section> -->
 
      <footer class="footer-section">
          <?php include 'components/footer.php'; ?>

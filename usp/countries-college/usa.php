@@ -1612,7 +1612,7 @@
                                     <div class="stats-card mb-4">
                                         <h5>Class of 2027 Statistics</h5>
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="csol-md-4">
                                                 <p class="large-stat">3.4%</p>
                                                 <p>Overall Acceptance Rate</p>
                                             </div>

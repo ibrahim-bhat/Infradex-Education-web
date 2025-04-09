@@ -30,11 +30,19 @@
                  <div class="col-lg-2 col-md-6">
                      <div class="footer-widget">
                          <h4 class="widget-title">Quick Links</h4>
-                         <ul class="footer-links">
-                             <li><a href="<?php echo $basePath; ?>#home">Home</a></li>
-                             <li><a href="<?php echo $basePath; ?>#about">About Us</a></li>
-                             <li><a href="<?php echo $basePath; ?>#contact">Contact</a></li>
-                         </ul>
+                         <div class="footer-links">
+                             <a href="<?php echo $basePath; ?>#home">Home</a>
+                             <a href="<?php echo $basePath; ?>#about">About Us</a>
+                             <a href="<?php echo $basePath; ?>#contact">Contact</a>
+                             <a href="<?php echo $basePath; ?>#">Terms & Conditions</a>
+                             <a href="<?php echo $basePath; ?>#">Privacy Policy</a>
+                             <a href="<?php echo $basePath; ?>#">FAQ</a>
+                             <a href="about.php">About Us</a>
+                             <a href="contact.php">Contact</a>
+                             <a href="privacy-policy.php">Privacy Policy</a>
+                             <a href="terms.php">Terms of Service</a>
+                             <a href="tech-team.php">Infradex Tech Team</a>
+                         </div>
                      </div>
                  </div>
 

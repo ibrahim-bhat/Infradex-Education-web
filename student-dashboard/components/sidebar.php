@@ -27,11 +27,11 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                         <i class="fas fa-th-large"></i> Dashboard
                     </a>
                 </li>
-                <li class="<?php echo $current_page === 'scholarship' ? 'active' : ''; ?>">
+                <!-- <li class="<?php echo $current_page === 'scholarship' ? 'active' : ''; ?>">
                     <a href="scholarship.php">
                         <i class="fas fa-graduation-cap"></i> Scholarships
                     </a>
-                </li>
+                </li> -->
                 <li class="<?php echo $current_page === 'my-courses' ? 'active' : ''; ?>">
                     <a href="my-courses.php">
                         <i class="fas fa-book"></i> My Courses
