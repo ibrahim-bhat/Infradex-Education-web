@@ -21,121 +21,247 @@
         <div class="career-counseling-header text-center">
             <h1 class="text-white mb-4">
                 <i class="fas fa-university me-3"></i>
-                Courses After Class 12
+                Program Selection Guide
             </h1>
             <p class="text-light lead px-4">
-                Explore various higher education opportunities and make informed decisions about your academic future
+                Explore comprehensive details about various programs and make informed decisions about your academic future
             </p>
         </div>
 
-        <div class="career-counseling-content text-light">
-            <p class="mb-4">
-                Class 12 marks a significant transition for students, opening doors to various higher education opportunities. At this stage, students often have questions such as:
-            </p>
+        <!-- Medical Programs Table -->
+        <div class="program-table-section mb-5">
+            <h2 class="text-white mb-4">Medical Programs</h2>
+            <div class="table-responsive">
+                <table class="table custom-table">
+                    <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Duration</th>
+                            <th>Eligibility</th>
+                            <th>Entrance Exams</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MBBS</td>
+                            <td>5.5 Years</td>
+                            <td>PCB with min. 50% in 12th</td>
+                            <td>NEET UG</td>
+                        </tr>
+                        <tr>
+                            <td>BDS</td>
+                            <td>5 Years</td>
+                            <td>PCB with min. 50% in 12th</td>
+                            <td>NEET UG</td>
+                        </tr>
+                        <tr>
+                            <td>BAMS</td>
+                            <td>5.5 Years</td>
+                            <td>PCB with min. 50% in 12th</td>
+                            <td>NEET UG</td>
+                        </tr>
+                        <tr>
+                            <td>B.Pharm</td>
+                            <td>4 Years</td>
+                            <td>PCB/PCM with min. 45% in 12th</td>
+                            <td>GPAT</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-            <ul class="mb-4">
-                <li>Should I specialize now or later?</li>
-                <li>Should I choose a popular course or explore emerging fields?</li>
-                <li>Which entrance exams do I need to take for a particular course?</li>
-            </ul>
+        <!-- Engineering Programs Table -->
+        <div class="program-table-section mb-5">
+            <h2 class="text-white mb-4">Engineering Programs</h2>
+            <div class="table-responsive">
+                <table class="table custom-table">
+                    <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Duration</th>
+                            <th>Eligibility</th>
+                            <th>Entrance Exams</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>B.Tech</td>
+                            <td>4 Years</td>
+                            <td>PCM with min. 60% in 12th</td>
+                            <td>JEE Main, JEE Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>B.E</td>
+                            <td>4 Years</td>
+                            <td>PCM with min. 60% in 12th</td>
+                            <td>JEE Main, State CETs</td>
+                        </tr>
+                        <tr>
+                            <td>B.Arch</td>
+                            <td>5 Years</td>
+                            <td>PCM with min. 50% in 12th</td>
+                            <td>JEE Main Paper 2, NATA</td>
+                        </tr>
+                        <tr>
+                            <td>Integrated M.Tech</td>
+                            <td>5 Years</td>
+                            <td>PCM with min. 60% in 12th</td>
+                            <td>JEE Main, JEE Advanced</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-            <p class="mb-4">
-                To assist students in making informed decisions, Shiksha provides guidance on a wide range of courses and career options available. Let's explore these possibilities.
-            </p>
+        <!-- Commerce Programs Table -->
+        <div class="program-table-section mb-5">
+            <h2 class="text-white mb-4">Commerce Programs</h2>
+            <div class="table-responsive">
+                <table class="table custom-table">
+                    <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Duration</th>
+                            <th>Eligibility</th>
+                            <th>Entrance Exams</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>B.Com</td>
+                            <td>3 Years</td>
+                            <td>Commerce in 12th with min. 45%</td>
+                            <td>University Entrance Tests</td>
+                        </tr>
+                        <tr>
+                            <td>BBA</td>
+                            <td>3 Years</td>
+                            <td>Any stream with min. 50% in 12th</td>
+                            <td>CAT, XAT, MAT</td>
+                        </tr>
+                        <tr>
+                            <td>CA</td>
+                            <td>4.5 Years</td>
+                            <td>Commerce in 12th with min. 55%</td>
+                            <td>CA Foundation</td>
+                        </tr>
+                        <tr>
+                            <td>CS</td>
+                            <td>3 Years</td>
+                            <td>Any stream with min. 50% in 12th</td>
+                            <td>CS Foundation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-            <h2 class="highlight-text mb-4">Courses After Class 12 for Science Students</h2>
-            <p>For students who have studied Science with Mathematics (PCM/PCMB) in Class 11 and 12, popular courses include:</p>
-            <ul class="mb-4">
-                <li>BTech/BE</li>
-                <li>Integrated MTech</li>
-                <li>BCA</li>
-                <li>BArch</li>
-                <li>BSc</li>
-            </ul>
-
-            <p>Students with a PCM/PCMB background can also pursue careers in the aviation industry as a Commercial Pilot or apply to the National Defence Academy (NDA), Pune.</p>
-
-            <p>For those who have studied Science with Biology (PCB/PCMB), common courses are:</p>
-            <ul class="mb-4">
-                <li>MBBS</li>
-                <li>BDS</li>
-                <li>BPharma</li>
-                <li>Nursing</li>
-                <li>Paramedical fields</li>
-            </ul>
-
-            <p>Additionally, Science students may opt for courses in areas like:</p>
-            <ul class="mb-4">
-                <li>Law</li>
-                <li>Management</li>
-                <li>Mass Communication</li>
-                <li>Animation</li>
-                <li>Graphic Designing</li>
-                <li>Travel & Tourism</li>
-                <li>Hospitality</li>
-                <li>Fashion Designing</li>
-            </ul>
-
-            <h3 class="highlight-text mb-3">Top Entrance Exams for Science Courses After 12th</h3>
-            <ul class="mb-4">
-                <li><strong>Engineering Exams:</strong> JEE Main, JEE Advanced</li>
-                <li><strong>Medical Exams:</strong> NEET UG, NEET PG, AIIMS MBBS</li>
-                <li><strong>Science Exams:</strong> NEST, IIT JAM, JEST</li>
-            </ul>
-
-            <h2 class="highlight-text mb-4">Courses After Class 12 for Commerce Students</h2>
-            <p>For Commerce students (with or without Mathematics), popular undergraduate courses include:</p>
-            <ul class="mb-4">
-                <li>BCom, BCom (Hons), Eco (Hons)</li>
-                <li>BBA/BMS</li>
-                <li>Integrated MBA</li>
-                <li>CFP, CA, and CS</li>
-            </ul>
-
-            <p>Commerce students can also pursue competitive exams for Banking, Defence, and Civil Services. Other available options include:</p>
-            <ul class="mb-4">
-                <li>BStat</li>
-                <li>BJMC</li>
-                <li>BBA LLB</li>
-                <li>BCA</li>
-                <li>BHM</li>
-                <li>Travel & Tourism</li>
-                <li>Fashion Designing</li>
-                <li>Advertising</li>
-            </ul>
-
-            <h3 class="highlight-text mb-3">Top Entrance Exams for Commerce Courses After 12th</h3>
-            <ul class="mb-4">
-                <li><strong>Accounting & Commerce Exams:</strong> ICWAI, ICSI, ICAI</li>
-            </ul>
-
-            <h2 class="highlight-text mb-4">Courses After Class 12 for Arts Students</h2>
-            <p>Arts students have a broad range of course options to consider, such as:</p>
-            <ul class="mb-4">
-                <li>BA in Humanities & Social Sciences</li>
-                <li>BA in Arts (Fine/Visual/Performing)</li>
-                <li>Bachelor of Fine Arts (BFA)</li>
-                <li>BDes in Animation</li>
-                <li>BA LLB</li>
-                <li>BDes in Design</li>
-                <li>BSc in Hospitality & Travel</li>
-                <li>BSc in Design</li>
-                <li>BJMC, BMM (Journalism & Mass Communication)</li>
-                <li>BHM (Hospitality & Travel)</li>
-            </ul>
-
-            <p>Additionally, Arts students can explore fields like Linguistics, Foreign Languages, Fashion Designing, Theatre Studies, Film Making, Art History, and more.</p>
-
-            <h3 class="highlight-text mb-3">List of Entrance Exams for Arts Courses After 12th</h3>
-            <ul class="mb-4">
-                <li><strong>Law Exams:</strong> CLAT, AILET, LSAT</li>
-                <li><strong>Design Exams:</strong> NID, NIFT</li>
-                <li><strong>Hospitality Exams:</strong> NCHMCT JEE</li>
-                <li><strong>Mass Communication Exams:</strong> IIMC, JMI, XIC- OET</li>
-                <li><strong>Humanities Exams:</strong> JNUEE, DUET, PUBDET</li>
-            </ul>
+        <!-- Arts & Humanities Programs Table -->
+        <div class="program-table-section mb-5">
+            <h2 class="text-white mb-4">Arts & Humanities Programs</h2>
+            <div class="table-responsive">
+                <table class="table custom-table">
+                    <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Duration</th>
+                            <th>Eligibility</th>
+                            <th>Entrance Exams</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BA</td>
+                            <td>3 Years</td>
+                            <td>Any stream with min. 45% in 12th</td>
+                            <td>University Entrance Tests</td>
+                        </tr>
+                        <tr>
+                            <td>BFA</td>
+                            <td>4 Years</td>
+                            <td>Any stream with min. 50% in 12th</td>
+                            <td>NID DAT, UCEED</td>
+                        </tr>
+                        <tr>
+                            <td>BA LLB</td>
+                            <td>5 Years</td>
+                            <td>Any stream with min. 45% in 12th</td>
+                            <td>CLAT, AILET</td>
+                        </tr>
+                        <tr>
+                            <td>BJMC</td>
+                            <td>3 Years</td>
+                            <td>Any stream with min. 50% in 12th</td>
+                            <td>IIMC, XIC-OET</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+
+    <style>
+    .custom-table {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(128, 0, 255, 0.1);
+    }
+
+    .custom-table thead {
+        background: linear-gradient(45deg, rgba(128, 0, 255, 0.2), rgba(74, 0, 224, 0.2));
+    }
+
+    .custom-table th {
+        color: white;
+        font-weight: 600;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(128, 0, 255, 0.2);
+    }
+
+    .custom-table td {
+        color: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+        border-bottom: 1px solid rgba(128, 0, 255, 0.1);
+    }
+
+    .custom-table tbody tr {
+        transition: all 0.3s ease;
+    }
+
+    .custom-table tbody tr:hover {
+        background: rgba(128, 0, 255, 0.1);
+        transform: translateX(5px);
+    }
+
+    .program-table-section {
+        position: relative;
+    }
+
+    .program-table-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 20%, rgba(128, 0, 255, 0.05), transparent 70%);
+        pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+        .custom-table {
+            font-size: 0.9rem;
+        }
+
+        .custom-table td, .custom-table th {
+            padding: 0.75rem;
+        }
+    }
+    </style>
 
     <footer class="footer-section">
         <?php include '../../components/footer.php'; ?>
