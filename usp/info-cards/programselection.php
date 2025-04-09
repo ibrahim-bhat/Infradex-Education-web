@@ -201,9 +201,27 @@
         </div>
     </div>
 
+    <!-- Explore More Courses Section -->
+    <div class="explore-more-section mb-5">
+        <div class="explore-card">
+            <div class="explore-content">
+                <div class="courses-count">
+                    <span class="number">3000</span>
+                    <span class="plus">+</span>
+                </div>
+                <h2 class="text-white mb-3">Discover More Courses</h2>
+                <p class="text-light mb-4">Explore our extensive catalog of courses across various disciplines and universities worldwide</p>
+                <a href="../../courses.php" class="btn btn-explore">
+                    <span>Explore All Courses</span>
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <style>
     .custom-table {
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(10px);
         border-radius: 15px;
         overflow: hidden;
@@ -223,18 +241,18 @@
     }
 
     .custom-table td {
-        color: #ffffff;
+        color: #000000;
         padding: 1rem;
         border-bottom: 1px solid rgba(128, 0, 255, 0.1);
     }
 
     .custom-table tbody tr {
         transition: all 0.3s ease;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, 0.95);
     }
 
     .custom-table tbody tr:hover {
-        background: rgba(128, 0, 255, 0.2);
+        background: rgba(128, 0, 255, 0.1);
         transform: translateX(5px);
     }
 
@@ -260,6 +278,107 @@
 
         .custom-table td, .custom-table th {
             padding: 0.75rem;
+        }
+    }
+
+    .explore-more-section {
+        padding: 2rem 0;
+    }
+
+    .explore-card {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(128, 0, 255, 0.1);
+        padding: 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .explore-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 20%, rgba(128, 0, 255, 0.1), transparent 70%),
+            radial-gradient(circle at 80% 80%, rgba(74, 0, 224, 0.1), transparent 70%);
+        pointer-events: none;
+    }
+
+    .explore-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .courses-count {
+        margin-bottom: 1.5rem;
+        display: inline-block;
+    }
+
+    .courses-count .number {
+        font-size: 4rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #8a2be2, #4a0080);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 10px rgba(138, 43, 226, 0.3);
+    }
+
+    .courses-count .plus {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #8a2be2;
+        position: relative;
+        top: -1rem;
+    }
+
+    .btn-explore {
+        background: linear-gradient(45deg, #8a2be2, #4a0080);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    }
+
+    .btn-explore:hover {
+        transform: translateY(-3px);
+        background: linear-gradient(45deg, #9d4ef7, #5a0099);
+        color: white;
+        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+    }
+
+    .btn-explore i {
+        transition: transform 0.3s ease;
+    }
+
+    .btn-explore:hover i {
+        transform: translateX(5px);
+    }
+
+    @media (max-width: 768px) {
+        .explore-card {
+            padding: 2rem;
+        }
+
+        .courses-count .number {
+            font-size: 3rem;
+        }
+
+        .courses-count .plus {
+            font-size: 2rem;
+        }
+
+        .btn-explore {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
         }
     }
     </style>

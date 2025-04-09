@@ -70,6 +70,7 @@
                         <p>Alumni in different industries help students with internships and job placements.</p>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>

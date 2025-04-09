@@ -26,6 +26,100 @@
             <p class="text-light lead px-4">
                 Expert guidance to navigate the complex admission process and secure your place at your dream university
             </p>
+            
+            <!-- Admission Now Button -->
+            <div class="admission-cta mt-4">
+                <a href="tel:+1234567890" class="btn btn-admission">
+                    <i class="fas fa-phone-alt me-2"></i>
+                    Admission Now: +1234567890
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="quick-links-section mt-5">
+            <h2 class="text-white text-center mb-4">Explore Universities by Country</h2>
+            <div class="quick-links-grid">
+                <!-- USA Universities -->
+                <div class="country-links-card">
+                    <div class="card-header">
+                        <i class="fas fa-flag-usa"></i>
+                        <h3>USA Universities</h3>
+                    </div>
+                    <div class="links-content">
+                        <a href="../../usp/countries-college/usa.php" class="main-link">Study in USA</a>
+                        <div class="sub-links">
+                            <a href="../../usp/countries-college/usa.php#princeton">Princeton University</a>
+                            <a href="../../usp/countries-college/usa.php#columbia">Columbia University</a>
+                            <a href="../../usp/countries-college/usa.php#harvard">Harvard University</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UK Universities -->
+                <div class="country-links-card">
+                    <div class="card-header">
+                        <i class="fas fa-landmark"></i>
+                        <h3>UK Universities</h3>
+                    </div>
+                    <div class="links-content">
+                        <a href="../../usp/countries-college/uk.php" class="main-link">Study in UK</a>
+                        <div class="sub-links">
+                            <a href="../../usp/countries-college/uk.php#oxford">Oxford University</a>
+                            <a href="../../usp/countries-college/uk.php#cambridge">Cambridge University</a>
+                            <a href="../../usp/countries-college/uk.php#imperial">Imperial College London</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canada Universities -->
+                <div class="country-links-card">
+                    <div class="card-header">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Canada Universities</h3>
+                    </div>
+                    <div class="links-content">
+                        <a href="../../usp/countries-college/canada.php" class="main-link">Study in Canada</a>
+                        <div class="sub-links">
+                            <a href="../../usp/countries-college/canada.php#toronto">University of Toronto</a>
+                            <a href="../../usp/countries-college/canada.php#mcgill">McGill University</a>
+                            <a href="../../usp/countries-college/canada.php#ubc">University of British Columbia</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Australia Universities -->
+                <div class="country-links-card">
+                    <div class="card-header">
+                        <i class="fas fa-globe-oceania"></i>
+                        <h3>Australia Universities</h3>
+                    </div>
+                    <div class="links-content">
+                        <a href="../../usp/countries-college/australia.php" class="main-link">Study in Australia</a>
+                        <div class="sub-links">
+                            <a href="../../usp/countries-college/australia.php#melbourne">University of Melbourne</a>
+                            <a href="../../usp/countries-college/australia.php#sydney">University of Sydney</a>
+                            <a href="../../usp/countries-college/australia.php#anu">Australian National University</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bangladesh Universities -->
+                <div class="country-links-card">
+                    <div class="card-header">
+                        <i class="fas fa-monument"></i>
+                        <h3>Bangladesh Universities</h3>
+                    </div>
+                    <div class="links-content">
+                        <a href="../../usp/countries-college/bangladesh.php" class="main-link">Study in Bangladesh</a>
+                        <div class="sub-links">
+                            <a href="../../usp/countries-college/bangladesh.php#du">University of Dhaka</a>
+                            <a href="../../usp/countries-college/bangladesh.php#buet">BUET</a>
+                            <a href="../../usp/countries-college/bangladesh.php#cmc">Chittagong Medical College</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="career-counseling-content">
