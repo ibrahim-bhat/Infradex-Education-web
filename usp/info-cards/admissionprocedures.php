@@ -29,9 +29,9 @@
             
             <!-- Admission Now Button -->
             <div class="admission-cta mt-4">
-                <a href="tel:+1234567890" class="btn btn-admission">
+                <a href="tel:+919796931231" class="btn btn-admission">
                     <i class="fas fa-phone-alt me-2"></i>
-                    Admission Now: +1234567890
+                    Admission Now: +91 979-693-1231
                 </a>
             </div>
         </div>
