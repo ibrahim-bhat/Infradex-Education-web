@@ -2299,7 +2299,7 @@
                     <div class="card-body">
                         <ul class="nav nav-tabs" id="princetonTabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="princeton-programs-tab" data-bs-toggle="tab" data-bs-target="#princeton-programs" type="button" role="tab" aria-controls="princeton-programs" aria-selected="true">Programs</button>
+                                <button class="nav-link active" id="princeton-courses-tab" data-bs-toggle="tab" data-bs-target="#princeton-courses" type="button" role="tab" aria-controls="princeton-courses" aria-selected="true">Courses</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="princeton-admissions-tab" data-bs-toggle="tab" data-bs-target="#princeton-admissions" type="button" role="tab" aria-controls="princeton-admissions" aria-selected="false">Admissions</button>
@@ -2310,70 +2310,106 @@
                         </ul>
 
                         <div class="tab-content" id="princetonTabsContent">
-                            <!-- Programs Tab -->
-                            <div class="tab-pane fade show active" id="princeton-programs" role="tabpanel" aria-labelledby="princeton-programs-tab">
+                            <!-- Courses -->
+                            <div class="tab-pane fade show active" id="princeton-courses" role="tabpanel" aria-labelledby="princeton-courses-tab">
                                 <div class="program-card">
-                                    <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>Available Programs</h4>
-                        <ul class="program-list">
-                            <li>
-                                            <i class="fas fa-certificate"></i>
-                                <div>
-                                                <strong>MBA/PGDM (3 courses)</strong><br>
-                                                Duration: 1-2 years<br>
-                                                Tuition: INR 45L - 52L<br>
-                                                Exams: IELTS, GRE, TOEFL
+                                    <div class="table-responsive">
+                                        <table class="table table-dark table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Course</th>
+                                                    <th>1st Year Tuition Fees</th>
+                                                    <th>Duration & Eligibility</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>MBA/PGDM (7 courses)</td>
+                                                    <td>INR 18 L - 66 L</td>
+                                                    <td>9 months-2 years<br>IELTS: 7 - 7.5, TOEFL: 100 & Above, Duolingo: 125 & Above</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>B.A. (28 courses)</td>
+                                                    <td>INR 51 L - 53 L</td>
+                                                    <td>4 years<br>TOEFL, SAT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MS (25 courses)</td>
+                                                    <td>INR 18 L - 66 L</td>
+                                                    <td>9 months-3 years<br>TOEFL: 80 - 103, IELTS: 6.5 - 7.5, Duolingo: 125 - 130</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MD (1 course)</td>
+                                                    <td>INR 60 L</td>
+                                                    <td>4 years<br>IELTS: 7.5 & Above, TOEFL, PTE, Duolingo: 103 & Above</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>M.A. (16 courses)</td>
+                                                    <td>INR 17 L - 64 L</td>
+                                                    <td>12 months-3 years<br>TOEFL: 80 - 103, IELTS: 6.5 - 7.5, GRE, Duolingo: 125 - 130, GMAT, PTE: 70 & Above</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>B.Sc. (17 courses)</td>
+                                                    <td>INR 51 L - 53 L</td>
+                                                    <td>4 years<br>TOEFL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>LL.M. (1 course)</td>
+                                                    <td>INR 70 L</td>
+                                                    <td>1 year<br>TOEFL: 100 & Above</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>B.E. / B.Tech (5 courses)</td>
+                                                    <td>INR 53 L</td>
+                                                    <td>4 years<br>TOEFL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BBA (1 course)</td>
+                                                    <td>INR 53 L</td>
+                                                    <td>4 years<br>TOEFL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>PG Certificate (1 course)</td>
+                                                    <td>INR 57 L</td>
+                                                    <td>2 years<br>TOEFL: 95 & Above</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>M.Arch (5 courses)</td>
+                                                    <td>INR 46 L - 52 L</td>
+                                                    <td>2 years-42 months<br>TOEFL: 92 & Above, GRE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>M.Des (1 course)</td>
+                                                    <td>INR 52 L</td>
+                                                    <td>2 years<br>GRE, TOEFL: 92 & Above</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MPH (1 course)</td>
+                                                    <td>INR 58 L</td>
+                                                    <td>1 year<br>IELTS: 7 & Above, TOEFL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Others PG (3 courses)</td>
+                                                    <td>INR 17 L</td>
+                                                    <td>18-24 months<br>TOEFL: 100 & Above</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MPA (3 courses)</td>
+                                                    <td>INR 54 L</td>
+                                                    <td>1 year-2 years<br>GMAT, GRE, IELTS: 7 & Above, TOEFL: 100 & Above</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MEng (1 course)</td>
+                                                    <td>INR 54 L</td>
+                                                    <td>2 years<br>IELTS: 6.5 & Above, TOEFL: 80 & Above</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                            </li>
-                            <li>
-                                            <i class="fas fa-certificate"></i>
-                                <div>
-                                                <strong>MEng (5 courses)</strong><br>
-                                                Duration: 10 months-2 years<br>
-                                                Tuition: INR 52L<br>
-                                                Exams: IELTS, TOEFL, GRE
-                                </div>
-                            </li>
-                            <li>
-                                            <i class="fas fa-certificate"></i>
-                                <div>
-                                                <strong>MS (6 courses)</strong><br>
-                                                Duration: 1-2 years<br>
-                                                Tuition: INR 45L - 52L<br>
-                                                Exams: IELTS, TOEFL, GRE
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-certificate"></i>
-                                            <div>
-                                                <strong>B.A. (19 courses)</strong><br>
-                                                Duration: 4 years<br>
-                                                Tuition: INR 52L - 54L<br>
-                                                Exams: IELTS, TOEFL, PTE
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-certificate"></i>
-                                            <div>
-                                                <strong>B.Sc. (8 courses)</strong><br>
-                                                Duration: 4 years<br>
-                                                Tuition: INR 52L - 54L<br>
-                                                Exams: IELTS, TOEFL, PTE
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-certificate"></i>
-                                            <div>
-                                                <strong>MPA (2 courses)</strong><br>
-                                                Duration: 2-4 years<br>
-                                                Tuition: INR 45L - 47L<br>
-                                                Exams: IELTS, GRE, TOEFL
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                            </div>
 
-                            <!-- Admissions Tab -->
+                            <!-- Admissions -->
                             <div class="tab-pane fade" id="princeton-admissions" role="tabpanel" aria-labelledby="princeton-admissions-tab">
                                 <div class="program-card">
                                     <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Details</h4>
@@ -2466,7 +2502,7 @@
                     <div class="card-body">
                         <ul class="nav nav-tabs" id="columbiaTabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="columbia-programs-tab" data-bs-toggle="tab" data-bs-target="#columbia-programs" type="button" role="tab" aria-controls="columbia-programs" aria-selected="true">Programs</button>
+                                <button class="nav-link active" id="columbia-courses-tab" data-bs-toggle="tab" data-bs-target="#columbia-courses" type="button" role="tab" aria-controls="columbia-courses" aria-selected="true">Courses</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="columbia-admissions-tab" data-bs-toggle="tab" data-bs-target="#columbia-admissions" type="button" role="tab" aria-controls="columbia-admissions" aria-selected="false">Admissions</button>
@@ -2477,8 +2513,8 @@
                         </ul>
 
                         <div class="tab-content" id="columbiaTabsContent">
-                            <!-- Programs Tab -->
-                            <div class="tab-pane fade show active" id="columbia-programs" role="tabpanel" aria-labelledby="columbia-programs-tab">
+                            <!-- Courses -->
+                            <div class="tab-pane fade show active" id="columbia-courses" role="tabpanel" aria-labelledby="columbia-courses-tab">
                                 <div class="program-card">
                                     <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>Available Programs</h4>
                                     <ul class="program-list">
