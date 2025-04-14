@@ -7,6 +7,8 @@
                     $basePath = '../../';
                 } else if (strpos($_SERVER['REQUEST_URI'], '/usp/info-cards') !== false) {
                     $basePath = '../../';
+                } else if (strpos($_SERVER['REQUEST_URI'], '/usp/servicecards') !== false) {
+                    $basePath = '../../';
                 } else if (strpos($_SERVER['REQUEST_URI'], '/usp') !== false) {
                     $basePath = '../';
                 }
