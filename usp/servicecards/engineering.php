@@ -15,7 +15,7 @@
 <body>
     <div class="scanlines"></div>
 
-    <?php include '../components/navbar.php'; ?>
+    <?php include '../../components/navbar.php'; ?>
     <section class="five-d-section">
         <div class="container">
             <h1 class="text-center mb-5">Engineering</h1>
@@ -210,7 +210,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/navbar-scroll.js"></script>
+    <script src="../../js/navbar-scroll.js"></script>
 </body>
 
 </html> 
