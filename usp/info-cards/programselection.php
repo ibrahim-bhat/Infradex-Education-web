@@ -201,7 +201,7 @@
         </div>
     </div>
 
-    <!-- Explore More Courses Section -->
+    <!-- Explore More Courses Section 
     <div class="explore-more-section mb-5">
         <div class="explore-card">
             <div class="explore-content">
@@ -218,6 +218,7 @@
             </div>
         </div>
     </div>
+    -->
 
     <style>
     .custom-table {
