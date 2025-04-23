@@ -1106,19 +1106,20 @@
             </div>
         </div>
 
-        <div class="universityss-card" data-state="helwan">
-            <div class="card-header">
-                <div class="d-flex flex-wrap align-items-center">
-                    <div class="university-logo">
-                        <span>HU</span>
-                    </div>
-                    <div>
-                        <h2 class="fw-bold mb-2">Helwan University Faculty of Medicine</h2>
-                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Helwan, Egypt</p>
-                        <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Established: 1975</p>
-                    </div>
-                </div>
+    <div class="university-card" data-state="helwan">
+    <div class="card-header">
+        <div class="d-flex flex-wrap align-items-center">
+            <div class="university-logo">
+                <span>HU</span>
             </div>
+            <div>
+                <h2 class="fw-bold mb-2">Helwan University Faculty of Medicine</h2>
+                <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Helwan, Egypt</p>
+                <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Established: 1975</p>
+            </div>
+        </div>
+    </div>
+                                    </div>
             <div class="card-body">
                 <p>Helwan University is a public university located in Helwan, Egypt. The Faculty of Medicine is dedicated to providing quality medical education and research opportunities. The university is recognized for its contributions to medical education and research within Egypt.</p>
 
