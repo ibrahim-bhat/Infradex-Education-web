@@ -42,7 +42,7 @@
     </section>
 
     <!-- Quick Facts -->
-    <section class="quick-facts py-5">
+    <section class="quick-facts py-1">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-3">
@@ -94,9 +94,6 @@
                     <!-- Tashkent Medical Academy -->
                     <div class="university-card mb-5">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <img src="../../images/universities/tma.jpg" alt="Tashkent Medical Academy" class="img-fluid rounded">
-                            </div>
                             <div class="col-lg-8">
                                 <h3>Tashkent Medical Academy (TMA)</h3>
                                 <p class="text-muted">Established: 1919</p>
@@ -146,9 +143,7 @@
                     <!-- Samarkand State Medical University -->
                     <div class="university-card mb-5">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <img src="../../images/universities/samsmu.jpg" alt="Samarkand State Medical University" class="img-fluid rounded">
-                            </div>
+                
                             <div class="col-lg-8">
                                 <h3>Samarkand State Medical University (SamSMU)</h3>
                                 <p class="text-muted">Established: 1930</p>
@@ -213,9 +208,7 @@
                     <!-- Bukhara State Medical University -->
                     <div class="university-card mb-5">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <img src="../../images/universities/bsmu.jpg" alt="Bukhara State Medical University" class="img-fluid rounded">
-                            </div>
+                        
                             <div class="col-lg-8">
                                 <h3>Bukhara State Medical University</h3>
                                 <div class="fees-structure mb-3">
@@ -259,9 +252,7 @@
                     <!-- Fergana Medical Institute -->
                     <div class="university-card mb-5">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <img src="../../images/universities/fmi.jpg" alt="Fergana Medical Institute" class="img-fluid rounded">
-                            </div>
+                    
                             <div class="col-lg-8">
                                 <h3>Fergana Medical Institute</h3>
                                 <p class="text-muted">Established: Early 1990s</p>
