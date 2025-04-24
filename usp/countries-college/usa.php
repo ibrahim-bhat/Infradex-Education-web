@@ -1347,6 +1347,7 @@
     </div>
 </div>
 
+<!-- unversity california -->
 <div class="university-card" data-state="california">
     <div class="card-header">
         <div class="d-flex flex-wrap align-items-center">
@@ -1367,336 +1368,238 @@
             The University of California, Berkeley (UCB) is one of the world's most renowned public land-grant research institutions. Known for its academic excellence, UCB consistently ranks among the top 30 global universities, making it highly sought-after by international students.
         </p>
 
-        <ul class="nav nav-tabs" id="programTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="admissions-tab" data-bs-toggle="tab" data-bs-target="#admissions" type="button" role="tab" aria-controls="admissions" aria-selected="false">Admissions</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="rankings-tab" data-bs-toggle="tab" data-bs-target="#rankings" type="button" role="tab" aria-controls="rankings" aria-selected="false">Rankings</button>
-            </li>
-        </ul>
+        <!-- Courses Section -->
+        <div class="program-card">
+            <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>Available Programs</h4>
+            <ul class="program-list">
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <strong>MBA/PGDM</strong><br>
+                        Duration: 1-4 years<br>
+                        Tuition: INR 23L - 74L<br>
+                        Exams: IELTS (7+), TOEFL (90+), GMAT<br>
+                        Programs: 11 courses
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <strong>MS Programs</strong><br>
+                        Duration: 9 months - 5 years<br>
+                        Tuition: INR 22L - 72L<br>
+                        Exams: IELTS (7+), TOEFL (90+), GRE<br>
+                        Programs: 40 courses
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <strong>B.Sc Programs</strong><br>
+                        Duration: 4 years<br>
+                        Tuition: INR 27L - 44L<br>
+                        Exams: IELTS (6.5+), TOEFL (80+), Duolingo (115+)<br>
+                        Programs: 25 courses
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <strong>B.A Programs</strong><br>
+                        Duration: 4 years<br>
+                        Tuition: INR 38L - 44L<br>
+                        Exams: IELTS (6.5+), TOEFL (80+), Duolingo (115+)<br>
+                        Programs: 46 courses
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-        <div class="tab-content" id="programTabsContent">
-            <!-- Courses Tab -->
-            <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
-                <div class="program-card">
-                    <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>Available Programs</h4>
-                    <ul class="program-list">
-                        <li>
-                            <i class="fas fa-certificate"></i>
-                            <div>
-                                <strong>MBA/PGDM</strong><br>
-                                Duration: 1-4 years<br>
-                                Tuition: INR 23L - 74L<br>
-                                Exams: IELTS (7+), TOEFL (90+), GMAT<br>
-                                Programs: 11 courses
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-certificate"></i>
-                            <div>
-                                <strong>MS Programs</strong><br>
-                                Duration: 9 months - 5 years<br>
-                                Tuition: INR 22L - 72L<br>
-                                Exams: IELTS (7+), TOEFL (90+), GRE<br>
-                                Programs: 40 courses
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-certificate"></i>
-                            <div>
-                                <strong>B.Sc Programs</strong><br>
-                                Duration: 4 years<br>
-                                Tuition: INR 27L - 44L<br>
-                                Exams: IELTS (6.5+), TOEFL (80+), Duolingo (115+)<br>
-                                Programs: 25 courses
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-certificate"></i>
-                            <div>
-                                <strong>B.A Programs</strong><br>
-                                Duration: 4 years<br>
-                                Tuition: INR 38L - 44L<br>
-                                Exams: IELTS (6.5+), TOEFL (80+), Duolingo (115+)<br>
-                                Programs: 46 courses
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        <!-- Admissions Section -->
+        <div class="program-card mt-4">
+            <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Statistics</h4>
+            <div class="mb-4">
+                <h5>Class of 2027 Acceptance Rate: 11.6%</h5>
+                <ul>
+                    <li>Total Applications: 125,917</li>
+                    <li>Admitted Students: 14,715</li>
+                </ul>
             </div>
 
-            <!-- Admissions Tab -->
-            <div class="tab-pane fade" id="admissions" role="tabpanel" aria-labelledby="admissions-tab">
-                <div class="program-card">
-                    <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Statistics</h4>
-                    <div class="mb-4">
-                        <h5>Class of 2027 Acceptance Rate: 11.6%</h5>
-                        <ul>
-                            <li>Total Applications: 125,917</li>
-                            <li>Admitted Students: 14,715</li>
-                        </ul>
-                    </div>
+            <h5>Requirements for International Students</h5>
+            <ul class="program-list">
+                <li>Official academic transcripts</li>
+                <li>English proficiency (IELTS: 6.5 | TOEFL: 80)</li>
+                <li>Resume/CV</li>
+                <li>Statement of Purpose</li>
+                <li>Letters of Recommendation</li>
+                <li>SAT/ACT scores</li>
+                <li>GRE/GMAT scores (if applicable)</li>
+            </ul>
 
-                    <h5>Requirements for International Students</h5>
-                    <ul class="program-list">
-                        <li>Official academic transcripts</li>
-                        <li>English proficiency (IELTS: 6.5 | TOEFL: 80)</li>
-                        <li>Resume/CV</li>
-                        <li>Statement of Purpose</li>
-                        <li>Letters of Recommendation</li>
-                        <li>SAT/ACT scores</li>
-                        <li>GRE/GMAT scores (if applicable)</li>
-                    </ul>
+            <h5>Average Test Scores</h5>
+            <ul>
+                <li>SAT: 1450+</li>
+                <li>ACT: 28+</li>
+                <li>GMAT: 730+</li>
+                <li>GPA (Undergraduate): 3.4</li>
+                <li>GPA (Postgraduate): 3.0</li>
+            </ul>
+        </div>
 
-                    <h5>Average Test Scores</h5>
-                    <ul>
-                        <li>SAT: 1450+</li>
-                        <li>ACT: 28+</li>
-                        <li>GMAT: 730+</li>
-                        <li>GPA (Undergraduate): 3.4</li>
-                        <li>GPA (Postgraduate): 3.0</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Rankings Tab -->
-            <div class="tab-pane fade" id="rankings" role="tabpanel" aria-labelledby="rankings-tab">
-                <div class="program-card">
-                    <h4 class="program-title"><i class="fas fa-award me-2"></i>Global Rankings</h4>
-                    <div class="mb-4">
-                        <span class="ranking-badge">
-                            <i class="fas fa-trophy me-1"></i> #3
-                            <small>QS Ranking</small>
-                        </span>
-                        <span class="ranking-badge">
-                            <i class="fas fa-trophy me-1"></i> #5
-                            <small>ARWU Ranking</small>
-                        </span>
-                        <span class="ranking-badge">
-                            <i class="fas fa-trophy me-1"></i> #8
-                            <small>THE Ranking</small>
-                        </span>
-                        <span class="ranking-badge">
-                            <i class="fas fa-trophy me-1"></i> #17
-                            <small>US News Ranking</small>
-                        </span>
-                    </div>
-                </div>
+        <!-- Rankings Section -->
+        <div class="program-card mt-4">
+            <h4 class="program-title"><i class="fas fa-award me-2"></i>Global Rankings</h4>
+            <div class="mb-4">
+                <span class="ranking-badge">
+                    <i class="fas fa-trophy me-1"></i> #3
+                    <small>QS Ranking</small>
+                </span>
+                <span class="ranking-badge">
+                    <i class="fas fa-trophy me-1"></i> #5
+                    <small>ARWU Ranking</small>
+                </span>
+                <span class="ranking-badge">
+                    <i class="fas fa-trophy me-1"></i> #8
+                    <small>THE Ranking</small>
+                </span>
+                <span class="ranking-badge">
+                    <i class="fas fa-trophy me-1"></i> #17
+                    <small>US News Ranking</small>
+                </span>
             </div>
         </div>
     </div>
 </div>
 
-                <div class="university-card" data-state="massachusetts">
-                    <div class="card-header">
-                        <div class="d-flex flex-wrap align-items-center">
-                            <div class="university-logo">
-                                <span>HU</span>
-                            </div>
-                            <div>
-                                <h2 class="fw-bold mb-2">Harvard University</h2>
-                                <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Cambridge, Massachusetts, USA</p>
-                            </div>
-                        </div>
+
+<div class="university-card" data-state="massachusetts">
+    <div class="card-header">
+        <div class="d-flex flex-wrap align-items-center">
+            <div class="university-logo">
+                <span>HU</span>
+            </div>
+            <div>
+                <h2 class="fw-bold mb-2">Harvard University</h2>
+                <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Cambridge, Massachusetts, USA</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <!-- Courses Section -->
+        <div class="program-card">
+            <h4 class="program-title"><i class="fas fa-graduation-cap me-2"></i>Available Courses</h4>
+            <div class="table-responsive">
+                <table class="table table-dark table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>1st Year Tuition Fees</th>
+                            <th>Duration & Eligibility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>MBA/PGDM (7 courses)</td><td>INR 18 L - 66 L</td><td>9 months-2 years<br>IELTS: 7 - 7.5, TOEFL: 100+, Duolingo: 125+</td></tr>
+                        <tr><td>B.A. (28 courses)</td><td>INR 51 L - 53 L</td><td>4 years<br>TOEFL, SAT</td></tr>
+                        <tr><td>MS (25 courses)</td><td>INR 18 L - 66 L</td><td>9 months-3 years<br>TOEFL: 80 - 103, IELTS: 6.5 - 7.5, Duolingo: 125 - 130</td></tr>
+                        <tr><td>MD (1 course)</td><td>INR 60 L</td><td>4 years<br>IELTS: 7.5+, TOEFL, PTE, Duolingo: 103+</td></tr>
+                        <tr><td>M.A. (16 courses)</td><td>INR 17 L - 64 L</td><td>12 months-3 years<br>TOEFL: 80 - 103, IELTS: 6.5 - 7.5, GRE, Duolingo: 125 - 130, GMAT, PTE: 70+</td></tr>
+                        <tr><td>B.Sc. (17 courses)</td><td>INR 51 L - 53 L</td><td>4 years<br>TOEFL</td></tr>
+                        <tr><td>LL.M. (1 course)</td><td>INR 70 L</td><td>1 year<br>TOEFL: 100+</td></tr>
+                        <tr><td>B.E. / B.Tech (5 courses)</td><td>INR 53 L</td><td>4 years<br>TOEFL</td></tr>
+                        <tr><td>BBA (1 course)</td><td>INR 53 L</td><td>4 years<br>TOEFL</td></tr>
+                        <tr><td>PG Certificate (1 course)</td><td>INR 57 L</td><td>2 years<br>TOEFL: 95+</td></tr>
+                        <tr><td>M.Arch (5 courses)</td><td>INR 46 L - 52 L</td><td>2 years-42 months<br>TOEFL: 92+, GRE</td></tr>
+                        <tr><td>M.Des (1 course)</td><td>INR 52 L</td><td>2 years<br>GRE, TOEFL: 92+</td></tr>
+                        <tr><td>MPH (1 course)</td><td>INR 58 L</td><td>1 year<br>IELTS: 7+, TOEFL</td></tr>
+                        <tr><td>Others PG (3 courses)</td><td>INR 17 L</td><td>18-24 months<br>TOEFL: 100+</td></tr>
+                        <tr><td>MPA (3 courses)</td><td>INR 54 L</td><td>1-2 years<br>GMAT, GRE, IELTS: 7+, TOEFL: 100+</td></tr>
+                        <tr><td>MEng (1 course)</td><td>INR 54 L</td><td>2 years<br>IELTS: 6.5+, TOEFL: 80+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Admissions Section -->
+        <div class="program-card mt-4">
+            <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Overview</h4>
+
+            <div class="stats-card mb-4">
+                <h5>Class of 2027 Statistics</h5>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="large-stat">3.4%</p>
+                        <p>Overall Acceptance Rate</p>
                     </div>
-                    <div class="card-body">
-                        <ul class="nav nav-tabs" id="programTabs" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="admissions-tab" data-bs-toggle="tab" data-bs-target="#admissions" type="button" role="tab" aria-controls="admissions" aria-selected="false">Admissions</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="rankings-tab" data-bs-toggle="tab" data-bs-target="#rankings" type="button" role="tab" aria-controls="rankings" aria-selected="false">Rankings</button>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content" id="programTabsContent">
-                            <!-- Courses -->
-                            <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
-                                <div class="program-card">
-                                    <div class="table-responsive">
-                                        <table class="table table-dark table-striped table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Course</th>
-                                                    <th>1st Year Tuition Fees</th>
-                                                    <th>Duration & Eligibility</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>MBA/PGDM (7 courses)</td>
-                                                    <td>INR 18 L - 66 L</td>
-                                                    <td>9 months-2 years<br>IELTS: 7 - 7.5, TOEFL: 100 & Above, Duolingo: 125 & Above</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>B.A. (28 courses)</td>
-                                                    <td>INR 51 L - 53 L</td>
-                                                    <td>4 years<br>TOEFL, SAT</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>MS (25 courses)</td>
-                                                    <td>INR 18 L - 66 L</td>
-                                                    <td>9 months-3 years<br>TOEFL: 80 - 103, IELTS: 6.5 - 7.5, Duolingo: 125 - 130</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>MD (1 course)</td>
-                                                    <td>INR 60 L</td>
-                                                    <td>4 years<br>IELTS: 7.5 & Above, TOEFL, PTE, Duolingo: 103 & Above</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>M.A. (16 courses)</td>
-                                                    <td>INR 17 L - 64 L</td>
-                                                    <td>12 months-3 years<br>TOEFL: 80 - 103, IELTS: 6.5 - 7.5, GRE, Duolingo: 125 - 130, GMAT, PTE: 70 & Above</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>B.Sc. (17 courses)</td>
-                                                    <td>INR 51 L - 53 L</td>
-                                                    <td>4 years<br>TOEFL</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>LL.M. (1 course)</td>
-                                                    <td>INR 70 L</td>
-                                                    <td>1 year<br>TOEFL: 100 & Above</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>B.E. / B.Tech (5 courses)</td>
-                                                    <td>INR 53 L</td>
-                                                    <td>4 years<br>TOEFL</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>BBA (1 course)</td>
-                                                    <td>INR 53 L</td>
-                                                    <td>4 years<br>TOEFL</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>PG Certificate (1 course)</td>
-                                                    <td>INR 57 L</td>
-                                                    <td>2 years<br>TOEFL: 95 & Above</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>M.Arch (5 courses)</td>
-                                                    <td>INR 46 L - 52 L</td>
-                                                    <td>2 years-42 months<br>TOEFL: 92 & Above, GRE</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>M.Des (1 course)</td>
-                                                    <td>INR 52 L</td>
-                                                    <td>2 years<br>GRE, TOEFL: 92 & Above</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>MPH (1 course)</td>
-                                                    <td>INR 58 L</td>
-                                                    <td>1 year<br>IELTS: 7 & Above, TOEFL</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Others PG (3 courses)</td>
-                                                    <td>INR 17 L</td>
-                                                    <td>18-24 months<br>TOEFL: 100 & Above</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>MPA (3 courses)</td>
-                                                    <td>INR 54 L</td>
-                                                    <td>1 year-2 years<br>GMAT, GRE, IELTS: 7 & Above, TOEFL: 100 & Above</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>MEng (1 course)</td>
-                                                    <td>INR 54 L</td>
-                                                    <td>2 years<br>IELTS: 6.5 & Above, TOEFL: 80 & Above</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Admissions -->
-                            <div class="tab-pane fade" id="admissions" role="tabpanel" aria-labelledby="admissions-tab">
-                                <div class="program-card">
-                                    <h4 class="program-title"><i class="fas fa-clipboard-check me-2"></i>Admission Overview</h4>
-
-                                    <div class="stats-card mb-4">
-                                        <h5>Class of 2027 Statistics</h5>
-                                        <div class="row">
-                                            <div class="csol-md-4">
-                                                <p class="large-stat">3.4%</p>
-                                                <p>Overall Acceptance Rate</p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <p class="large-stat">56,937</p>
-                                                <p>Total Applications</p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <p class="large-stat">1,966</p>
-                                                <p>Students Admitted</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <h5>Important Deadlines</h5>
-                                    <ul class="program-list">
-                                        <li>Early Action (Class of 2026): November 1, 2025</li>
-                                        <li>MBA Round 1: September 4, 2025 (tentative)</li>
-                                    </ul>
-
-                                    <h5>Requirements for International Students</h5>
-                                    <ul class="program-list">
-                                        <li>Strong academic record</li>
-                                        <li>Standardized test scores (SAT/ACT for undergraduate, GMAT/GRE for graduate)</li>
-                                        <li>English proficiency test scores</li>
-                                        <li>Letters of Recommendation</li>
-                                        <li>Statement of Purpose</li>
-                                    </ul>
-
-                                    <h5>English Proficiency Requirements</h5>
-                                    <ul class="program-list">
-                                        <li>TOEFL: 80+</li>
-                                        <li>IELTS: 6.5+</li>
-                                        <li>PTE: 70+</li>
-                                        <li>Duolingo: 120+</li>
-                                    </ul>
-
-                                    <h5>Average Test Scores</h5>
-                                    <ul class="program-list">
-                                        <li>SAT: 1490-1580</li>
-                                        <li>ACT: 34-36</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Rankings -->
-                            <div class="tab-pane fade" id="rankings" role="tabpanel" aria-labelledby="rankings-tab">
-                                <div class="program-card">
-                                    <h4 class="program-title"><i class="fas fa-award me-2"></i>Global Rankings</h4>
-                                    <div class="mb-4">
-                                        <span class="ranking-badge">
-                                            <i class="fas fa-trophy me-1"></i> #1
-                                            <small>ARWU Ranking</small>
-                                        </span>
-                                        <span class="ranking-badge">
-                                            <i class="fas fa-trophy me-1"></i> #3
-                                            <small>THE Ranking</small>
-                                        </span>
-                                        <span class="ranking-badge">
-                                            <i class="fas fa-trophy me-1"></i> #3
-                                            <small>US News Ranking</small>
-                                        </span>
-                                        <span class="ranking-badge">
-                                            <i class="fas fa-trophy me-1"></i> #4
-                                            <small>QS Ranking</small>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-4">
+                        <p class="large-stat">56,937</p>
+                        <p>Total Applications</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="large-stat">1,966</p>
+                        <p>Students Admitted</p>
                     </div>
                 </div>
+            </div>
+
+            <h5>Important Deadlines</h5>
+            <ul class="program-list">
+                <li>Early Action (Class of 2026): November 1, 2025</li>
+                <li>MBA Round 1: September 4, 2025 (tentative)</li>
+            </ul>
+
+            <h5>Requirements for International Students</h5>
+            <ul class="program-list">
+                <li>Strong academic record</li>
+                <li>Standardized test scores (SAT/ACT for undergraduate, GMAT/GRE for graduate)</li>
+                <li>English proficiency test scores</li>
+                <li>Letters of Recommendation</li>
+                <li>Statement of Purpose</li>
+            </ul>
+
+            <h5>English Proficiency Requirements</h5>
+            <ul class="program-list">
+                <li>TOEFL: 80+</li>
+                <li>IELTS: 6.5+</li>
+                <li>PTE: 70+</li>
+                <li>Duolingo: 120+</li>
+            </ul>
+
+            <h5>Average Test Scores</h5>
+            <ul class="program-list">
+                <li>SAT: 1490-1580</li>
+                <li>ACT: 34-36</li>
+            </ul>
+        </div>
+
+        <!-- Rankings Section -->
+        <div class="program-card mt-4">
+            <h4 class="program-title"><i class="fas fa-award me-2"></i>Global Rankings</h4>
+            <div class="mb-4">
+                <span class="ranking-badge">
+                    <i class="fas fa-trophy me-1"></i> #1
+                    <small>ARWU Ranking</small>
+                </span>
+                <span class="ranking-badge">
+                    <i class="fas fa-trophy me-1"></i> #3
+                    <small>THE Ranking</small>
+                </span>
+                <span class="ranking-badge">
+                    <i class="fas fa-trophy me-1"></i> #3
+                    <small>US News Ranking</small>
+                </span>
+                <span class="ranking-badge">
+                    <i class="fas fa-trophy me-1"></i> #4
+                    <small>QS Ranking</small>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- unversity  -->
 
 <div class="university-card" data-state="pennsylvania">
     <div class="card-header">
