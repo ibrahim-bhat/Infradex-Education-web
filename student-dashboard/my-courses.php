@@ -195,6 +195,55 @@ function getCourseProgress($course_id, $student_id, $conn) {
     <a href="https://learn.infradex.in/student-registration/" class="btn btn-primary mt-3">
         <i class="fas fa-user-plus me-2"></i>Sign Up to Access Courses
     </a>
+
+    <div class="courses-header">
+            <h1><i class="fas fa-graduation-cap me-3"></i>Our Courses</h1>
+            <p>Discover a world of knowledge with our comprehensive course catalog</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="course-card">
+                    <h3>SELF CONFIDENCE & SELF ESTEEM</h3>
+                    <p>This course helps children recognize their strengths, build a positive self-image, and develop the courage to face challenges with confidence.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="course-card">
+                    <h3>EMPATHY AND SHARING</h3>
+                    <p>Children learn to understand others' feelings, show kindness, and practice sharing and cooperation in everyday situations.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="course-card">
+                    <h3>EMOTIONS MANAGEMENT</h3>
+                    <p>This module teaches kids how to identify, express, and manage their emotions in healthy and constructive ways.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="course-card">
+                    <h3>RELATIONSHIPS AND COMMUNICATION</h3>
+                    <p>This course helps children and teens build strong connections through effective communication and active listening. Learn to handle emotional turbulence, relationship problems, and peer pressure with maturity.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="course-card">
+                    <h3>FOCUS AND ORGANISATION</h3>
+                    <p>Students are guided on how to manage time, stay organized, and improve attention and concentration for better academic and personal performance.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="course-card">
+                    <h3>SOCIALIZATION AND ETHICAL DECISION-MAKING</h3>
+                    <p>Encourages teamwork, respect for others, networking and helps kids make fair, responsible, and ethical choices in social situations.</p>
+                </div>
+            </div>
+        </div>
               <!-- <h2>My Courses</h2> -->
               <!-- <div class="course-filters">
                           <button class="filter-btn active">All Courses</button>

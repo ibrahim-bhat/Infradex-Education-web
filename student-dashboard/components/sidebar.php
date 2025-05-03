@@ -37,6 +37,11 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                         <i class="fas fa-book"></i> My Courses
                     </a>
                 </li>
+                <li class="<?php echo $current_page === 'my-courses' ? 'active' : ''; ?>">
+                    <a href="neet-predictor.php">
+                        <i class="fas fa-book"></i> Neet Predictor
+                    </a>
+                </li>
                 <!-- <li class="<?php echo $current_page === 'payment-history' ? 'active' : ''; ?>">
                     <a href="payment-history.php">
                         <i class="fas fa-history"></i> Payment History
@@ -53,7 +58,7 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                     </a>
                 </li>
                 <li>
-                    <a href="../">
+                    <a href="httos://infradexedu.in">
                         <i class="fas fa-arrow-left"></i> Back to Web
                     </a>
                 </li>

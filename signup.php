@@ -254,6 +254,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="form-header">
             <h2>Create Account</h2>
             <p>Fill in your details to get started</p>
+            <p><a href="https://infradexedu.in"><-- Return to Web Page</a> </p>
         </div>
 
         <?php if ($success_message): ?>
