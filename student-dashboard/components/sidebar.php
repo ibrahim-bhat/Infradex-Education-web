@@ -37,11 +37,11 @@ if (!isset($user) && isset($_SESSION['user_id'])) {
                         <i class="fas fa-book"></i> My Courses
                     </a>
                 </li>
-                <li class="<?php echo $current_page === 'payment-history' ? 'active' : ''; ?>">
+                <!-- <li class="<?php echo $current_page === 'payment-history' ? 'active' : ''; ?>">
                     <a href="payment-history.php">
                         <i class="fas fa-history"></i> Payment History
                     </a>
-                </li>
+                </li> -->
                 <li class="<?php echo $current_page === 'document-uploads' ? 'active' : ''; ?>">
                     <a href="document-uploads.php">
                         <i class="fas fa-file-upload"></i> Document Uploads

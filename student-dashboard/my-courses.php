@@ -189,7 +189,12 @@ function getCourseProgress($course_id, $student_id, $conn) {
 
           <div class="dashboard-content">
             <div class="section-header">
-              <h2>My Courses</h2>
+            <h2>Explore a Diverse Range of Courses</h2>
+    <p>Discover a variety of courses to boost your skills and knowledge.</p>
+    <a href="https://learn.infradex.in/student-registration/" class="btn btn-primary mt-3">
+        <i class="fas fa-user-plus me-2"></i>Sign Up to Access Courses
+    </a>
+              <!-- <h2>My Courses</h2> -->
               <!-- <div class="course-filters">
                           <button class="filter-btn active">All Courses</button>
                           <button class="filter-btn">In Progress</button>
