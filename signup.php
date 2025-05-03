@@ -13,6 +13,7 @@ $error_message = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $full_name = $conn->real_escape_string($_POST['full_name']);
     $email = $conn->real_escape_string($_POST['email']);
+    $phone_number = $conn->real_escape_string($_POST['phone_number']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     // Start transaction
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $user_id = $conn->insert_id;
 
-        // Insert into students table with basic info and default values
+        // Insert into students table with phone number
         $student_query = "INSERT INTO students (
             full_name, 
             email, 
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ) VALUES (
             ?, 
             ?, 
-            '', /* default empty phone */
+            ?,  /* add phone_number */
             NULL, /* default null dob */
             '', /* default empty gender */
             '', /* default empty class */
@@ -74,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             NOW()
         )";
         $student_stmt = $conn->prepare($student_query);
-        $student_stmt->bind_param("ssi", $full_name, $email, $user_id);
+        $student_stmt->bind_param("sssi", $full_name, $email, $phone_number, $user_id);
         
         if (!$student_stmt->execute()) {
             throw new Exception("Error creating student record");
@@ -92,6 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         error_log("Signup error: " . $e->getMessage());
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -333,6 +335,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     </div>
+
+                    <div class="form-group">
+    <label for="phone_number">Phone Number</label>
+    <input type="text" id="phone_number" name="phone_number" placeholder="Enter your phone number" required>
+</div>
+
 
                     <div class="form-group">
                         <label for="password">Password</label>
