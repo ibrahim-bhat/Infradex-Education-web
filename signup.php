@@ -106,77 +106,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .signup-container {
-            display: flex;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            overflow: hidden;
-            max-width: 1000px;
-            width: 90%;
-            margin: 2rem auto;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .signup-image {
-            flex: 1;
-            background: linear-gradient(135deg, rgba(128, 0, 255, 0.8), rgba(74, 0, 224, 0.8)),
-                        url('images/education-bg.jpg') center/cover;
-            padding: 3rem;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fb;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
+            min-height: 100vh;
         }
 
-        .signup-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .container {
             width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(128, 0, 255, 0.3) 0%, transparent 70%);
-            animation: pulse 2s infinite;
+            max-width: 600px;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.84); 
         }
 
-        .signup-image h1 {
-            font-size: 2.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
         }
 
-        .signup-image p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        .signup-form {
-            flex: 1;
-            padding: 3rem;
-            background: rgba(0, 0, 0, 0.3);
+        .logo img {
+            width: 150px;
         }
 
         .form-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 20px;
         }
 
         .form-header h2 {
             font-size: 2rem;
-            color: white;
+            color: #333;
             margin-bottom: 0.5rem;
         }
 
         .form-header p {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(0, 0, 0, 0.7);
         }
 
         .form-group {
@@ -185,18 +160,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         .form-group label {
             display: block;
-            color: rgba(255, 255, 255, 0.9);
+            color: #333;
             margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .form-group input {
             width: 100%;
             padding: 0.8rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
+            background: rgba(240, 240, 240, 0.8);
+            color: #333;
             font-size: 1rem;
             transition: all 0.3s ease;
         }
@@ -204,12 +179,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .form-group input:focus {
             outline: none;
             border-color: #8000ff;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(240, 240, 240, 1);
             box-shadow: 0 0 0 2px rgba(128, 0, 255, 0.2);
         }
 
         .form-group input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(0, 0, 0, 0.5);
         }
 
         button[type="submit"] {
@@ -234,7 +209,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .login-link {
             text-align: center;
             margin-top: 1.5rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(0, 0, 0, 0.7);
         }
 
         .login-link a {
@@ -269,91 +244,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .signup-container {
-                flex-direction: column;
-                width: 95%;
-            }
-
-            .signup-image {
-                padding: 2rem;
-                text-align: center;
-            }
-
-            .signup-image h1 {
-                font-size: 2rem;
-            }
-
-            .signup-form {
-                padding: 2rem;
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                opacity: 0.6;
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                opacity: 0.6;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="scanlines"></div>
-    <div class="container d-flex align-items-center justify-content-center min-vh-100">
-        <div class="signup-container">
-            <div class="signup-image">
-                <h1>Welcome to Infradex Education</h1>
-                <p>Join our community and get access to world-class education, resources, and opportunities for growth. Start your learning journey today!</p>
+    <div class="container">
+    <div class="logo">
+            <a href="https://infradexedu.in"><img src="./images/eee.png" alt="Infradex Education Logo"></a>
+        </div>
+        <div class="form-header">
+            <h2>Create Account</h2>
+            <p>Fill in your details to get started</p>
+        </div>
+
+        <?php if ($success_message): ?>
+            <div class="success"><?php echo $success_message; ?></div>
+        <?php endif; ?>
+
+        <?php if ($error_message): ?>
+            <div class="error"><?php echo $error_message; ?></div>
+        <?php endif; ?>
+        
+        <form method="POST" action="">
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
             </div>
-            
-            <div class="signup-form">
-                <div class="form-header">
-                    <h2>Create Account</h2>
-                    <p>Fill in your details to get started</p>
-                </div>
 
-                <?php if ($success_message): ?>
-                    <div class="success"><?php echo $success_message; ?></div>
-                <?php endif; ?>
-
-                <?php if ($error_message): ?>
-                    <div class="error"><?php echo $error_message; ?></div>
-                <?php endif; ?>
-                
-                <form method="POST" action="">
-                    <div class="form-group">
-                        <label for="full_name">Full Name</label>
-                        <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <div class="form-group">
-    <label for="phone_number">Phone Number</label>
-    <input type="text" id="phone_number" name="phone_number" placeholder="Enter your phone number" required>
-</div>
-
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Choose a password (min. 6 characters)" required minlength="6">
-                    </div>
-
-                    <button type="submit">Create Account</button>
-                </form>
-                
-                <div class="login-link">
-                    Already have an account? <a href="login-new.php">Sign in</a>
-                </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
+
+            <div class="form-group">
+                <label for="phone_number">Phone Number</label>
+                <input type="text" id="phone_number" name="phone_number" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Choose a password (min. 6 characters)" required minlength="6">
+            </div>
+
+            <button type="submit">Create Account</button>
+        </form>
+        
+        <div class="login-link">
+            Already have an account? <a href="login-new.php">Sign in</a>
         </div>
     </div>
 
@@ -396,4 +332,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     </script>
 </body>
-</html> 
+</html>

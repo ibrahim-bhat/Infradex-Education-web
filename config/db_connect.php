@@ -5,7 +5,7 @@ ini_set('display_errors', 0);
 $servername = "localhost";
 $username = "root";  // Replace with your database username
 $password = "";  // Replace with your database password
-$dbname = "phpinfradex";
+$dbname = "infradexeduie";
 
 // Create connection
 try {
