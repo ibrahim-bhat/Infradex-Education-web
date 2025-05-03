@@ -191,6 +191,7 @@ function getCourseProgress($course_id, $student_id, $conn) {
             <div class="section-header">
             <h2>Explore a Diverse Range of Courses</h2>
     <p>Discover a variety of courses to boost your skills and knowledge.</p>
+    <p>Explore Courses <a href="https://learn.infradex.in/">here</a> </p>
     <a href="https://learn.infradex.in/student-registration/" class="btn btn-primary mt-3">
         <i class="fas fa-user-plus me-2"></i>Sign Up to Access Courses
     </a>
@@ -201,7 +202,7 @@ function getCourseProgress($course_id, $student_id, $conn) {
                           <button class="filter-btn">Completed</button>
                       </div> -->
             </div>
-            <?php include '../components/coming-soon.php'; ?>
+            <!-- <?php include '../components/coming-soon.php'; ?> -->
 <!-- 
             <div class="content-wrapper">
      
