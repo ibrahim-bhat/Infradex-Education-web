@@ -84,7 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // If everything is successful, commit the transaction
         $conn->commit();
         $success_message = "Account created successfully! Please login.";
-        header("refresh:2;url=login-new.php");
+        header("Refresh: 2; url=https://infradexedu.in");
+        echo "You will be redirected to Web Pagge in 2 seconds. If not, click <a href='https://infradexedu.in'>here</a>.";
 
     } catch (Exception $e) {
         // If there's an error, rollback the transaction

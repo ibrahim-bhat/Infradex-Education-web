@@ -282,7 +282,7 @@ try {
                 <i class="fas fa-graduation-cap"></i>
             </div>
             <h1 class="mt-0"> INFRADEX Edu.</h1>
-            <p><a href="https://infradexedu.in"><-- Return to Web Page</a> </p>
+            <p><a href="https://infradexedu.in"><-- Visit Website</a> </p>
             <div class="error-message" id="errorMessage"></div>
 
             <form id="loginForm" method="POST">
