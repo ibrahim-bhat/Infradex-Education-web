@@ -40,6 +40,25 @@
         <div class="quick-links-section mt-5">
             <h2 class="text-white text-center mb-4">Explore Universities by Country</h2>
             <div class="quick-links-grid">
+
+                                <!-- Bangladesh Universities -->
+                <div class="country-links-card">
+                    <div class="card-header">
+                        <i class="fas fa-monument"></i>
+                        <h3>Bangladesh Universities</h3>
+                    </div>
+                    <div class="links-content">
+                        <a href="../../usp/countries-college/bangladesh.php" class="main-link">Study in Bangladesh</a>
+                        <div class="sub-links">
+                            <a href="../../usp/countries-college/bangladesh.php#du">University of Dhaka</a>
+                            <a href="../../usp/countries-college/bangladesh.php#buet">BUET</a>
+                            <a href="../../usp/countries-college/bangladesh.php#cmc">Chittagong Medical College</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
                 <!-- USA Universities -->
                 <div class="country-links-card">
                     <div class="card-header">
@@ -103,24 +122,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Bangladesh Universities -->
-                <div class="country-links-card">
-                    <div class="card-header">
-                        <i class="fas fa-monument"></i>
-                        <h3>Bangladesh Universities</h3>
-                    </div>
-                    <div class="links-content">
-                        <a href="../../usp/countries-college/bangladesh.php" class="main-link">Study in Bangladesh</a>
-                        <div class="sub-links">
-                            <a href="../../usp/countries-college/bangladesh.php#du">University of Dhaka</a>
-                            <a href="../../usp/countries-college/bangladesh.php#buet">BUET</a>
-                            <a href="../../usp/countries-college/bangladesh.php#cmc">Chittagong Medical College</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="career-counseling-content">
             <div class="row">
