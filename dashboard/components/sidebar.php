@@ -57,7 +57,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </ul>
             </div>
 
-            <div class="nav-section">
+            <!-- <div class="nav-section">
                 <h6 class="nav-section-title">COURSES</h6>
                 <ul>
                     <?php if (in_array($_SESSION['user_role'], ['super_admin', 'admin'])): ?>
@@ -90,7 +90,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </li>
                     <?php endif; ?>
                 </ul>
-            </div>
+            </div> -->
         <?php endif; ?>
 
         <?php if (in_array($_SESSION['user_role'], ['super_admin', 'admin', 'management'])): ?>
@@ -112,7 +112,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </ul>
             </div>
 
-            <div class="nav-section">
+            <!-- <div class="nav-section">
                 <h6 class="nav-section-title">PAYMENT HISTORY</h6>
                 <ul>
                     <li class="<?php echo $current_page == 'payment_history.php' ? 'active' : ''; ?>">
@@ -158,6 +158,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </div>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </nav>
 </div>

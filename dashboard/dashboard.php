@@ -154,7 +154,7 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
                         </div>
                     </div>
                 </div>
-
+<!-- 
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="chart-container">
@@ -235,7 +235,7 @@ $users_query = "SELECT id, email, full_name, user_role FROM users";
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

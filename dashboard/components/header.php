@@ -16,7 +16,7 @@ $profile_photo = isset($user_data['profile_photo']) && !empty($user_data['profil
 
 <header class="dashboard-header">
     <div class="header-left">
-        <a href="../index.php" class="back-to-web">
+        <a href="https://infradexedu.in" class="back-to-web">
             <i class="fas fa-arrow-left"></i>
             <span>Back to Website</span>
         </a>
@@ -53,7 +53,7 @@ $profile_photo = isset($user_data['profile_photo']) && !empty($user_data['profil
                 </li>
                 <li><hr class="dropdown-divider"></li>
                 <li>
-                    <a class="dropdown-item text-danger" href="../logout.php">
+                    <a class="dropdown-item text-danger" href="logout.php">
                         <i class="fas fa-sign-out-alt"></i>
                         Logout
                     </a>
