@@ -83,7 +83,7 @@
     }
     
     .logo {
-        width: 120px;
+        width: 220px;
         margin-bottom: 30px;
         animation: float 6s ease-in-out infinite;
     }
@@ -614,8 +614,8 @@
     <!-- Hero Section -->
     <section class="hero" style="position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, #e53170 0%, #0f969c 100%); overflow: hidden;">
         <div class="hero-content" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;">
-            <img src="images/eee.png" alt="Infradex Logo" class="logo" style="max-width: 200px; margin-bottom: 2rem; animation: float 3s ease-in-out infinite;">
-            <h1 style="font-size: 5rem; font-weight: 900; margin-bottom: 1rem; color: white; text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; letter-spacing: 5px; text-transform: uppercase; font-family: 'Anton', sans-serif;">
+            <img src="images/eee.png" alt="Infradex Logo" class="logo" style="max-width: 12000px; margin-bottom: 2rem; animation: float 3s ease-in-out infinite;">
+            <h1 style="font-size: 5rem; font-weight: 100; margin-bottom: 1rem; color: white; text-shadow: 0px 0px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; letter-spacing: 5px; text-transform: uppercase; font-family: 'Anton', sans-serif;">
                 COLLEGE HUNT
             </h1>
             <h2 style="font-size: 3rem; color: #ffd700; margin-bottom: 1.5rem; text-shadow: 2px 2px 0 #000; font-family: 'Bebas Neue', sans-serif; letter-spacing: 3px;">
@@ -633,7 +633,7 @@
                 </a>
             </div>
         </div>
-        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>'); opacity: 0.3;"></div>
+        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMCwwIEwxMDAsMCBMMTAwLDEwMCBMMCwxMDAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==');"></div>
         <div class="hero-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1;">
             <div style="position: absolute; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; top: -150px; right: -150px;"></div>
             <div style="position: absolute; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; bottom: -100px; left: -100px;"></div>
