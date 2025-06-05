@@ -85,7 +85,7 @@
     .logo {
         width: 220px;
         margin-bottom: 30px;
-        animation: float 6s ease-in-out infinite;
+        /* animation: float 6s ease-in-out infinite; */
     }
     
     .hero h1 {
@@ -614,23 +614,31 @@
     <!-- Hero Section -->
     <section class="hero" style="position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, #e53170 0%, #0f969c 100%); overflow: hidden;">
         <div class="hero-content" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;">
-            <img src="images/eee.png" alt="Infradex Logo" class="logo" style="max-width: 12000px; margin-bottom: 2rem; animation: float 3s ease-in-out infinite;">
+            <img src="images/eee.png" alt="Infradex Logo" class="logo" style="max-width: 12000px; margin-bottom: 2rem;">
             <h1 style="font-size: 5rem; font-weight: 100; margin-bottom: 1rem; color: white; text-shadow: 0px 0px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; letter-spacing: 5px; text-transform: uppercase; font-family: 'Anton', sans-serif;">
                 COLLEGE HUNT
             </h1>
             <h2 style="font-size: 3rem; color: #ffd700; margin-bottom: 1.5rem; text-shadow: 2px 2px 0 #000; font-family: 'Bebas Neue', sans-serif; letter-spacing: 3px;">
                 Squid Game Edition
             </h2>
-            <p style="font-size: 1.5rem; color: white; max-width: 800px; margin: 0 auto 3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+            <p style="font-size: 1.5rem; color: white; max-width: 800px; margin: 0 auto 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
                 A Viral Youth Marketing Campaign Connecting Students to India's Top Colleges
             </p>
+            <div style="margin-bottom: 2rem;">
+                <p style="margin: 0.5rem 0; color: #ffd700; font-size: 2rem;">
+                    <i class="fas fa-camera" style="margin-right: 8px;"></i> Event by Elaman Visuals
+                </p>
+                <p style="margin: 0.5rem 0; color: #ffd700; font-size: 2rem;">
+                    <i class="fas fa-star" style="margin-right: 8px;"></i> Main Sponsor: Infradex Education
+                </p>
+            </div>
             <div class="cta-buttons" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
                 <a href="#pricing" class="btn" style="background: #ffd700; color: #000; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border: 2px solid #ffd700; font-family: 'Anton', sans-serif;">
                     View Packages
                 </a>
-                <a href="#contact" class="btn" style="background: transparent; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border: 2px solid white; font-family: 'Anton', sans-serif;">
+                <!-- <a href="#contact" class="btn" style="background: transparent; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border: 2px solid white; font-family: 'Anton', sans-serif; z-index: 1000;">
                     Contact Us
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMCwwIEwxMDAsMCBMMTAwLDEwMCBMMCwxMDAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==');"></div>
@@ -770,7 +778,7 @@
                         <li>1 Reel + 1 Story</li>
                         <li>Thank-you mention</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                    <a href="https://docs.google.com/forms/d/1jQ7qOd6i2d5UjyYiXLQ5Ci23WffKU4GakIRBfWfwhoA/edit?pli=1" target="_blank" class="btn btn-outline">Get Started</a>
                 </div>
                 
                 <!-- Gold Package (Featured) -->
@@ -790,7 +798,7 @@
                         <li>Logo in aftermovie</li>
                         <li>Brochure in VIP bags</li>
                     </ul>
-                    <a href="#contact" class="btn">Get Started</a>
+                    <a href="https://docs.google.com/forms/d/1jQ7qOd6i2d5UjyYiXLQ5Ci23WffKU4GakIRBfWfwhoA/edit?pli=1" target="_blank" class="btn">Get Started</a>
                 </div>
                 
                 <!-- Silver Package -->
@@ -809,7 +817,7 @@
                         <li>Logo in aftermovie</li>
                         <li>Brochure distribution</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                    <a href="https://docs.google.com/forms/d/1jQ7qOd6i2d5UjyYiXLQ5Ci23WffKU4GakIRBfWfwhoA/edit?pli=1" target="_blank" class="btn btn-outline">Get Started</a>
                 </div>
             </div>
         </div>
