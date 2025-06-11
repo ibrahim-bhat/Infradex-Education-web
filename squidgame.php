@@ -699,7 +699,7 @@
             
             <!-- Event Dates -->
             <div class="event-dates">
-                <i class="far fa-calendar-alt"></i> JULY 3-4, 2024
+                <i class="far fa-calendar-alt"></i> JULY 6-7, 2025
             </div>
             
             <!-- Countdown Timer -->
@@ -983,8 +983,8 @@
     <!-- Add the AOS initialization and custom animations -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Set the date we're counting down to - July 3, 2024
-        const countDownDate = new Date("July 3, 2025 00:00:00").getTime();
+        // Set the date we're counting down to - July 6, 2025
+        const countDownDate = new Date("July 6, 2025 00:00:00").getTime();
         
         // Update the count down every 1 second
         const countdownTimer = setInterval(function() {
