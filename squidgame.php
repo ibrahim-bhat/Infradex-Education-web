@@ -162,6 +162,66 @@
         100% { transform: translateY(0px); }
     }
     
+    /* Countdown Timer Styles */
+    .countdown-container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1rem;
+        min-width: 100px;
+        border-radius: 10px;
+        text-align: center;
+        border: 2px solid var(--squid-teal);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(229, 49, 112, 0.3);
+    }
+    
+    .countdown-item::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--squid-pink);
+    }
+    
+    .countdown-item .number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--squid-yellow);
+        font-family: 'Press Start 2P', cursive;
+        margin-bottom: 0.5rem;
+        line-height: 1;
+    }
+    
+    .countdown-item .text {
+        font-size: 0.9rem;
+        color: var(--squid-white);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .event-dates {
+        font-size: 1.8rem;
+        color: var(--squid-white);
+        background: rgba(0, 0, 0, 0.5);
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--squid-pink);
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 1px;
+    }
+    
     /* Responsive Styles */
     @media (max-width: 768px) {
         .hero h1 {
@@ -200,6 +260,18 @@
             width: 100%;
             max-width: 250px;
             margin: 5px 0;
+        }
+        
+        .countdown-item {
+            min-width: 80px;
+        }
+        
+        .countdown-item .number {
+            font-size: 1.8rem;
+        }
+        
+        .countdown-item .text {
+            font-size: 0.8rem;
         }
     }
     /* Sections */
@@ -624,6 +696,32 @@
             <p style="font-size: 1.5rem; color: white; max-width: 800px; margin: 0 auto 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
                 A Viral Youth Marketing Campaign Connecting Students to India's Top Colleges
             </p>
+            
+            <!-- Event Dates -->
+            <div class="event-dates">
+                <i class="far fa-calendar-alt"></i> JULY 3-4, 2024
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="number" id="days">00</div>
+                    <div class="text">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="number" id="hours">00</div>
+                    <div class="text">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="number" id="minutes">00</div>
+                    <div class="text">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="number" id="seconds">00</div>
+                    <div class="text">Seconds</div>
+                </div>
+            </div>
+            
             <div style="margin-bottom: 2rem;">
                 <p style="margin: 0.5rem 0; color: #ffd700; font-size: 2rem;">
                     <i class="fas fa-camera" style="margin-right: 8px;"></i> Event by Elaman Visuals
@@ -885,6 +983,47 @@
     <!-- Add the AOS initialization and custom animations -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Set the date we're counting down to - July 3, 2024
+        const countDownDate = new Date("July 3, 2025 00:00:00").getTime();
+        
+        // Update the count down every 1 second
+        const countdownTimer = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result with leading zeros
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+            
+            // If the count down is finished, display message
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+                
+                // You could add a message that the event has started
+                const countdownContainer = document.querySelector(".countdown-container");
+                if (countdownContainer) {
+                    const eventStartedElement = document.createElement("div");
+                    eventStartedElement.innerHTML = "<div style='font-size: 1.5rem; color: var(--squid-yellow); margin-top: 1rem;'>Event is happening now!</div>";
+                    countdownContainer.parentNode.insertBefore(eventStartedElement, countdownContainer.nextSibling);
+                }
+            }
+        }, 1000);
+        
         // Initialize AOS
         AOS.init({
             duration: 800,
@@ -911,6 +1050,7 @@
                 }
             });
         });
+        
         // Initialize AOS animation library
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
