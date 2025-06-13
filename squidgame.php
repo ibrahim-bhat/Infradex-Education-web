@@ -17,11 +17,12 @@
     <style>
     /* Base Styles */
     :root {
-        --squid-pink: #E53170;
-        --squid-teal: #0F969C;
-        --squid-yellow: #FFD700;
-        --squid-black: #001011;
-        --squid-white: #F6F7F8;
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --accent-color: #e74c3c;
+        --dark-color: #1a1a1a;
+        --light-color: #f5f5f5;
+        --text-color: #333333;
     }
     
     * {
@@ -32,8 +33,8 @@
     
     body {
         font-family: 'Bebas Neue', sans-serif;
-        background-color: var(--squid-black);
-        color: var(--squid-white);
+        background-color: var(--light-color);
+        color: var(--text-color);
         line-height: 1.6;
         overflow-x: hidden;
     }
@@ -52,7 +53,7 @@
     
     /* Hero Section */
     .hero {
-        background: linear-gradient(135deg, var(--squid-pink) 0%, var(--squid-teal) 100%);
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -94,7 +95,7 @@
         text-transform: uppercase;
         letter-spacing: 5px;
         margin-bottom: 1rem;
-        background: linear-gradient(to right, #fff, var(--squid-yellow));
+        background: linear-gradient(to right, #fff, var(--accent-color));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
@@ -139,9 +140,9 @@
     }
     
     .btn-primary {
-        background: var(--squid-yellow);
-        color: var(--squid-black);
-        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        background: var(--primary-color);
+        color: white;
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
     }
     
     .btn-secondary {
@@ -177,10 +178,10 @@
         min-width: 100px;
         border-radius: 10px;
         text-align: center;
-        border: 2px solid var(--squid-teal);
+        border: 2px solid var(--primary-color);
         position: relative;
         overflow: hidden;
-        box-shadow: 0 0 15px rgba(229, 49, 112, 0.3);
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
     }
     
     .countdown-item::after {
@@ -190,13 +191,13 @@
         left: 0;
         width: 100%;
         height: 3px;
-        background: var(--squid-pink);
+        background: var(--accent-color);
     }
     
     .countdown-item .number {
         font-size: 2.5rem;
         font-weight: bold;
-        color: var(--squid-yellow);
+        color: white;
         font-family: 'Press Start 2P', cursive;
         margin-bottom: 0.5rem;
         line-height: 1;
@@ -204,20 +205,20 @@
     
     .countdown-item .text {
         font-size: 0.9rem;
-        color: var(--squid-white);
+        color: var(--light-color);
         text-transform: uppercase;
         letter-spacing: 1px;
     }
     
     .event-dates {
         font-size: 1.8rem;
-        color: var(--squid-white);
+        color: var(--light-color);
         background: rgba(0, 0, 0, 0.5);
         display: inline-block;
         padding: 0.5rem 1.5rem;
         border-radius: 5px;
         margin-bottom: 1.5rem;
-        border: 1px solid var(--squid-pink);
+        border: 1px solid var(--accent-color);
         font-family: 'Anton', sans-serif;
         letter-spacing: 1px;
     }
@@ -281,7 +282,8 @@
     }
     
     .bg-dark {
-        background: rgba(0, 0, 0, 0.7);
+        background: var(--dark-color);
+        color: var(--light-color);
     }
     
     .section-header {
@@ -295,24 +297,33 @@
         font-family: 'Anton', sans-serif;
         text-transform: uppercase;
         letter-spacing: 2px;
+        color: var(--secondary-color);
     }
     
     .highlight {
-        color: var(--squid-yellow);
+        color: var(--accent-color);
     }
     
     .divider {
         width: 80px;
         height: 4px;
-        background: var(--squid-teal);
+        background: var(--primary-color);
         margin: 0 auto;
         border-radius: 2px;
     }
     
     .section-subtitle {
         font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.8);
+        color: var(--text-color);
         margin-top: 1rem;
+    }
+    
+    .bg-dark .section-title {
+        color: var(--light-color);
+    }
+    
+    .bg-dark .section-subtitle {
+        color: rgba(255, 255, 255, 0.8);
     }
     
     /* Campaign Cards */
@@ -324,23 +335,24 @@
     }
     
     .campaign-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: white;
         border-radius: 10px;
         padding: 2rem;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     
     .campaign-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(229, 49, 112, 0.2);
+        box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
     }
     
     .campaign-icon {
         width: 70px;
         height: 70px;
-        background: var(--squid-pink);
+        background: var(--primary-color);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -351,7 +363,7 @@
     }
     
     .campaign-card h3 {
-        color: var(--squid-teal);
+        color: var(--secondary-color);
         margin-bottom: 1rem;
         font-size: 1.5rem;
     }
@@ -365,16 +377,16 @@
     }
     
     .stat-item {
-        background: rgba(15, 150, 156, 0.1);
+        background: rgba(255, 255, 255, 0.1);
         padding: 2rem;
         border-radius: 10px;
         text-align: center;
-        border: 1px solid rgba(15, 150, 156, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .stat-item h3 {
         font-size: 2.5rem;
-        color: var(--squid-yellow);
+        color: var(--accent-color);
         margin-bottom: 0.5rem;
         font-family: 'Anton', sans-serif;
     }
@@ -391,7 +403,7 @@
         content: '';
         position: absolute;
         width: 4px;
-        background: var(--squid-teal);
+        background: var(--primary-color);
         top: 0;
         bottom: 0;
         left: 50%;
@@ -419,8 +431,8 @@
     .timeline-dot {
         width: 20px;
         height: 20px;
-        background: var(--squid-pink);
-        border: 3px solid var(--squid-teal);
+        background: var(--accent-color);
+        border: 3px solid var(--primary-color);
         border-radius: 50%;
         position: absolute;
         top: 30px;
@@ -435,23 +447,29 @@
     
     .timeline-content {
         padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.05);
+        background: white;
         border-radius: 10px;
         position: relative;
         transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     
     .timeline-content:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(229, 49, 112, 0.1);
+        box-shadow: 0 10px 30px rgba(52, 152, 219, 0.1);
     }
     
     .timeline-content h3 {
-        color: var(--squid-yellow);
+        color: var(--accent-color);
         margin-top: 0;
         margin-bottom: 0.5rem;
         font-size: 1.3rem;
+    }
+    
+    .bg-dark .timeline-content {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--light-color);
     }
     
     /* Pricing Cards */
@@ -464,56 +482,70 @@
     }
     
     .pricing-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: white;
         border-radius: 15px;
         padding: 2.5rem 2rem;
         width: 100%;
         max-width: 350px;
         position: relative;
         transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid #e0e0e0;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
     .pricing-card.featured {
         transform: scale(1.05);
         background: rgba(255, 255, 255, 0.1);
-        border: 2px solid var(--squid-yellow);
+        border: 2px solid var(--accent-color);
         z-index: 2;
+    }
+    
+    .bg-dark .pricing-card {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--light-color);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .popular-tag {
         position: absolute;
         top: -12px;
         right: 30px;
-        background: var(--squid-yellow);
-        color: var(--squid-black);
+        background: var(--accent-color);
+        color: white;
         padding: 0.3rem 1rem;
         border-radius: 20px;
         font-size: 0.8rem;
         font-weight: bold;
-        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
     }
     
     .pricing-header {
         text-align: center;
         margin-bottom: 2rem;
         padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .bg-dark .pricing-header {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .pricing-header h3 {
         font-size: 2rem;
         margin: 0 0 0.5rem;
-        color: var(--squid-teal);
+        color: var(--secondary-color);
         font-family: 'Anton', sans-serif;
         letter-spacing: 2px;
+    }
+    
+    .bg-dark .pricing-header h3 {
+        color: var(--light-color);
     }
     
     .price {
         font-size: 2.5rem;
         font-weight: bold;
-        color: var(--squid-yellow);
+        color: var(--accent-color);
         margin: 0.5rem 0;
     }
     
@@ -540,12 +572,17 @@
     
     .btn-outline {
         background: transparent;
-        border: 2px solid var(--squid-teal);
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+    
+    .bg-dark .btn-outline {
+        border: 2px solid var(--primary-color);
         color: white;
     }
     
     .btn-outline:hover {
-        background: var(--squid-teal);
+        background: var(--primary-color);
         color: white;
     }
     
@@ -731,12 +768,12 @@
                 </p>
             </div>
             <div class="cta-buttons" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="squidgame-details.php" class="btn" style="background: #0f969c; color: #fff; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border: 2px solid #0f969c; font-family: 'Anton', sans-serif; z-index: 1000;">
+                    Student Register
+                </a>
                 <a href="#pricing" class="btn" style="background: #ffd700; color: #000; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border: 2px solid #ffd700; font-family: 'Anton', sans-serif;">
                     View Packages
                 </a>
-                <!-- <a href="#contact" class="btn" style="background: transparent; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border: 2px solid white; font-family: 'Anton', sans-serif; z-index: 1000;">
-                    Contact Us
-                </a> -->
             </div>
         </div>
         <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMCwwIEwxMDAsMCBMMTAwLDEwMCBMMCwxMDAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==');"></div>
